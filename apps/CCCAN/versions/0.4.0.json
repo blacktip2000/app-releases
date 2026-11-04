@@ -1,0 +1,14 @@
+{
+    "schema":  1,
+    "app":  "CCCAN",
+    "version":  "0.4.0",
+    "tag":  "CCCAN-v0.4.0",
+    "published":  "2026-11-04",
+    "notes":  "### Added\n- **Tx 탭 재구성**: [직접 입력] [Tx 리스트(파일)] [Tx 리스트(온라인)] [+] … 우측 [■ 전체정지].\n  [+]로 파일 리스트(경로)·온라인 리스트(주소) 탭을 더 추가(이름 바꾸기/닫기, 설정에 기억). 탭마다 실행 중 개수 표시.\n- **직접 입력 Repeat**: 주기(ms, 최소 1) + [▶ Repeat]/[■ 정지]. 반복 중에는 ID/Data/주기 입력이 잠기고 정지 후 반영.\n  전체정지·Esc 길게 누르기에도 포함. ID/데이터 길이로 Ext/FD 자동 판별.\n- **리스트 행마다 [1회] [반복] + 주기 입력**: 파일 종류(single/repeat)와 무관하게 언제든 1회/반복. 주기는 파일을 바꾸지 않고 앱에만 기억\n  (기본값: 파일의 repeat 주기, 없으면 100ms). 시퀀스는 [▶ 실행]/[■ 중지].\n- 항목 **설명(Description)**: 이름에 마우스를 올리면 툴팁. JSON v2에 선택 필드 `Description`(구버전 앱도 무시하고 읽음).\n- **편집기**: Ext(ID \u003e 7FF 또는 4자리 이상)·FD(데이터 \u003e 8바이트) 자동 체크, FD 자동 시 BRS 기본 켬(마지막 선택 기억,\n  DBC `CANFD_BRS` 속성이 있으면 우선).\n- **CANDB 시그널로 만들기**: 시그널/메시지 이름 검색 → 같은 메시지의 시그널 여러 개 선택 → 값(값 테이블 선택 또는 물리값, 범위 표시) →\n  ID·Ext·FD·BRS·길이·Data·제목·설명 자동 구성. 나머지 시그널은 0 또는 DBC 초기값(`GenSigStartValue`) 선택(기억).\n  Intel/Motorola, signed, factor/offset, 멀티플렉서 자동 설정 지원.\n- **온라인 Tx 리스트(Docmost)**: 공유 페이지의 표(열: 이름 · ID · 데이터 · 설명, 표 앞 제목 = 그룹)를 읽기 전용으로 표시.\n  시작 시 + [새로고침]으로 불러오기, 마지막 성공 결과를 캐시해 서버가 안 될 때 \"캐시: 날짜\"로 표시.\n  열 이름은 한/영, 괄호·공백 무시. 잘못된 행은 비활성 + 이유 툴팁. 사내 주소(사설 IP)는 프록시를 거치지 않음.\n- 진단 로그: 온라인 요청 주소/결과(HTTP 상태, 표·행·오류 행 수), 캐시 사용, 탭 추가/닫기, 직접 입력 반복 시작/정지.\n\n### Changed\n- **라이트 테마** 가독성: 입력칸(흰색)·버튼/탭/표 헤더(회청색)·배경을 구분하고 1px 테두리 표시. 다크 테마는 그대로.\n",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCCAN-v0.4.0",
+    "installer":  {
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.4.0/CCCAN-Setup-0.4.0.exe",
+                      "sha256":  "c36ff1a1821b7573d29fc221bd31d44db685542277425f708a3a747a96c8a44d",
+                      "size":  3182918
+                  }
+}
