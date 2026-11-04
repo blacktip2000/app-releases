@@ -8,7 +8,7 @@
     "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCCAN-v0.3.1-test.1",
     "installer":  {
                       "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.3.1-test.1/CCCAN-Setup-0.3.0.exe",
-                      "sha256":  "6d564ffce9fc96fc48fad965b741bd481783cb1fe7fa8cdd56623cf140281b4c",
-                      "size":  3127486
+                      "sha256":  "0fb4cef5d481f78dc78628bfdcac2c3373d0214fbf5c2ead5a3d4412f86c702d",
+                      "size":  3130103
                   }
 }
