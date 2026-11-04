@@ -49,3 +49,23 @@ pwsh -File tools\publish.ps1 -App CCCAN -Version 0.3.0 -Installer ..\CCCAN\insta
 **매니페스트는 자산 업로드가 끝난 뒤에만** 갱신되므로, 앱이 없는 파일을 받으려 하는 일이 없습니다.
 
 새 앱을 추가할 때는 `apps/<App>/` 폴더만 새로 쓰면 됩니다(다른 앱과 태그·경로가 겹치지 않음).
+
+## Release summary (shown in the app's update dialog)
+
+Start the notes file with a summary section; `tools/publish.ps1` copies its bullets into `summary` of the manifest.
+
+```markdown
+### 요약
+- one-line change
+- another one-line change
+
+### Added
+- **Feature**: details ...
+```
+
+- `summary`: bullets of the summary section (`### 요약` or `### Summary`). Apps from CCCAN 0.4.1 show it first.
+- `history`: summaries of previous versions (from `apps/<App>/versions/*.json`, newest first, up to 10).
+  Apps show every version newer than the installed one, so skipped versions are visible too.
+  Entries without a summary carry their `notes` (the app summarizes them).
+- `notes`: full notes (markdown bold/code marks removed) + a short "previous versions" section for older apps that only read `notes`.
+- Rebuild the manifest of an already released version (no new asset): add `-ManifestOnly`.
