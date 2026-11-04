@@ -28,10 +28,10 @@ if ($notes.Length -gt 6000) { $notes = $notes.Substring(0, 6000) + "`n..." }
 Write-Host "[1/4] release $tag ($name, $size bytes, sha256 $sha)"
 $null = gh release view $tag -R $Repo 2>&1
 if ($LASTEXITCODE -eq 0) {
-    gh release upload $tag $inst.FullName -R $Repo --clobber
-} else {
-    gh release create $tag $inst.FullName -R $Repo --title "$App v$Version" --notes-file $NotesFile
+    # Never replace an asset: the download CDN may keep serving the old bytes, and clients verify SHA-256.
+    throw "release $tag already exists. Publish a new version instead of replacing assets."
 }
+gh release create $tag $inst.FullName -R $Repo --title "$App v$Version" --notes-file $NotesFile
 if ($LASTEXITCODE -ne 0) { throw "gh release failed" }
 
 Write-Host "[2/4] manifest"
