@@ -8,7 +8,7 @@ param(
     [string]$Repo = "blacktip2000/app-releases",
     [string]$ManifestName = "latest.json"
 )
-$ErrorActionPreference = "Stop"
+$ErrorActionPreference = "Continue"  # native tools write warnings to stderr; check $LASTEXITCODE instead
 $root = Split-Path -Parent $PSScriptRoot
 
 if ($App -notmatch '^[A-Za-z0-9_-]+$') { throw "invalid app name: $App" }
@@ -26,7 +26,7 @@ $notes = [IO.File]::ReadAllText((Resolve-Path $NotesFile), [Text.Encoding]::UTF8
 if ($notes.Length -gt 6000) { $notes = $notes.Substring(0, 6000) + "`n..." }
 
 Write-Host "[1/4] release $tag ($name, $size bytes, sha256 $sha)"
-gh release view $tag -R $Repo *> $null
+$null = gh release view $tag -R $Repo 2>&1
 if ($LASTEXITCODE -eq 0) {
     gh release upload $tag $inst.FullName -R $Repo --clobber
 } else {
@@ -57,10 +57,10 @@ New-Item -ItemType Directory -Force -Path (Join-Path $appDir "versions") | Out-N
 [IO.File]::WriteAllText((Join-Path $appDir $ManifestName), $json, $utf8)
 
 Write-Host "[3/4] commit & push"
-git -C $root pull -q --rebase
-git -C $root add "apps/$App"
-git -C $root commit -q -m "$App $Version ($ManifestName)"
-git -C $root push -q
+git -C $root pull -q --rebase 2>&1 | Out-Null
+git -C $root add "apps/$App" 2>&1 | Out-Null
+git -C $root commit -q -m "$App $Version ($ManifestName)" 2>&1 | Out-Null
+git -C $root push -q 2>&1 | Out-Null
 if ($LASTEXITCODE -ne 0) { throw "git push failed" }
 
 Write-Host "[4/4] verify"
