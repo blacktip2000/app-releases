@@ -1,0 +1,30 @@
+{
+    "schema":  1,
+    "app":  "AlSeeCraft",
+    "version":  "0.3.0",
+    "tag":  "AlSeeCraft-v0.3.0",
+    "published":  "2026-11-05",
+    "summary":  [
+                    "앱 자동 업데이트 (새 버전 알림 → 다운로드·SHA-256 검증 → 설치 후 자동 재실행)",
+                    "Linux 배포: AppImage(자동 업데이트 지원)와 .deb(Ubuntu 24.04+)",
+                    "Linux 파일 관리자에서 drawable XML 썸네일 표시(.deb)"
+                ],
+    "notes":  "### 요약\n- 앱 자동 업데이트 (새 버전 알림 → 다운로드·SHA-256 검증 → 설치 후 자동 재실행)\n- Linux 배포: AppImage(자동 업데이트 지원)와 .deb(Ubuntu 24.04+)\n- Linux 파일 관리자에서 drawable XML 썸네일 표시(.deb)\n\n### Added\n- 자동 업데이트: 시작할 때 공개 배포 채널(app-releases)에서 새 버전을 확인하고, 현재 버전 이후의 모든 변경 요약을 보여 줌. [지금 설치] / [나중에] / [이 버전 건너뛰기]\n  - 다운로드는 이 앱의 릴리스 자산만 허용, 크기와 SHA-256이 다르면 삭제\n  - Windows: 앱을 닫고 설치 프로그램을 무인 실행한 뒤 다시 실행 (설치 로그 %LOCALAPPDATA%\\AlSeeCraft\\logs\\update_install_\u003c버전\u003e.log)\n  - Linux AppImage: 실행 중인 AppImage 파일을 검증된 새 파일로 교체한 뒤 다시 실행\n  - [도움말 → 업데이트 확인...], 환경 설정 [일반 → 시작할 때 업데이트 확인]\n- Linux 배포: AlSeeCraft-\u003c버전\u003e-x86_64.AppImage(Qt 포함, 설치 불필요), alseecraft_\u003c버전\u003e_amd64.deb(시스템 Qt6, 메뉴·연결 프로그램 등록, drawable XML 썸네일러)\n\n### Notes\n- Linux 빌드는 Ubuntu 24.04(glibc 2.39) 기준입니다. 더 오래된 배포판에서는 AppImage가 실행되지 않을 수 있습니다.\n- Linux 파일 관리자에는 우클릭 메뉴에 그림을 넣는 공통 API가 없어, Windows 우클릭 미리보기 대신 썸네일과 [연결 프로그램 → AlSeeCraft]로 제공합니다.",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/AlSeeCraft-v0.3.0",
+    "history":  [
+
+                ],
+    "installer":  {
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/AlSeeCraft-v0.3.0/AlSeeCraft-Setup-0.3.0.exe",
+                      "sha256":  "5d43c3cbcc4f516181afe0c8069d30320ec91e241bdeace332b07deabbd881fd",
+                      "size":  13932334
+                  },
+    "platforms":  {
+                      "linux-x86_64":  {
+                                           "kind":  "appimage",
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/AlSeeCraft-v0.3.0/AlSeeCraft-0.3.0-x86_64.AppImage",
+                                           "sha256":  "2ca69cc173a4ecd713152f5fc61396c9d9cd0ad93887fe3f96b1db88c3c10cf9",
+                                           "size":  37833208
+                                       }
+                  }
+}
