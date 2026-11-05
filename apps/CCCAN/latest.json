@@ -1,16 +1,24 @@
 {
     "schema":  1,
     "app":  "CCCAN",
-    "version":  "0.4.1",
-    "tag":  "CCCAN-v0.4.1",
-    "published":  "2026-11-04",
+    "version":  "0.4.2",
+    "tag":  "CCCAN-v0.4.2",
+    "published":  "2026-11-05",
     "summary":  [
-                    "업데이트 알림에 변경 사항 요약 표시(건너뛴 버전 포함)",
-                    "전체 릴리스 노트는 접어서 보기"
+                    "온라인 Tx 리스트에 시퀀스 지원(페이지의 \"동작 / 대상 / 값\" 표)",
+                    "Tx 항목 편집 창의 ImGui ID 충돌 경고 수정"
                 ],
-    "notes":  "### 요약\n- 업데이트 알림에 변경 사항 요약 표시(건너뛴 버전 포함)\n- 전체 릴리스 노트는 접어서 보기\n\n### Added\n- 업데이트 알림 요약: 새 버전 알림 창에 \"주요 변경 사항\"을 한 줄씩 표시. 현재 버전과 최신 버전 사이에 여러 버전이 있으면\n  버전별로 모두 보여 줌(예: 0.3.0 → 0.4.1이면 0.4.1 + 0.4.0). 전체 릴리스 노트는 [전체 릴리스 노트]를 펼쳐서 확인.\n- 매니페스트 summary(요약) / history(이전 버전 요약) 필드. 없으면 노트에서 자동 요약(굵은 제목 또는 첫 문장, [추가]/[변경]/[수정]).\n- 진단 로그: 업데이트 확인 시 요약 줄을 로그에 기록.\n\n### 이전 버전 요약\nv0.4.0\n- Tx 탭 재구성: 직접 입력 / 파일 리스트 / 온라인 리스트 + [+]로 탭 추가\n- 직접 입력 Repeat, 리스트 행마다 [1회]/[반복] + 주기\n- CANDB 시그널로 Tx 메시지 만들기(값 선택 → Data 자동 구성)\n- 온라인 Tx 리스트(Docmost 페이지 표, 캐시)\n- 라이트 테마 가독성 개선",
-    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCCAN-v0.4.1",
+    "notes":  "### 요약\n- 온라인 Tx 리스트에 시퀀스 지원(페이지의 \"동작 / 대상 / 값\" 표)\n- Tx 항목 편집 창의 ImGui ID 충돌 경고 수정\n\n### Added\n- 온라인 시퀀스: Docmost 페이지에 시퀀스: \u003c이름\u003e 제목 + 동작 | 대상 | 값 | 설명 표를 만들면 시퀀스로 실행.\n  동작: 전송(같은 페이지 메시지 이름 / 그룹/이름 / ID#DATA), 대기(ms), 수신대기(ID, 제한 시간, 계속), 반복 … 반복 끝(중첩 가능).\n  시퀀스는 리스트 맨 아래 \"시퀀스\" 그룹에 모이고 [▶ 실행]/[■ 중지], 전체정지·Esc 길게에 포함.\n  오류 시 그 시퀀스만 비활성 + n번째 행: 이유 툴팁/로그. 작성 규칙: docs/online-tx-list.md.\n- 온라인 메시지 키가 행 이름이 되어 시퀀스 요약에 이름이 그대로 보임.\n\n### Fixed\n- Tx 항목 편집 창에서 [메시지] 콤보에 마우스를 올리면 \"conflicting ID\" 경고가 뜨던 문제(같은 라벨의 라디오 버튼과 ID 충돌).\n  같은 이름의 그룹 제목·같은 문구의 값 테이블 항목도 ID 분리.\n\n### 이전 버전 요약\nv0.4.1\n- 업데이트 알림에 변경 사항 요약 표시(건너뛴 버전 포함)\n- 전체 릴리스 노트는 접어서 보기\nv0.4.0\n- Tx 탭 재구성: 직접 입력 / 파일 리스트 / 온라인 리스트 + [+]로 탭 추가\n- 직접 입력 Repeat, 리스트 행마다 [1회]/[반복] + 주기\n- CANDB 시그널로 Tx 메시지 만들기(값 선택 → Data 자동 구성)\n- 온라인 Tx 리스트(Docmost 페이지 표, 캐시)\n- 라이트 테마 가독성 개선",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCCAN-v0.4.2",
     "history":  [
+                    {
+                        "version":  "0.4.1",
+                        "published":  "2026-11-04",
+                        "summary":  [
+                                        "업데이트 알림에 변경 사항 요약 표시(건너뛴 버전 포함)",
+                                        "전체 릴리스 노트는 접어서 보기"
+                                    ]
+                    },
                     {
                         "version":  "0.4.0",
                         "published":  "2026-11-04",
@@ -32,8 +40,8 @@
                     }
                 ],
     "installer":  {
-                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.4.1/CCCAN-Setup-0.4.1.exe",
-                      "sha256":  "83f2641e546fb72748a3d302666baeaea0cf16a4b663ca4b189e693f5cc27205",
-                      "size":  3194269
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.4.2/CCCAN-Setup-0.4.2.exe",
+                      "sha256":  "8f225e0f8dc7251acb1c2ac76b64d21c0b59c4d9400905b4612d3b999802a960",
+                      "size":  3201348
                   }
 }
