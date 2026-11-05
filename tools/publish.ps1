@@ -1,5 +1,6 @@
 # Publish an app installer to blacktip2000/app-releases and update apps/<App>/latest.json
 # Usage: powershell -ExecutionPolicy Bypass -File tools\publish.ps1 -App CCCAN -Version 0.3.0 -Installer path\to\Setup.exe -NotesFile notes.md
+#        Linux: -App <App>-Linux -Installer path\to\<App>-<ver>-x86_64.AppImage (same manifest schema, separate channel)
 #
 # Notes file (UTF-8 markdown). Optional summary section at the top, shown first in the app's update dialog:
 #   ### <summary heading: Korean "yoyak" (U+C694 U+C57D) or "Summary">
@@ -49,7 +50,7 @@ function Get-Summary([string]$text) {
 
 $inst = Get-Item $Installer
 $name = $inst.Name
-if ($name -notmatch '^[A-Za-z0-9._-]+\.exe$') { throw "installer file name must be [A-Za-z0-9._-]+.exe: $name" }
+if ($name -notmatch '^[A-Za-z0-9._-]+\.(exe|AppImage)$') { throw "installer file name must be [A-Za-z0-9._-]+.exe or .AppImage: $name" }
 $sha = (Get-FileHash $inst.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
 $size = $inst.Length
 $tag = "$App-v$Version"
