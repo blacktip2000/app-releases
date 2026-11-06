@@ -1,6 +1,6 @@
 # Publish an app installer to blacktip2000/app-releases and update apps/<App>/latest.json
 # Usage: powershell -ExecutionPolicy Bypass -File tools\publish.ps1 -App CCCAN -Version 0.3.0 -Installer path\to\Setup.exe -NotesFile notes.md
-#        Linux: -App <App>-Linux -Installer path\to\<App>-<ver>-x86_64.AppImage (same manifest schema, separate channel)
+#        [-LinuxX64 path\to\cccan_0.3.0_amd64.deb] [-LinuxArm64 path\to\cccan_0.3.0_arm64.deb]
 #
 # Notes file (UTF-8 markdown). Optional summary section at the top, shown first in the app's update dialog:
 #   ### <summary heading: Korean "yoyak" (U+C694 U+C57D) or "Summary">
@@ -18,6 +18,8 @@ param(
     [string]$Repo = "blacktip2000/app-releases",
     [string]$ManifestName = "latest.json",
     [int]$HistoryCount = 10,
+    [string]$LinuxX64 = "",
+    [string]$LinuxArm64 = "",
     [switch]$ManifestOnly  # rebuild manifest for an already released version (no new release / asset)
 )
 $ErrorActionPreference = "Continue"  # native tools write warnings to stderr; check $LASTEXITCODE instead
@@ -50,10 +52,21 @@ function Get-Summary([string]$text) {
 
 $inst = Get-Item $Installer
 $name = $inst.Name
-if ($name -notmatch '^[A-Za-z0-9._-]+\.(exe|AppImage)$') { throw "installer file name must be [A-Za-z0-9._-]+.exe or .AppImage: $name" }
+if ($name -notmatch '^[A-Za-z0-9._-]+\.exe$') { throw "installer file name must be [A-Za-z0-9._-]+.exe: $name" }
 $sha = (Get-FileHash $inst.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
 $size = $inst.Length
 $tag = "$App-v$Version"
+
+# platform key -> file (windows-x64 is the -Installer)
+$assets = [ordered]@{ "windows-x64" = $inst }
+foreach ($p in @(@("linux-x64", $LinuxX64), @("linux-arm64", $LinuxArm64))) {
+    if ($p[1]) {
+        if (-not (Test-Path $p[1])) { throw "package not found: $($p[1])" }
+        $f = Get-Item $p[1]
+        if ($f.Name -notmatch '^[A-Za-z0-9._+-]+\.deb$') { throw "linux package name must be *.deb: $($f.Name)" }
+        $assets[$p[0]] = $f
+    }
+}
 $notesMd = [IO.File]::ReadAllText((Resolve-Path $NotesFile), [Text.Encoding]::UTF8)
 $summary = Get-Summary $notesMd
 $appDir = Join-Path $root "apps\$App"
@@ -90,13 +103,14 @@ foreach ($h in ($history | Select-Object -First 3)) {
 if ($prevLines.Count) { $notes += "`n`n### $KoPrev`n" + ($prevLines -join "`n") }
 
 if (-not $ManifestOnly) {
-    Write-Host "[1/4] release $tag ($name, $size bytes, sha256 $sha)"
+    Write-Host "[1/4] release $tag ($($assets.Keys -join ', '))"
     $null = gh release view $tag -R $Repo 2>&1
     if ($LASTEXITCODE -eq 0) {
         # Never replace an asset: the download CDN may keep serving the old bytes, and clients verify SHA-256.
         throw "release $tag already exists. Publish a new version instead of replacing assets."
     }
-    gh release create $tag $inst.FullName -R $Repo --title "$App v$Version" --notes-file $NotesFile
+    $files = @($assets.Values | ForEach-Object { $_.FullName })
+    gh release create $tag @files -R $Repo --title "$App v$Version" --notes-file $NotesFile
     if ($LASTEXITCODE -ne 0) { throw "gh release failed" }
 } else {
     Write-Host "[1/4] manifest only (release $tag must already exist)"
@@ -108,6 +122,15 @@ Write-Host "[2/4] manifest (summary $($summary.Count), history $($history.Count)
 $published = Get-Date -Format "yyyy-MM-dd"
 $existing = Join-Path $appDir "versions\$Version.json"
 if ($ManifestOnly -and (Test-Path $existing)) { $published = ([IO.File]::ReadAllText($existing, [Text.Encoding]::UTF8) | ConvertFrom-Json).published }
+$installers = [ordered]@{}
+foreach ($k in $assets.Keys) {
+    $f = $assets[$k]
+    $installers[$k] = [ordered]@{
+        url    = "https://github.com/$Repo/releases/download/$tag/$($f.Name)"
+        sha256 = (Get-FileHash $f.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
+        size   = $f.Length
+    }
+}
 $manifest = [ordered]@{
     schema    = 1
     app       = $App
@@ -123,6 +146,7 @@ $manifest = [ordered]@{
         sha256 = $sha
         size   = $size
     }
+    installers = $installers
 }
 $json = $manifest | ConvertTo-Json -Depth 6
 $utf8 = New-Object Text.UTF8Encoding($false)
