@@ -69,3 +69,8 @@ Start the notes file with a summary section; `tools/publish.ps1` copies its bull
   Entries without a summary carry their `notes` (the app summarizes them).
 - `notes`: full notes (markdown bold/code marks removed) + a short "previous versions" section for older apps that only read `notes`.
 - Rebuild the manifest of an already released version (no new asset): add `-ManifestOnly`.
+
+## Platforms (CCCAN 0.5.0~)
+
+`publish.ps1 -Installer <Setup.exe> [-LinuxX64 <amd64.deb>] [-LinuxArm64 <arm64.deb>]` writes `installers` = { `windows-x64`, `linux-x64`, `linux-arm64` } to the manifest.
+Apps pick the entry for their own platform; `installer` (Windows) stays for apps 0.4.x and older.
