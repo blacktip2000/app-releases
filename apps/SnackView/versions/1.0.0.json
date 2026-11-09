@@ -1,0 +1,32 @@
+{
+    "schema":  1,
+    "app":  "SnackView",
+    "version":  "1.0.0",
+    "tag":  "SnackView-v1.0.0",
+    "published":  "2026-11-09",
+    "summary":  [
+                    "이미지 뷰어와 화면 캡처·편집기를 하나로 합친 첫 릴리스",
+                    "다크 테마 UI: 카드형 썸네일, 강조색 캡처 버튼, 아이콘 툴바, 사이드바 설정 창",
+                    "뷰어 메뉴에서 캡처, Ctrl+E로 그림을 편집기로 열기, 편집 결과를 뷰어로 보기",
+                    "뷰어·캡처 설정을 한 창에서 (탐색/보기/슬라이드 쇼/썸네일/캡처 단축키/캡처·일반)",
+                    "Windows 10/11 x64, Ubuntu 20.04 이상(.deb) 지원, 앱 내 자동 업데이트"
+                ],
+    "notes":  "## SnackView 1.0.0\r\n\r\n### 요약\r\n- 이미지 뷰어와 화면 캡처·편집기를 하나로 합친 첫 릴리스\r\n- 다크 테마 UI: 카드형 썸네일, 강조색 캡처 버튼, 아이콘 툴바, 사이드바 설정 창\r\n- 뷰어 메뉴에서 캡처, Ctrl+E로 그림을 편집기로 열기, 편집 결과를 뷰어로 보기\r\n- 뷰어·캡처 설정을 한 창에서 (탐색/보기/슬라이드 쇼/썸네일/캡처 단축키/캡처·일반)\r\n- Windows 10/11 x64, Ubuntu 20.04 이상(.deb) 지원, 앱 내 자동 업데이트\r\n\r\n### 변경 사항\r\n- 한 실행 파일(SnackView)이 뷰어 창과 트레이 캡처 도우미(--agent) 두 역할로 동작\r\n- 뷰어를 열면 트레이 캡처 도우미가 함께 시작되어 전역 단축키(Ctrl+Shift+C/W/D/S/A/F)가 동작\r\n- 캡처 목록 창에 [뷰어로 보기] 추가, 파일에서 연 그림은 원래 폴더에 이름_편집_시각.png로 저장 제안\r\n- Linux: PrintScreen 단독 단축키는 기본으로 끔 (데스크톱이 이미 사용)\r\n\r\n### 설치\r\n- Windows: SnackView-Setup-1.0.0.exe (관리자 권한 불필요, 사용자 단위 설치)\r\n- Ubuntu/Debian: sudo apt install ./snackview_1.0.0_amd64.deb (Qt 포함, /opt/snackview)",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/SnackView-v1.0.0",
+    "history":  [
+
+                ],
+    "installer":  {
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/SnackView-v1.0.0/SnackView-Setup-1.0.0.exe",
+                      "sha256":  "23ce975ea70622660ac6b00cada5d55a517780ff591a59258b3281d10bb2cc5f",
+                      "size":  13916488
+                  },
+    "platforms":  {
+                      "linux-x86_64":  {
+                                           "kind":  "deb",
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/SnackView-v1.0.0/snackview_1.0.0_amd64.deb",
+                                           "sha256":  "a46a4331fd08e2072207e3b0a3d36390c1eff356cd3128438beb735a1c97cd15",
+                                           "size":  26651448
+                                       }
+                  }
+}
