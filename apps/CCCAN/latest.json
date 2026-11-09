@@ -1,16 +1,24 @@
 {
     "schema":  1,
     "app":  "CCCAN",
-    "version":  "0.5.0",
-    "tag":  "CCCAN-v0.5.0",
-    "published":  "2026-11-07",
+    "version":  "0.5.1",
+    "tag":  "CCCAN-v0.5.1",
+    "published":  "2026-11-09",
     "summary":  [
-                    "Linux 판 추가(x64 PC / arm64 라즈베리파이, .deb 설치형, 자동 업데이트 포함)",
-                    "Tx 반복 시작 시 같은 MsgID를 반복 중인 다른 행(모든 탭·직접 입력)을 자동 정지"
+                    "Linux 판이 Ubuntu 20.04 / Debian 11 / Raspberry Pi OS bullseye(64bit)에서도 설치·실행",
+                    "사용자 설명서(PDF) 배포: CCCAN-UserManual-0.5.1.pdf"
                 ],
-    "notes":  "### 요약\n- Linux 판 추가(x64 PC / arm64 라즈베리파이, .deb 설치형, 자동 업데이트 포함)\n- Tx 반복 시작 시 같은 MsgID를 반복 중인 다른 행(모든 탭·직접 입력)을 자동 정지\n\n### Added\n- Linux 판: Windows 판과 같은 기능. cccan_\u003c버전\u003e_amd64.deb / cccan_\u003c버전\u003e_arm64.deb (Ubuntu 22.04+, Debian 12+, Raspberry Pi OS 64bit).\n  GLFW + OpenGL 3.3/3.0/ES 3.0, termios 시리얼(/dev/ttyACM*), sysfs 포트 열거·핫플러그(inotify), libcurl, fontconfig 한글 글꼴,\n  udev 규칙(장치 권한 + ModemManager 제외), 앱 메뉴 항목, 크래시 보고(.crash 텍스트), pkexec 를 통한 자동 업데이트 설치. 자세한 내용: docs/linux.md.\n- 업데이트 매니페스트 installers(플랫폼별 설치 파일: windows-x64 / linux-x64 / linux-arm64).\n\n### Changed\n- Tx 반복 자동 정지: [반복]/[▶ Repeat]를 누를 때 같은 ID(+Ext)를 반복 중인 다른 행(파일·온라인·추가 탭, 직접 입력)이 있으면\n  그 반복을 멈추고 새 반복을 시작. Tx 창 오른쪽 아래에 안내, 로그에 정지한 행 기록. (시퀀스는 대상 아님)\n- 내부: OS 의존 코드를 Platform 계층으로 정리(경로·셸·스레드 이름·파일 이동 등).\n\n### 이전 버전 요약\nv0.4.2\n- 온라인 Tx 리스트에 시퀀스 지원(페이지의 \"동작 / 대상 / 값\" 표)\n- Tx 항목 편집 창의 ImGui ID 충돌 경고 수정\nv0.4.1\n- 업데이트 알림에 변경 사항 요약 표시(건너뛴 버전 포함)\n- 전체 릴리스 노트는 접어서 보기\nv0.4.0\n- Tx 탭 재구성: 직접 입력 / 파일 리스트 / 온라인 리스트 + [+]로 탭 추가\n- 직접 입력 Repeat, 리스트 행마다 [1회]/[반복] + 주기\n- CANDB 시그널로 Tx 메시지 만들기(값 선택 → Data 자동 구성)\n- 온라인 Tx 리스트(Docmost 페이지 표, 캐시)\n- 라이트 테마 가독성 개선",
-    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCCAN-v0.5.0",
+    "notes":  "### 요약\n- Linux 판이 Ubuntu 20.04 / Debian 11 / Raspberry Pi OS bullseye(64bit)에서도 설치·실행\n- 사용자 설명서(PDF) 배포: CCCAN-UserManual-0.5.1.pdf\n\n### Changed\n- Linux 지원 범위 확대: .deb 를 Ubuntu 20.04(glibc 2.31) 컨테이너에서 빌드(GCC 11, libstdc++ 정적 링크).\n  지원: Ubuntu 20.04+, Debian 11+, Raspberry Pi OS(bullseye·bookworm 64bit).\n\n### Fixed\n- Linux 판 [정보] 창의 UI 항목이 \"Direct3D 11\"로 표시되던 문제 → \"GLFW + OpenGL\".\n\n### Docs\n- 팀원용 사용자 설명서(설치·연결·Trace·Tx·온라인 리스트·Record·Replay·설정·이슈 보고·FAQ) — 첨부 CCCAN-UserManual-0.5.1.pdf\n\n### 설치 파일\n- Windows: CCCAN-Setup-0.5.1.exe\n- Linux PC: cccan_0.5.1_amd64.deb / 라즈베리파이 64bit: cccan_0.5.1_arm64.deb → sudo apt install ./cccan_0.5.1_\u003carch\u003e.deb\n\n### 이전 버전 요약\nv0.5.0\n- Linux 판 추가(x64 PC / arm64 라즈베리파이, .deb 설치형, 자동 업데이트 포함)\n- Tx 반복 시작 시 같은 MsgID를 반복 중인 다른 행(모든 탭·직접 입력)을 자동 정지\nv0.4.2\n- 온라인 Tx 리스트에 시퀀스 지원(페이지의 \"동작 / 대상 / 값\" 표)\n- Tx 항목 편집 창의 ImGui ID 충돌 경고 수정\nv0.4.1\n- 업데이트 알림에 변경 사항 요약 표시(건너뛴 버전 포함)\n- 전체 릴리스 노트는 접어서 보기",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCCAN-v0.5.1",
     "history":  [
+                    {
+                        "version":  "0.5.0",
+                        "published":  "2026-11-07",
+                        "summary":  [
+                                        "Linux 판 추가(x64 PC / arm64 라즈베리파이, .deb 설치형, 자동 업데이트 포함)",
+                                        "Tx 반복 시작 시 같은 MsgID를 반복 중인 다른 행(모든 탭·직접 입력)을 자동 정지"
+                                    ]
+                    },
                     {
                         "version":  "0.4.2",
                         "published":  "2026-11-05",
@@ -48,25 +56,25 @@
                     }
                 ],
     "installer":  {
-                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.0/CCCAN-Setup-0.5.0.exe",
-                      "sha256":  "3d9203609b0b799771e0631a82dcab8d86d6535bb4b0bd30369d3bc335f11487",
-                      "size":  3204172
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.1/CCCAN-Setup-0.5.1.exe",
+                      "sha256":  "045219f66baab95bb27ed86bdda08c036f95275d7f29fbcea2971ecf4ef7f5c4",
+                      "size":  3199094
                   },
     "installers":  {
                        "windows-x64":  {
-                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.0/CCCAN-Setup-0.5.0.exe",
-                                           "sha256":  "3d9203609b0b799771e0631a82dcab8d86d6535bb4b0bd30369d3bc335f11487",
-                                           "size":  3204172
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.1/CCCAN-Setup-0.5.1.exe",
+                                           "sha256":  "045219f66baab95bb27ed86bdda08c036f95275d7f29fbcea2971ecf4ef7f5c4",
+                                           "size":  3199094
                                        },
                        "linux-x64":  {
-                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.0/cccan_0.5.0_amd64.deb",
-                                         "sha256":  "16023beff86306833889c7560c1fe77204245e4c37e2e13f48edde37907f0643",
-                                         "size":  3369866
+                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.1/cccan_0.5.1_amd64.deb",
+                                         "sha256":  "1e09d2aa0ba2f00470b8156348bfba11a8fefb8ddb439ed6d31b089b6caa0296",
+                                         "size":  3374844
                                      },
                        "linux-arm64":  {
-                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.0/cccan_0.5.0_arm64.deb",
-                                           "sha256":  "cce0541f22d7286823118f0464f63204e38856aedc3bc81dbec9908064e6a900",
-                                           "size":  3118704
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.1/cccan_0.5.1_arm64.deb",
+                                           "sha256":  "e5e8ec3ecb957d4f24e039e3f3aca1431377663e753a0d4b355e4a037eeda6a2",
+                                           "size":  3120452
                                        }
                    }
 }
