@@ -1,0 +1,37 @@
+{
+    "schema":  1,
+    "app":  "CCLogcat",
+    "version":  "0.1.0",
+    "tag":  "CCLogcat-v0.1.0",
+    "published":  "2026-11-11",
+    "summary":  [
+                    "첫 배포: 실시간 logcat / KMSG 뷰어 (Windows, Ubuntu 20.04+)",
+                    "기기 연결 감지 → 바로 로깅, 끊기면 이어 받기",
+                    "로그 탭 여러 개 + 별도 창 분리 (실시간·파일 로그 동시 보기)",
+                    "필터·검색·하이라이트·북마크",
+                    "왼쪽 패널: 기기 / ADB 명령 / 온라인 명령 리스트(Docmost) / 정보",
+                    "앱 내 자동 업데이트"
+                ],
+    "notes":  "### 요약\n- 첫 배포: 실시간 logcat / KMSG 뷰어 (Windows, Ubuntu 20.04+)\n- 기기 연결 감지 → 바로 로깅, 끊기면 이어 받기\n- 로그 탭 여러 개 + 별도 창 분리 (실시간·파일 로그 동시 보기)\n- 필터·검색·하이라이트·북마크\n- 왼쪽 패널: 기기 / ADB 명령 / 온라인 명령 리스트(Docmost) / 정보\n- 앱 내 자동 업데이트\n\n### Added\n- 로그 타입: MAIN, MAIN+SYSTEM, MAIN+SYSTEM+CRASH, SYSTEM, CRASH, EVENTS, RADIO, KERNEL, ALL, KMSG(dmesg -w), KMSG root(/proc/kmsg), 버퍼 직접 조합\n- 자동 로깅: adb track-devices 로 연결을 감지해 빈 탭 재사용 또는 기기별 새 탭으로 바로 수신\n- 다중 창: 탭 우클릭/툴바 [새 창으로], 기기 패널 [새 창], 파일 메뉴 [파일을 새 창으로 열기]\n- 필터: 레벨 토글(우클릭 = 이상만), 포함/제외(a|b), 태그(Tag, -Tag, Tag*), PID/TID, 정규식, 대소문자\n- 검색/하이라이트/북마크: Ctrl+F·F3, 규칙별 색·줄 전체 강조, Ctrl+B·F2·북마크 패널·저장\n- ADB 명령: 기본 명령 23개, 추가/수정/정렬, {arg}/{serial} 치환, 직접 입력·기록, 출력 창·중지\n- 온라인 명령 리스트: Docmost 공유 페이지 / Markdown / JSON 표, 캐시, [내 명령에] 복사, [공유용 복사]\n- 업데이트: app-releases 채널, SHA-256 검증, Windows 무인 설치 후 재실행, Linux pkexec 설치",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.1.0",
+    "history":  [
+
+                ],
+    "installer":  {
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.1.0/CCLogcat-Setup-0.1.0.exe",
+                      "sha256":  "02f21aad3aeb20e121bd6a962a9b7d4b9afa6c8a3e86dc82227cea8cc48fe16f",
+                      "size":  6267740
+                  },
+    "installers":  {
+                       "windows-x64":  {
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.1.0/CCLogcat-Setup-0.1.0.exe",
+                                           "sha256":  "02f21aad3aeb20e121bd6a962a9b7d4b9afa6c8a3e86dc82227cea8cc48fe16f",
+                                           "size":  6267740
+                                       },
+                       "linux-x64":  {
+                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.1.0/cclogcat_0.1.0_amd64.deb",
+                                         "sha256":  "6e3ec526b4f3fd3e99e5239ac29b332ea572d0c793b89096965964cf88479578",
+                                         "size":  4628196
+                                     }
+                   }
+}
