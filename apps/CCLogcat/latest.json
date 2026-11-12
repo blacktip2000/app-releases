@@ -1,17 +1,25 @@
 {
     "schema":  1,
     "app":  "CCLogcat",
-    "version":  "0.3.2",
-    "tag":  "CCLogcat-v0.3.2",
+    "version":  "0.3.3",
+    "tag":  "CCLogcat-v0.3.3",
     "published":  "2026-11-12",
     "summary":  [
-                    "왼쪽 메뉴를 아이콘으로 (툴팁 유지)",
-                    "왼쪽 패널을 « 버튼 한 번으로 닫기",
-                    "컬럼 폭을 마우스로 조절, 헤더 우클릭으로 컬럼 켜기/끄기"
+                    "포함·제외·태그·PID·검색 칸을 클릭하면 이전 입력 기록이 아래 목록으로",
+                    "하이라이트 단어 칸도 동일"
                 ],
-    "notes":  "### 요약\n- 왼쪽 메뉴를 아이콘으로 (툴팁 유지)\n- 왼쪽 패널을 « 버튼 한 번으로 닫기\n- 컬럼 폭을 마우스로 조절, 헤더 우클릭으로 컬럼 켜기/끄기\n\n### Changed\n- 활동 막대: 기기(휴대폰)·명령(터미널)·온라인(지구본)·프리셋(슬라이더)·정보(i) 아이콘. 마우스를 올리면 이름과 설명\n- 왼쪽 패널: 제목 오른쪽 « 버튼으로 닫기 (아이콘을 다시 누르면 열림)\n\n### Added\n- 컬럼 폭 조절: 로그 목록 헤더의 경계선을 끌어서 #·TIME·PID·TID·L·TAG 폭 조절, 경계 더블클릭 = 그 컬럼 기본 폭. 좁히면 내용은 잘라서 표시. 설정에 저장\n- 헤더 우클릭 메뉴: 줄 번호·시간·PID·TID·레벨·태그 켜기/끄기, 컬럼 폭 기본값\n- 옵션: 화면 \u003e 컬럼 폭 [기본값으로]\n\n### 이전 버전 요약\nv0.3.1\n- 하이라이트를 탭(프리셋)마다 따로 관리 (전체 공통 아님)\n- 프리셋 적용 = 그 탭의 하이라이트도 프리셋 것으로\n- 하이라이트 창에서 [이 프리셋에 저장]\nv0.3.0\n- 클립보드 복사/붙여넣기가 외부 프로그램과 제대로 연동\n- 검색 연산자 통일: a|b, *, ?, !제외 (정규식 체크 시 모두 정규식)\n- 같은 폴더의 로그를 열면 마지막 필터 자동 적용\n- 자동 스크롤·위치 막대(SeekBar) 수정, 수신 중 클릭 정확도 개선\n- 탭 모양 정리(이름+닫기 한 덩어리, 줄바꿈), 툴팁 즉시 표시\n- 선택한 줄을 아래 상태줄에서 부분 복사, 프리셋 메뉴 정리\nv0.2.0\n- 줄마다 배경을 번갈아 칠해 읽기 쉽게 (옵션에서 세기 조절)\n- 줄 더블클릭 = 북마크, 우클릭 \u003e 메모 (마우스를 올리면 툴팁)\n- 하이라이트 창: 단어+색 추가, 개수 제한 없음\n- 오른쪽 위치 막대: 북마크·메모·하이라이트·검색 위치, 클릭하면 이동\n- 로그 파일 여러 개를 한 창에 시간순으로 합쳐 보기\n- 필터 프리셋 저장·공유·온라인 불러오기, 태그 검색은 대소문자 무시 포함",
-    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.3.2",
+    "notes":  "### 요약\n- 포함·제외·태그·PID·검색 칸을 클릭하면 이전 입력 기록이 아래 목록으로\n- 하이라이트 단어 칸도 동일\n\n### Added\n- 입력 기록: 포함·제외·태그·PID·검색(Ctrl+F)·하이라이트 단어 칸을 클릭하면 그 칸의 이전 입력이 아래 목록으로 열리고, 고르면 바로 입력·적용. 입력칸에서 벗어날 때 내용이 기록에 저장(칸마다 최근 30개, 중복은 맨 위로). 목록 아래 [기록 지우기]\n\n### 이전 버전 요약\nv0.3.2\n- 왼쪽 메뉴를 아이콘으로 (툴팁 유지)\n- 왼쪽 패널을 « 버튼 한 번으로 닫기\n- 컬럼 폭을 마우스로 조절, 헤더 우클릭으로 컬럼 켜기/끄기\nv0.3.1\n- 하이라이트를 탭(프리셋)마다 따로 관리 (전체 공통 아님)\n- 프리셋 적용 = 그 탭의 하이라이트도 프리셋 것으로\n- 하이라이트 창에서 [이 프리셋에 저장]\nv0.3.0\n- 클립보드 복사/붙여넣기가 외부 프로그램과 제대로 연동\n- 검색 연산자 통일: a|b, *, ?, !제외 (정규식 체크 시 모두 정규식)\n- 같은 폴더의 로그를 열면 마지막 필터 자동 적용\n- 자동 스크롤·위치 막대(SeekBar) 수정, 수신 중 클릭 정확도 개선\n- 탭 모양 정리(이름+닫기 한 덩어리, 줄바꿈), 툴팁 즉시 표시\n- 선택한 줄을 아래 상태줄에서 부분 복사, 프리셋 메뉴 정리",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.3.3",
     "history":  [
+                    {
+                        "version":  "0.3.2",
+                        "published":  "2026-11-12",
+                        "summary":  [
+                                        "왼쪽 메뉴를 아이콘으로 (툴팁 유지)",
+                                        "왼쪽 패널을 « 버튼 한 번으로 닫기",
+                                        "컬럼 폭을 마우스로 조절, 헤더 우클릭으로 컬럼 켜기/끄기"
+                                    ]
+                    },
                     {
                         "version":  "0.3.1",
                         "published":  "2026-11-12",
@@ -59,20 +67,20 @@
                     }
                 ],
     "installer":  {
-                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.3.2/CCLogcat-Setup-0.3.2.exe",
-                      "sha256":  "7abaffc1737745d20a50fac49bcf009bb90c6b259f0ea3bd5f79006afaac9f4d",
-                      "size":  6433440
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.3.3/CCLogcat-Setup-0.3.3.exe",
+                      "sha256":  "db0401a6a25f6b6bd7ccd76d9de191b8b1486323984df29f47f66798a6a40bf2",
+                      "size":  6443140
                   },
     "installers":  {
                        "windows-x64":  {
-                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.3.2/CCLogcat-Setup-0.3.2.exe",
-                                           "sha256":  "7abaffc1737745d20a50fac49bcf009bb90c6b259f0ea3bd5f79006afaac9f4d",
-                                           "size":  6433440
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.3.3/CCLogcat-Setup-0.3.3.exe",
+                                           "sha256":  "db0401a6a25f6b6bd7ccd76d9de191b8b1486323984df29f47f66798a6a40bf2",
+                                           "size":  6443140
                                        },
                        "linux-x64":  {
-                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.3.2/cclogcat_0.3.2_amd64.deb",
-                                         "sha256":  "3a6384d16adb4342b3b3127497f38abca2868dab23bd4e1684f0f97449f6a786",
-                                         "size":  5031112
+                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.3.3/cclogcat_0.3.3_amd64.deb",
+                                         "sha256":  "a199e13235fea872d65f232f289610b2c924a9a3b866738c3ff4d90080e5a500",
+                                         "size":  5037004
                                      }
                    }
 }
