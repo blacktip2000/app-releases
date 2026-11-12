@@ -1,16 +1,25 @@
 {
     "schema":  1,
     "app":  "CCLogcat",
-    "version":  "0.4.1",
-    "tag":  "CCLogcat-v0.4.1",
+    "version":  "0.4.2",
+    "tag":  "CCLogcat-v0.4.2",
     "published":  "2026-11-13",
     "summary":  [
-                    "성능 개선: 수신 중 위치 막대 계산, 하이라이트 규칙이 많을 때 줄 그리기",
-                    "북마크·메모가 많아도 패널이 느려지지 않게"
+                    "앱 목록에 검색 추가",
+                    "새로고침해도 앱 목록 창이 닫히지 않음",
+                    "기기가 연결돼 있으면 어느 탭에서나 [목록] 사용 가능"
                 ],
-    "notes":  "### 요약\n- 성능 개선: 수신 중 위치 막대 계산, 하이라이트 규칙이 많을 때 줄 그리기\n- 북마크·메모가 많아도 패널이 느려지지 않게\n\n### Changed\n- 위치 막대: 하이라이트 위치를 정렬 없이 한 번 훑어 계산 (200만 줄·적중 33만 줄 기준 24ms → 5ms). 수신 중 줄 수만 바뀐 경우엔 초당 최대 4번만 다시 계산 (최대 0.25초 늦게 반영, 북마크·메모·필터·규칙 변경은 즉시)\n- 줄 그리기: 하이라이트 규칙이 수십 개여도 그 줄에 실제로 걸리는 규칙만 판정\n- 상태줄 \"선택 N줄\": 선택 목록을 매번 만들지 않고 개수만 계산\n- 북마크·메모 패널: 화면에 보이는 항목만 그림. 긴 메모는 한 줄로 줄여 보이고 마우스를 올리면 전체 내용\n- 툴팁: 필터 줄 툴팁 문구를 마우스를 올렸을 때만 생성\n\n### 이전 버전 요약\nv0.4.0\n- 집중 보기: 시작~끝 구간의 로그만 새 창으로 (필터·하이라이트 유지)\n- Ctrl+클릭으로 여러 줄 선택\n- 앱(패키지) 필터: 실행 중인 앱을 골라 그 앱 로그만\n- 프리셋 \"탭의 설정 추가하기\" (덮어쓰지 않고 더하기)\n- 우클릭 메뉴 정리: 복사 통합, 메시지 단어 하이라이트, TID 만 보기/숨기기\n- 시각을 마이크로초(6자리)까지\nv0.3.3\n- 포함·제외·태그·PID·검색 칸을 클릭하면 이전 입력 기록이 아래 목록으로\n- 하이라이트 단어 칸도 동일\nv0.3.2\n- 왼쪽 메뉴를 아이콘으로 (툴팁 유지)\n- 왼쪽 패널을 « 버튼 한 번으로 닫기\n- 컬럼 폭을 마우스로 조절, 헤더 우클릭으로 컬럼 켜기/끄기",
-    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.4.1",
+    "notes":  "### 요약\n- 앱 목록에 검색 추가\n- 새로고침해도 앱 목록 창이 닫히지 않음\n- 기기가 연결돼 있으면 어느 탭에서나 [목록] 사용 가능\n\n### Changed\n- 앱(패키지) 필터 [목록]: 맨 위 검색칸에 패키지 이름 일부를 넣으면 목록이 바로 줄어듦(대소문자 무시, \"보이는 수 / 전체 수\" 표시). 결과가 하나면 Enter 로 바로 선택\n- 새로고침: 목록 창 안에서 눌러도 창이 닫히지 않고, 기존 목록을 그대로 둔 채 옆에 진행 표시만 돌다가 갱신. 창은 바깥을 누르거나 앱을 고르면 닫힘\n\n### Fixed\n- [목록] 비활성: 기기 로그 탭에서만 켜지던 것을, 연결된 기기가 있으면 빈 탭·파일 탭에서도 켜지도록 수정 (이 탭의 기기, 없으면 연결된 첫 기기 사용). 목록을 가져오지 못하면 \"불러오는 중\"이 계속 도는 대신 안내 표시\n\n### 이전 버전 요약\nv0.4.1\n- 성능 개선: 수신 중 위치 막대 계산, 하이라이트 규칙이 많을 때 줄 그리기\n- 북마크·메모가 많아도 패널이 느려지지 않게\nv0.4.0\n- 집중 보기: 시작~끝 구간의 로그만 새 창으로 (필터·하이라이트 유지)\n- Ctrl+클릭으로 여러 줄 선택\n- 앱(패키지) 필터: 실행 중인 앱을 골라 그 앱 로그만\n- 프리셋 \"탭의 설정 추가하기\" (덮어쓰지 않고 더하기)\n- 우클릭 메뉴 정리: 복사 통합, 메시지 단어 하이라이트, TID 만 보기/숨기기\n- 시각을 마이크로초(6자리)까지\nv0.3.3\n- 포함·제외·태그·PID·검색 칸을 클릭하면 이전 입력 기록이 아래 목록으로\n- 하이라이트 단어 칸도 동일",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.4.2",
     "history":  [
+                    {
+                        "version":  "0.4.1",
+                        "published":  "2026-11-13",
+                        "summary":  [
+                                        "성능 개선: 수신 중 위치 막대 계산, 하이라이트 규칙이 많을 때 줄 그리기",
+                                        "북마크·메모가 많아도 패널이 느려지지 않게"
+                                    ]
+                    },
                     {
                         "version":  "0.4.0",
                         "published":  "2026-11-12",
@@ -87,20 +96,20 @@
                     }
                 ],
     "installer":  {
-                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.1/CCLogcat-Setup-0.4.1.exe",
-                      "sha256":  "4d6d0737fb2086faa188c07eef971044a2046d826ddd63c72d11ab0bb9e68d5a",
-                      "size":  6495406
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.2/CCLogcat-Setup-0.4.2.exe",
+                      "sha256":  "54e9d73f6940b0ee818f3b2c6d85f6a490d8c4157eef39c751339f76be8c6f24",
+                      "size":  6498029
                   },
     "installers":  {
                        "windows-x64":  {
-                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.1/CCLogcat-Setup-0.4.1.exe",
-                                           "sha256":  "4d6d0737fb2086faa188c07eef971044a2046d826ddd63c72d11ab0bb9e68d5a",
-                                           "size":  6495406
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.2/CCLogcat-Setup-0.4.2.exe",
+                                           "sha256":  "54e9d73f6940b0ee818f3b2c6d85f6a490d8c4157eef39c751339f76be8c6f24",
+                                           "size":  6498029
                                        },
                        "linux-x64":  {
-                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.1/cclogcat_0.4.1_amd64.deb",
-                                         "sha256":  "66a8dce27076ced0fe936cc5283dd05229d2167a62ca7f5f3cfe2e03cf95989d",
-                                         "size":  5094796
+                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.2/cclogcat_0.4.2_amd64.deb",
+                                         "sha256":  "7ec04da213663c13e0748fa858381f610e2de7a10de178565d112f1fa89ec159",
+                                         "size":  5094736
                                      }
                    }
 }
