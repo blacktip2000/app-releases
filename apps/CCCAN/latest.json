@@ -1,16 +1,24 @@
 {
     "schema":  1,
     "app":  "CCCAN",
-    "version":  "0.5.1",
-    "tag":  "CCCAN-v0.5.1",
-    "published":  "2026-11-09",
+    "version":  "0.5.2",
+    "tag":  "CCCAN-v0.5.2",
+    "published":  "2026-11-13",
     "summary":  [
-                    "Linux 판이 Ubuntu 20.04 / Debian 11 / Raspberry Pi OS bullseye(64bit)에서도 설치·실행",
-                    "사용자 설명서(PDF) 배포: CCCAN-UserManual-0.5.1.pdf"
+                    "Tx 리스트(파일)에 그룹 기능 추가(온라인 리스트처럼 접기/펼치기, 그룹으로 이동·이름 바꾸기·순서 변경)",
+                    "앱 시작 시 아래 영역은 Tx 탭이 선택된 상태로 시작"
                 ],
-    "notes":  "### 요약\n- Linux 판이 Ubuntu 20.04 / Debian 11 / Raspberry Pi OS bullseye(64bit)에서도 설치·실행\n- 사용자 설명서(PDF) 배포: CCCAN-UserManual-0.5.1.pdf\n\n### Changed\n- Linux 지원 범위 확대: .deb 를 Ubuntu 20.04(glibc 2.31) 컨테이너에서 빌드(GCC 11, libstdc++ 정적 링크).\n  지원: Ubuntu 20.04+, Debian 11+, Raspberry Pi OS(bullseye·bookworm 64bit).\n\n### Fixed\n- Linux 판 [정보] 창의 UI 항목이 \"Direct3D 11\"로 표시되던 문제 → \"GLFW + OpenGL\".\n\n### Docs\n- 팀원용 사용자 설명서(설치·연결·Trace·Tx·온라인 리스트·Record·Replay·설정·이슈 보고·FAQ) — 첨부 CCCAN-UserManual-0.5.1.pdf\n\n### 설치 파일\n- Windows: CCCAN-Setup-0.5.1.exe\n- Linux PC: cccan_0.5.1_amd64.deb / 라즈베리파이 64bit: cccan_0.5.1_arm64.deb → sudo apt install ./cccan_0.5.1_\u003carch\u003e.deb\n\n### 이전 버전 요약\nv0.5.0\n- Linux 판 추가(x64 PC / arm64 라즈베리파이, .deb 설치형, 자동 업데이트 포함)\n- Tx 반복 시작 시 같은 MsgID를 반복 중인 다른 행(모든 탭·직접 입력)을 자동 정지\nv0.4.2\n- 온라인 Tx 리스트에 시퀀스 지원(페이지의 \"동작 / 대상 / 값\" 표)\n- Tx 항목 편집 창의 ImGui ID 충돌 경고 수정\nv0.4.1\n- 업데이트 알림에 변경 사항 요약 표시(건너뛴 버전 포함)\n- 전체 릴리스 노트는 접어서 보기",
-    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCCAN-v0.5.1",
+    "notes":  "### 요약\n- Tx 리스트(파일)에 그룹 기능 추가(온라인 리스트처럼 접기/펼치기, 그룹으로 이동·이름 바꾸기·순서 변경)\n- 앱 시작 시 아래 영역은 Tx 탭이 선택된 상태로 시작\n\n### Added\n- Tx 리스트(파일) 그룹: 항목마다 \"Group\"(JSON) — 같은 그룹은 ▼ 제목 행 아래에 묶여 접기/펼치기.\n  - 항목 편집기 [그룹] 칸(직접 입력 / ▼ 기존 그룹 선택), [+ 새 항목]은 선택한 항목의 그룹으로 시작.\n  - 항목 우클릭 → 그룹으로 이동(기존 그룹 / 새 그룹… / 그룹에서 빼기). [위로]/[아래로]는 그룹 안에서만.\n  - 그룹 제목 우클릭 → 그룹 모두 정지, 이 그룹에 새 항목…, 그룹 이름 바꾸기…(같은 이름이면 합침), 그룹 위로/아래로, 그룹 해제.\n  - 손으로 쓴 파일에서 같은 그룹이 떨어져 있으면 열 때 한곳으로 모음. 그룹/제목을 바꿔도 반복 주기 기억 유지.\n\n### Changed\n- 시작 시 아래 영역(Tx / Replay)의 선택 탭을 Tx로.\n\n### 첨부\n- Windows CCCAN-Setup-0.5.2.exe / Linux cccan_0.5.2_amd64.deb, cccan_0.5.2_arm64.deb / 사용자 설명서 CCCAN-UserManual-0.5.2.pdf\n\n### 이전 버전 요약\nv0.5.1\n- Linux 판이 Ubuntu 20.04 / Debian 11 / Raspberry Pi OS bullseye(64bit)에서도 설치·실행\n- 사용자 설명서(PDF) 배포: CCCAN-UserManual-0.5.1.pdf\nv0.5.0\n- Linux 판 추가(x64 PC / arm64 라즈베리파이, .deb 설치형, 자동 업데이트 포함)\n- Tx 반복 시작 시 같은 MsgID를 반복 중인 다른 행(모든 탭·직접 입력)을 자동 정지\nv0.4.2\n- 온라인 Tx 리스트에 시퀀스 지원(페이지의 \"동작 / 대상 / 값\" 표)\n- Tx 항목 편집 창의 ImGui ID 충돌 경고 수정",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCCAN-v0.5.2",
     "history":  [
+                    {
+                        "version":  "0.5.1",
+                        "published":  "2026-11-09",
+                        "summary":  [
+                                        "Linux 판이 Ubuntu 20.04 / Debian 11 / Raspberry Pi OS bullseye(64bit)에서도 설치·실행",
+                                        "사용자 설명서(PDF) 배포: CCCAN-UserManual-0.5.1.pdf"
+                                    ]
+                    },
                     {
                         "version":  "0.5.0",
                         "published":  "2026-11-07",
@@ -56,25 +64,25 @@
                     }
                 ],
     "installer":  {
-                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.1/CCCAN-Setup-0.5.1.exe",
-                      "sha256":  "045219f66baab95bb27ed86bdda08c036f95275d7f29fbcea2971ecf4ef7f5c4",
-                      "size":  3199094
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.2/CCCAN-Setup-0.5.2.exe",
+                      "sha256":  "58b2d46220b9d31ddd6b2fa3ac3cdb0c1f39103d285d70c54213a3bd9e5e1171",
+                      "size":  3209117
                   },
     "installers":  {
                        "windows-x64":  {
-                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.1/CCCAN-Setup-0.5.1.exe",
-                                           "sha256":  "045219f66baab95bb27ed86bdda08c036f95275d7f29fbcea2971ecf4ef7f5c4",
-                                           "size":  3199094
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.2/CCCAN-Setup-0.5.2.exe",
+                                           "sha256":  "58b2d46220b9d31ddd6b2fa3ac3cdb0c1f39103d285d70c54213a3bd9e5e1171",
+                                           "size":  3209117
                                        },
                        "linux-x64":  {
-                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.1/cccan_0.5.1_amd64.deb",
-                                         "sha256":  "1e09d2aa0ba2f00470b8156348bfba11a8fefb8ddb439ed6d31b089b6caa0296",
-                                         "size":  3374844
+                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.2/cccan_0.5.2_amd64.deb",
+                                         "sha256":  "889c86b369c4ad08265c6f4263b4a40833181d8c0dc325426e089648df01c806",
+                                         "size":  3402710
                                      },
                        "linux-arm64":  {
-                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.1/cccan_0.5.1_arm64.deb",
-                                           "sha256":  "e5e8ec3ecb957d4f24e039e3f3aca1431377663e753a0d4b355e4a037eeda6a2",
-                                           "size":  3120452
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.2/cccan_0.5.2_arm64.deb",
+                                           "sha256":  "32ffd5bf5aa6af3931d60418327567bec9054d4e0727fabb8c8ba14eb2c34515",
+                                           "size":  3146274
                                        }
                    }
 }
