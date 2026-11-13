@@ -1,16 +1,23 @@
 {
     "schema":  1,
     "app":  "CCLogcat",
-    "version":  "0.4.4",
-    "tag":  "CCLogcat-v0.4.4",
+    "version":  "0.4.5",
+    "tag":  "CCLogcat-v0.4.5",
     "published":  "2026-11-13",
     "summary":  [
-                    "온라인 명령 [실행] 시 탭이 바뀌지 않음 (결과는 목록 아래에)",
-                    "시퀀스: 여러 명령을 순서대로 실행"
+                    "프로세스 모니터 추가: 프로세스별 CPU / 메모리 / GPU 메모리를 팝업 창으로"
                 ],
-    "notes":  "### 요약\n- 온라인 명령 [실행] 시 탭이 바뀌지 않음 (결과는 목록 아래에)\n- 시퀀스: 여러 명령을 순서대로 실행\n\n### Changed\n- 온라인 명령 [실행]: ADB 명령 탭으로 넘어가지 않고 온라인 탭에서 그대로 실행. 목록 아래 \"실행 결과\" 영역(접기/펼치기)에 출력·진행 상태·중지·복사 표시\n\n### Added\n- 시퀀스(여러 명령 순서 실행): 명령 하나에 여러 줄(또는 ;;, 표 안 \u003cbr\u003e, JSON 배열)을 넣으면 위에서부터 차례로 실행\n  - 예: adb root ;; adb remount ;; adb push aaa.apk /sss/sss/sss/bbb.apk\n  - 한 단계가 실패하면 멈춤(기본값, 명령 탭 \"실패 시 멈춤\"으로 끄기), [중지] 시 남은 단계도 취소\n  - sleep 2 / wait 1.5 = 단계 사이 대기, # = 주석\n  - 목록에 \"N단계\" 표시, 출력에 [2/3] 처럼 단계 번호, 끝나면 완료/중단 요약\n  - 내 명령 편집 창의 명령 칸이 여러 줄 입력으로 바뀜, 직접 입력 칸에서도 ;; 사용 가능\n  - Docmost 표 칸 안의 줄바꿈도 단계 구분으로 인식. [공유용 복사]는 여러 줄 명령을  ;;  로 이어 씀\n  - 기본 명령에 예시 추가: \"root + remount (시퀀스)\", \"APK 올리기 (시퀀스)\" (편집 \u003e 기본 명령 복원으로 추가)\n\n### 이전 버전 요약\nv0.4.3\n- 자동 줄 바꿈 추가 (켜기/끄기)\nv0.4.2\n- 앱 목록에 검색 추가\n- 새로고침해도 앱 목록 창이 닫히지 않음\n- 기기가 연결돼 있으면 어느 탭에서나 [목록] 사용 가능\nv0.4.1\n- 성능 개선: 수신 중 위치 막대 계산, 하이라이트 규칙이 많을 때 줄 그리기\n- 북마크·메모가 많아도 패널이 느려지지 않게",
-    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.4.4",
+    "notes":  "### 요약\n- 프로세스 모니터 추가: 프로세스별 CPU / 메모리 / GPU 메모리를 팝업 창으로\n\n### Added\n- 프로세스 모니터 (기기 카드의 [프로세스] 또는 도구 \u003e 프로세스 모니터)\n  - 프로세스별 PID · 이름 · CPU% · MEM% · RES(상주 메모리) · GPU 메모리 · 상태 · USER\n  - 위쪽에 전체 CPU 사용률·GPU 사용률과 최근 그래프, 메모리·스왑 요약\n  - 열 제목 클릭 = 정렬(기본 CPU 높은 순), 이름·PID 찾기, \"앱만\" 보기, 주기 1~10초, 화면 고정\n  - 줄 우클릭 → 이 PID 로그만 보기 / 이 앱(패키지) 로그만 보기 / 이름·PID 복사\n  - 여러 기기면 창에서 기기 선택. 창을 닫으면 기기 쪽 수집도 바로 멈춤\n- 수집 방법: top 을 계속 띄워 두고 읽음(안드로이드 7 미만의 옛 top 도 자동 인식), GPU 메모리는 dumpsys gpu --gpumem(안드로이드 10+) 또는 Adreno kgsl, GPU 사용률은 기기에서 읽을 수 있는 sysfs 노드(kgsl / Mali / devfreq)\n  - 안드로이드는 프로세스별 GPU 사용률을 표준으로 제공하지 않아, 프로세스별로는 GPU 메모리를, 전체는 GPU 사용률을 표시. 기기가 지원하지 않으면 창에 안내 표시\n\n### 이전 버전 요약\nv0.4.4\n- 온라인 명령 [실행] 시 탭이 바뀌지 않음 (결과는 목록 아래에)\n- 시퀀스: 여러 명령을 순서대로 실행\nv0.4.3\n- 자동 줄 바꿈 추가 (켜기/끄기)\nv0.4.2\n- 앱 목록에 검색 추가\n- 새로고침해도 앱 목록 창이 닫히지 않음\n- 기기가 연결돼 있으면 어느 탭에서나 [목록] 사용 가능",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.4.5",
     "history":  [
+                    {
+                        "version":  "0.4.4",
+                        "published":  "2026-11-13",
+                        "summary":  [
+                                        "온라인 명령 [실행] 시 탭이 바뀌지 않음 (결과는 목록 아래에)",
+                                        "시퀀스: 여러 명령을 순서대로 실행"
+                                    ]
+                    },
                     {
                         "version":  "0.4.3",
                         "published":  "2026-11-13",
@@ -96,35 +103,23 @@
                                         "로그 파일 여러 개를 한 창에 시간순으로 합쳐 보기",
                                         "필터 프리셋 저장·공유·온라인 불러오기, 태그 검색은 대소문자 무시 포함"
                                     ]
-                    },
-                    {
-                        "version":  "0.1.0",
-                        "published":  "2026-11-11",
-                        "summary":  [
-                                        "첫 배포: 실시간 logcat / KMSG 뷰어 (Windows, Ubuntu 20.04+)",
-                                        "기기 연결 감지 → 바로 로깅, 끊기면 이어 받기",
-                                        "로그 탭 여러 개 + 별도 창 분리 (실시간·파일 로그 동시 보기)",
-                                        "필터·검색·하이라이트·북마크",
-                                        "왼쪽 패널: 기기 / ADB 명령 / 온라인 명령 리스트(Docmost) / 정보",
-                                        "앱 내 자동 업데이트"
-                                    ]
                     }
                 ],
     "installer":  {
-                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.4/CCLogcat-Setup-0.4.4.exe",
-                      "sha256":  "423029e8f57694ac97e3e22e18ada8cb9a6677d056ada9b61f92f7dec96e9691",
-                      "size":  6513534
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.5/CCLogcat-Setup-0.4.5.exe",
+                      "sha256":  "3ef0ebc88c3a70ff05924791219c25ca23c2ceb29084aed36b50bb332a1d3c09",
+                      "size":  6557346
                   },
     "installers":  {
                        "windows-x64":  {
-                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.4/CCLogcat-Setup-0.4.4.exe",
-                                           "sha256":  "423029e8f57694ac97e3e22e18ada8cb9a6677d056ada9b61f92f7dec96e9691",
-                                           "size":  6513534
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.5/CCLogcat-Setup-0.4.5.exe",
+                                           "sha256":  "3ef0ebc88c3a70ff05924791219c25ca23c2ceb29084aed36b50bb332a1d3c09",
+                                           "size":  6557346
                                        },
                        "linux-x64":  {
-                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.4/cclogcat_0.4.4_amd64.deb",
-                                         "sha256":  "8e9e7bd2271a5d2c20c277075ab85695db24ee51c2ffb7df0c81ab4aa9cef61c",
-                                         "size":  5110428
+                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.5/cclogcat_0.4.5_amd64.deb",
+                                         "sha256":  "73a416499ac4ec59ba1201be82c4d0a62866eac6a1c4cbe6048e9dfb6cfba385",
+                                         "size":  5150400
                                      }
                    }
 }
