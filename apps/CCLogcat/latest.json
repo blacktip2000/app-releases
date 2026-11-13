@@ -1,15 +1,23 @@
 {
     "schema":  1,
     "app":  "CCLogcat",
-    "version":  "0.4.3",
-    "tag":  "CCLogcat-v0.4.3",
+    "version":  "0.4.4",
+    "tag":  "CCLogcat-v0.4.4",
     "published":  "2026-11-13",
     "summary":  [
-                    "자동 줄 바꿈 추가 (켜기/끄기)"
+                    "온라인 명령 [실행] 시 탭이 바뀌지 않음 (결과는 목록 아래에)",
+                    "시퀀스: 여러 명령을 순서대로 실행"
                 ],
-    "notes":  "### 요약\n- 자동 줄 바꿈 추가 (켜기/끄기)\n\n### Added\n- 자동 줄 바꿈: 메시지가 화면 폭을 넘으면 메시지 컬럼 안에서 아래 줄로 이어서 표시. 툴바 [줄 바꿈] 버튼, 보기 메뉴 \"자동 줄 바꿈\", 단축키 Alt+Z 로 켜고 끔 (설정에 저장)\n  - 줄 번호·시간·PID·태그는 첫 줄에 그대로, 메시지만 이어짐. 검색·하이라이트 색도 이어진 줄까지 유지\n  - 켜면 가로 스크롤이 사라지고, 창 폭을 바꾸면 바로 다시 맞춤\n  - 켜고 끌 때 보던 첫 줄이 화면 맨 위에 그대로 남음\n  - 한글·한자 등 넓은 글자는 2칸으로 계산. 줄 높이는 필터 결과 기준으로 미리 계산해 두고 새 로그만 추가 계산 (수신 중에도 가벼움)\n\n### 이전 버전 요약\nv0.4.2\n- 앱 목록에 검색 추가\n- 새로고침해도 앱 목록 창이 닫히지 않음\n- 기기가 연결돼 있으면 어느 탭에서나 [목록] 사용 가능\nv0.4.1\n- 성능 개선: 수신 중 위치 막대 계산, 하이라이트 규칙이 많을 때 줄 그리기\n- 북마크·메모가 많아도 패널이 느려지지 않게\nv0.4.0\n- 집중 보기: 시작~끝 구간의 로그만 새 창으로 (필터·하이라이트 유지)\n- Ctrl+클릭으로 여러 줄 선택\n- 앱(패키지) 필터: 실행 중인 앱을 골라 그 앱 로그만\n- 프리셋 \"탭의 설정 추가하기\" (덮어쓰지 않고 더하기)\n- 우클릭 메뉴 정리: 복사 통합, 메시지 단어 하이라이트, TID 만 보기/숨기기\n- 시각을 마이크로초(6자리)까지",
-    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.4.3",
+    "notes":  "### 요약\n- 온라인 명령 [실행] 시 탭이 바뀌지 않음 (결과는 목록 아래에)\n- 시퀀스: 여러 명령을 순서대로 실행\n\n### Changed\n- 온라인 명령 [실행]: ADB 명령 탭으로 넘어가지 않고 온라인 탭에서 그대로 실행. 목록 아래 \"실행 결과\" 영역(접기/펼치기)에 출력·진행 상태·중지·복사 표시\n\n### Added\n- 시퀀스(여러 명령 순서 실행): 명령 하나에 여러 줄(또는 ;;, 표 안 \u003cbr\u003e, JSON 배열)을 넣으면 위에서부터 차례로 실행\n  - 예: adb root ;; adb remount ;; adb push aaa.apk /sss/sss/sss/bbb.apk\n  - 한 단계가 실패하면 멈춤(기본값, 명령 탭 \"실패 시 멈춤\"으로 끄기), [중지] 시 남은 단계도 취소\n  - sleep 2 / wait 1.5 = 단계 사이 대기, # = 주석\n  - 목록에 \"N단계\" 표시, 출력에 [2/3] 처럼 단계 번호, 끝나면 완료/중단 요약\n  - 내 명령 편집 창의 명령 칸이 여러 줄 입력으로 바뀜, 직접 입력 칸에서도 ;; 사용 가능\n  - Docmost 표 칸 안의 줄바꿈도 단계 구분으로 인식. [공유용 복사]는 여러 줄 명령을  ;;  로 이어 씀\n  - 기본 명령에 예시 추가: \"root + remount (시퀀스)\", \"APK 올리기 (시퀀스)\" (편집 \u003e 기본 명령 복원으로 추가)\n\n### 이전 버전 요약\nv0.4.3\n- 자동 줄 바꿈 추가 (켜기/끄기)\nv0.4.2\n- 앱 목록에 검색 추가\n- 새로고침해도 앱 목록 창이 닫히지 않음\n- 기기가 연결돼 있으면 어느 탭에서나 [목록] 사용 가능\nv0.4.1\n- 성능 개선: 수신 중 위치 막대 계산, 하이라이트 규칙이 많을 때 줄 그리기\n- 북마크·메모가 많아도 패널이 느려지지 않게",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.4.4",
     "history":  [
+                    {
+                        "version":  "0.4.3",
+                        "published":  "2026-11-13",
+                        "summary":  [
+                                        "자동 줄 바꿈 추가 (켜기/끄기)"
+                                    ]
+                    },
                     {
                         "version":  "0.4.2",
                         "published":  "2026-11-13",
@@ -103,20 +111,20 @@
                     }
                 ],
     "installer":  {
-                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.3/CCLogcat-Setup-0.4.3.exe",
-                      "sha256":  "a201668394b3cc0d2e81df1d664127972030bccf2c6c8ccf4032912efc39ba64",
-                      "size":  6504048
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.4/CCLogcat-Setup-0.4.4.exe",
+                      "sha256":  "423029e8f57694ac97e3e22e18ada8cb9a6677d056ada9b61f92f7dec96e9691",
+                      "size":  6513534
                   },
     "installers":  {
                        "windows-x64":  {
-                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.3/CCLogcat-Setup-0.4.3.exe",
-                                           "sha256":  "a201668394b3cc0d2e81df1d664127972030bccf2c6c8ccf4032912efc39ba64",
-                                           "size":  6504048
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.4/CCLogcat-Setup-0.4.4.exe",
+                                           "sha256":  "423029e8f57694ac97e3e22e18ada8cb9a6677d056ada9b61f92f7dec96e9691",
+                                           "size":  6513534
                                        },
                        "linux-x64":  {
-                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.3/cclogcat_0.4.3_amd64.deb",
-                                         "sha256":  "466dcdee40871bd89e0712a246b99f08d95dc04e3463ac839ae842df70a136c4",
-                                         "size":  5101696
+                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.4/cclogcat_0.4.4_amd64.deb",
+                                         "sha256":  "8e9e7bd2271a5d2c20c277075ab85695db24ee51c2ffb7df0c81ab4aa9cef61c",
+                                         "size":  5110428
                                      }
                    }
 }
