@@ -1,15 +1,23 @@
 {
     "schema":  1,
     "app":  "SnackView",
-    "version":  "1.0.1",
-    "tag":  "SnackView-v1.0.1",
+    "version":  "1.1.0",
+    "tag":  "SnackView-v1.1.0",
     "published":  "2026-11-14",
     "summary":  [
-                    "움직이는 GIF가 확대 모드와 미리보기에서 재생됨"
+                    "WebP 지원: 정지 WebP와 움직이는 WebP를 썸네일·미리보기·확대 모드에서 표시",
+                    "Lottie 지원: .json(Bodymovin)과 .lottie(dotLottie) 애니메이션을 재생"
                 ],
-    "notes":  "## SnackView 1.0.1\r\n\r\n### 요약\r\n- 움직이는 GIF가 확대 모드와 미리보기에서 재생됨\r\n\r\n### 변경 사항\r\n- 확대 모드: 여러 프레임 GIF를 프레임 간격대로 재생 (확대·이동·회전 상태 유지, 다른 그림으로 넘기면 정지)\r\n- 탐색 모드 미리보기 칸에서도 GIF 재생\r\n- 프레임은 그때그때 디코딩해 긴 GIF도 메모리 사용량이 일정함\r\n\r\n### 설치\r\n- Windows: SnackView-Setup-1.0.1.exe (앱 안 업데이트로도 설치됨)\r\n- Ubuntu/Debian: sudo apt install ./snackview_1.0.1_amd64.deb",
-    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/SnackView-v1.0.1",
+    "notes":  "## SnackView 1.1.0\r\n\r\n### 요약\r\n- WebP 지원: 정지 WebP와 움직이는 WebP를 썸네일·미리보기·확대 모드에서 표시\r\n- Lottie 지원: .json(Bodymovin)과 .lottie(dotLottie) 애니메이션을 재생\r\n\r\n### 변경 사항\r\n- 폴더 목록에서 Lottie JSON을 자동으로 알아봄 (일반 .json 파일은 그림으로 취급하지 않음)\r\n- Lottie 썸네일은 비어 있지 않은 대표 프레임으로 표시, 확대 모드에서는 원래 속도로 반복 재생\r\n- Lottie는 벡터라 확대 모드에서 긴 변 512~2048px로 선명하게 렌더, 프레임은 백그라운드에서 그림\r\n- dotLottie 안의 이미지 자산도 표시\r\n- 편집기로 열기(Ctrl+E)에서 drawable XML과 Lottie(대표 프레임)도 열림\r\n- Windows: TIFF·TGA·WBMP·ICNS 형식도 함께 지원, \u0027연결 프로그램\u0027에 .lottie 추가\r\n\r\n### 설치\r\n- Windows: SnackView-Setup-1.1.0.exe (앱 안 업데이트로도 설치됨)\r\n- Ubuntu/Debian: sudo apt install ./snackview_1.1.0_amd64.deb",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/SnackView-v1.1.0",
     "history":  [
+                    {
+                        "version":  "1.0.1",
+                        "published":  "2026-11-14",
+                        "summary":  [
+                                        "움직이는 GIF가 확대 모드와 미리보기에서 재생됨"
+                                    ]
+                    },
                     {
                         "version":  "1.0.0",
                         "published":  "2026-11-09",
@@ -23,16 +31,16 @@
                     }
                 ],
     "installer":  {
-                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/SnackView-v1.0.1/SnackView-Setup-1.0.1.exe",
-                      "sha256":  "eec9f1bacc721c8ba9fea96500be1a312047f7c884028dfdda235b80b854529b",
-                      "size":  13918172
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/SnackView-v1.1.0/SnackView-Setup-1.1.0.exe",
+                      "sha256":  "2b4c77349359771d21b8a0a03ed3ffb63145c824972cb50b2e0e8c624f10f730",
+                      "size":  14543019
                   },
     "platforms":  {
                       "linux-x86_64":  {
                                            "kind":  "deb",
-                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/SnackView-v1.0.1/snackview_1.0.1_amd64.deb",
-                                           "sha256":  "dd6757956961757143d9d5ed3fe2434ff934a7648c1013ce2f1beca4dd1e551d",
-                                           "size":  26645508
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/SnackView-v1.1.0/snackview_1.1.0_amd64.deb",
+                                           "sha256":  "628dd7b699c861c462b48db59e89c33b6105deab0a1db53d14245df3aacf58fd",
+                                           "size":  27502576
                                        }
                   }
 }
