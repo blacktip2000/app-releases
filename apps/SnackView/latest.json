@@ -1,32 +1,38 @@
 {
     "schema":  1,
     "app":  "SnackView",
-    "version":  "1.0.0",
-    "tag":  "SnackView-v1.0.0",
-    "published":  "2026-11-09",
+    "version":  "1.0.1",
+    "tag":  "SnackView-v1.0.1",
+    "published":  "2026-11-14",
     "summary":  [
-                    "이미지 뷰어와 화면 캡처·편집기를 하나로 합친 첫 릴리스",
-                    "다크 테마 UI: 카드형 썸네일, 강조색 캡처 버튼, 아이콘 툴바, 사이드바 설정 창",
-                    "뷰어 메뉴에서 캡처, Ctrl+E로 그림을 편집기로 열기, 편집 결과를 뷰어로 보기",
-                    "뷰어·캡처 설정을 한 창에서 (탐색/보기/슬라이드 쇼/썸네일/캡처 단축키/캡처·일반)",
-                    "Windows 10/11 x64, Ubuntu 20.04 이상(.deb) 지원, 앱 내 자동 업데이트"
+                    "움직이는 GIF가 확대 모드와 미리보기에서 재생됨"
                 ],
-    "notes":  "## SnackView 1.0.0\r\n\r\n### 요약\r\n- 이미지 뷰어와 화면 캡처·편집기를 하나로 합친 첫 릴리스\r\n- 다크 테마 UI: 카드형 썸네일, 강조색 캡처 버튼, 아이콘 툴바, 사이드바 설정 창\r\n- 뷰어 메뉴에서 캡처, Ctrl+E로 그림을 편집기로 열기, 편집 결과를 뷰어로 보기\r\n- 뷰어·캡처 설정을 한 창에서 (탐색/보기/슬라이드 쇼/썸네일/캡처 단축키/캡처·일반)\r\n- Windows 10/11 x64, Ubuntu 20.04 이상(.deb) 지원, 앱 내 자동 업데이트\r\n\r\n### 변경 사항\r\n- 한 실행 파일(SnackView)이 뷰어 창과 트레이 캡처 도우미(--agent) 두 역할로 동작\r\n- 뷰어를 열면 트레이 캡처 도우미가 함께 시작되어 전역 단축키(Ctrl+Shift+C/W/D/S/A/F)가 동작\r\n- 캡처 목록 창에 [뷰어로 보기] 추가, 파일에서 연 그림은 원래 폴더에 이름_편집_시각.png로 저장 제안\r\n- Linux: PrintScreen 단독 단축키는 기본으로 끔 (데스크톱이 이미 사용)\r\n\r\n### 설치\r\n- Windows: SnackView-Setup-1.0.0.exe (관리자 권한 불필요, 사용자 단위 설치)\r\n- Ubuntu/Debian: sudo apt install ./snackview_1.0.0_amd64.deb (Qt 포함, /opt/snackview)",
-    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/SnackView-v1.0.0",
+    "notes":  "## SnackView 1.0.1\r\n\r\n### 요약\r\n- 움직이는 GIF가 확대 모드와 미리보기에서 재생됨\r\n\r\n### 변경 사항\r\n- 확대 모드: 여러 프레임 GIF를 프레임 간격대로 재생 (확대·이동·회전 상태 유지, 다른 그림으로 넘기면 정지)\r\n- 탐색 모드 미리보기 칸에서도 GIF 재생\r\n- 프레임은 그때그때 디코딩해 긴 GIF도 메모리 사용량이 일정함\r\n\r\n### 설치\r\n- Windows: SnackView-Setup-1.0.1.exe (앱 안 업데이트로도 설치됨)\r\n- Ubuntu/Debian: sudo apt install ./snackview_1.0.1_amd64.deb",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/SnackView-v1.0.1",
     "history":  [
-
+                    {
+                        "version":  "1.0.0",
+                        "published":  "2026-11-09",
+                        "summary":  [
+                                        "이미지 뷰어와 화면 캡처·편집기를 하나로 합친 첫 릴리스",
+                                        "다크 테마 UI: 카드형 썸네일, 강조색 캡처 버튼, 아이콘 툴바, 사이드바 설정 창",
+                                        "뷰어 메뉴에서 캡처, Ctrl+E로 그림을 편집기로 열기, 편집 결과를 뷰어로 보기",
+                                        "뷰어·캡처 설정을 한 창에서 (탐색/보기/슬라이드 쇼/썸네일/캡처 단축키/캡처·일반)",
+                                        "Windows 10/11 x64, Ubuntu 20.04 이상(.deb) 지원, 앱 내 자동 업데이트"
+                                    ]
+                    }
                 ],
     "installer":  {
-                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/SnackView-v1.0.0/SnackView-Setup-1.0.0.exe",
-                      "sha256":  "23ce975ea70622660ac6b00cada5d55a517780ff591a59258b3281d10bb2cc5f",
-                      "size":  13916488
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/SnackView-v1.0.1/SnackView-Setup-1.0.1.exe",
+                      "sha256":  "eec9f1bacc721c8ba9fea96500be1a312047f7c884028dfdda235b80b854529b",
+                      "size":  13918172
                   },
     "platforms":  {
                       "linux-x86_64":  {
                                            "kind":  "deb",
-                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/SnackView-v1.0.0/snackview_1.0.0_amd64.deb",
-                                           "sha256":  "a46a4331fd08e2072207e3b0a3d36390c1eff356cd3128438beb735a1c97cd15",
-                                           "size":  26651448
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/SnackView-v1.0.1/snackview_1.0.1_amd64.deb",
+                                           "sha256":  "dd6757956961757143d9d5ed3fe2434ff934a7648c1013ce2f1beca4dd1e551d",
+                                           "size":  26645508
                                        }
                   }
 }
