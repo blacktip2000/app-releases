@@ -1,0 +1,116 @@
+{
+    "schema":  1,
+    "app":  "CCLogcat",
+    "version":  "0.4.7",
+    "tag":  "CCLogcat-v0.4.7",
+    "published":  "2026-11-15",
+    "summary":  [
+                    "PID / TID 로 거를 때 번호마다 다른 글자색"
+                ],
+    "notes":  "### 요약\n- PID / TID 로 거를 때 번호마다 다른 글자색\n\n### Changed\n- PID · TID 색 구분: PID 칸(1234|5678, pid:, tid:)이나 앱(패키지) 필터로 거르는 중이면 목록의 PID / TID 글자를 번호마다 다른 색으로 표시 (필터가 없을 때는 기존처럼 회색)\n  - 필터에 적은 번호는 적은 순서대로 뚜렷한 색, 앱 필터로 찾은 PID 도 같은 방식\n  - TID: 메인 스레드(TID = PID)는 PID 와 같은 색, 다른 스레드는 번호마다 고정된 색 → 한 프로세스 안의 스레드 구분\n  - 같은 번호는 탭·창이 달라도 같은 색. 다크/라이트 테마별로 읽기 좋은 밝기\n  - 끄기: 컬럼 제목 우클릭 · 보기 메뉴 · 옵션의 \"PID · TID 필터 시 번호별 색\"\n\n### 이전 버전 요약\nv0.4.6\n- 화면 공유 창 추가 (스크린샷 저장·복사, 마우스로 조작)\n- 프로세스 모니터에 그래프 보기 추가 (CPU · 메모리 · GPU 메모리)\nv0.4.5\n- 프로세스 모니터 추가: 프로세스별 CPU / 메모리 / GPU 메모리를 팝업 창으로\nv0.4.4\n- 온라인 명령 [실행] 시 탭이 바뀌지 않음 (결과는 목록 아래에)\n- 시퀀스: 여러 명령을 순서대로 실행",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.4.7",
+    "history":  [
+                    {
+                        "version":  "0.4.6",
+                        "published":  "2026-11-13",
+                        "summary":  [
+                                        "화면 공유 창 추가 (스크린샷 저장·복사, 마우스로 조작)",
+                                        "프로세스 모니터에 그래프 보기 추가 (CPU · 메모리 · GPU 메모리)"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.5",
+                        "published":  "2026-11-13",
+                        "summary":  [
+                                        "프로세스 모니터 추가: 프로세스별 CPU / 메모리 / GPU 메모리를 팝업 창으로"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.4",
+                        "published":  "2026-11-13",
+                        "summary":  [
+                                        "온라인 명령 [실행] 시 탭이 바뀌지 않음 (결과는 목록 아래에)",
+                                        "시퀀스: 여러 명령을 순서대로 실행"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.3",
+                        "published":  "2026-11-13",
+                        "summary":  [
+                                        "자동 줄 바꿈 추가 (켜기/끄기)"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.2",
+                        "published":  "2026-11-13",
+                        "summary":  [
+                                        "앱 목록에 검색 추가",
+                                        "새로고침해도 앱 목록 창이 닫히지 않음",
+                                        "기기가 연결돼 있으면 어느 탭에서나 [목록] 사용 가능"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.1",
+                        "published":  "2026-11-13",
+                        "summary":  [
+                                        "성능 개선: 수신 중 위치 막대 계산, 하이라이트 규칙이 많을 때 줄 그리기",
+                                        "북마크·메모가 많아도 패널이 느려지지 않게"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.0",
+                        "published":  "2026-11-12",
+                        "summary":  [
+                                        "집중 보기: 시작~끝 구간의 로그만 새 창으로 (필터·하이라이트 유지)",
+                                        "Ctrl+클릭으로 여러 줄 선택",
+                                        "앱(패키지) 필터: 실행 중인 앱을 골라 그 앱 로그만",
+                                        "프리셋 \"탭의 설정 추가하기\" (덮어쓰지 않고 더하기)",
+                                        "우클릭 메뉴 정리: 복사 통합, 메시지 단어 하이라이트, TID 만 보기/숨기기",
+                                        "시각을 마이크로초(6자리)까지"
+                                    ]
+                    },
+                    {
+                        "version":  "0.3.3",
+                        "published":  "2026-11-12",
+                        "summary":  [
+                                        "포함·제외·태그·PID·검색 칸을 클릭하면 이전 입력 기록이 아래 목록으로",
+                                        "하이라이트 단어 칸도 동일"
+                                    ]
+                    },
+                    {
+                        "version":  "0.3.2",
+                        "published":  "2026-11-12",
+                        "summary":  [
+                                        "왼쪽 메뉴를 아이콘으로 (툴팁 유지)",
+                                        "왼쪽 패널을 « 버튼 한 번으로 닫기",
+                                        "컬럼 폭을 마우스로 조절, 헤더 우클릭으로 컬럼 켜기/끄기"
+                                    ]
+                    },
+                    {
+                        "version":  "0.3.1",
+                        "published":  "2026-11-12",
+                        "summary":  [
+                                        "하이라이트를 탭(프리셋)마다 따로 관리 (전체 공통 아님)",
+                                        "프리셋 적용 = 그 탭의 하이라이트도 프리셋 것으로",
+                                        "하이라이트 창에서 [이 프리셋에 저장]"
+                                    ]
+                    }
+                ],
+    "installer":  {
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.7/CCLogcat-Setup-0.4.7.exe",
+                      "sha256":  "33cffd9a241afbfcd346993616bc3dc22759fd6be713cc1ed16c8007230e7e03",
+                      "size":  6612475
+                  },
+    "installers":  {
+                       "windows-x64":  {
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.7/CCLogcat-Setup-0.4.7.exe",
+                                           "sha256":  "33cffd9a241afbfcd346993616bc3dc22759fd6be713cc1ed16c8007230e7e03",
+                                           "size":  6612475
+                                       },
+                       "linux-x64":  {
+                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.7/cclogcat_0.4.7_amd64.deb",
+                                         "sha256":  "048d040acdbf0ab189a88ed0e75a33c397597939cde00e67ac1c7c8a4ef990cc",
+                                         "size":  5209816
+                                     }
+                   }
+}

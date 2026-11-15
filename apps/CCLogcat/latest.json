@@ -1,16 +1,23 @@
 {
     "schema":  1,
     "app":  "CCLogcat",
-    "version":  "0.4.6",
-    "tag":  "CCLogcat-v0.4.6",
-    "published":  "2026-11-13",
+    "version":  "0.4.7",
+    "tag":  "CCLogcat-v0.4.7",
+    "published":  "2026-11-15",
     "summary":  [
-                    "화면 공유 창 추가 (스크린샷 저장·복사, 마우스로 조작)",
-                    "프로세스 모니터에 그래프 보기 추가 (CPU · 메모리 · GPU 메모리)"
+                    "PID / TID 로 거를 때 번호마다 다른 글자색"
                 ],
-    "notes":  "### 요약\n- 화면 공유 창 추가 (스크린샷 저장·복사, 마우스로 조작)\n- 프로세스 모니터에 그래프 보기 추가 (CPU · 메모리 · GPU 메모리)\n\n### Added\n- 화면 공유 (기기 카드의 [화면] 또는 도구 \u003e 화면 공유): 별도 창으로 기기 화면을 계속 받아 표시\n  - 스크린샷: [스크린샷 저장] / Ctrl+S → 사진/CCLogcat/CCLogcat_\u003c기기\u003e_\u003c날짜_시각\u003e.png (기기 시간대 기준), [복사] / Ctrl+C → 클립보드에 이미지, [폴더] 로 바로 열기\n  - 마우스로 조작: 클릭 = 탭, 끌기 = 스와이프, 누르고 있기 = 길게 누르기, 휠 = 위아래 스크롤 (설정에서 끄기 가능)\n  - 아래 키: 뒤로 · 홈 · 최근 앱 · 전원 · 볼륨+/- , 글자 입력칸(영문·숫자)\n  - [일시정지], 최대 초당 장 수 제한, 무선 adb 처럼 느린 연결용 \"PNG 로 받기\"\n  - 기본은 adb exec-out screencap raw (USB 에서 초당 대략 2~10장, 화면 크기·연결에 따라 다름)\n- 프로세스 모니터 그래프: [표 | 그래프] 전환\n  - 표에서 줄을 클릭해 그래프에 넣기/빼기(최대 10개, 색 표시), 고르지 않으면 CPU 상위 5개\n  - CPU % / 메모리(RES) / GPU 메모리 세 그래프, 최근 60회 기록, 마우스를 올리면 그 시점 값\n  - 위쪽 전체 사용률에 메모리 사용률(그래프) 추가: CPU · 메모리 · GPU\n\n### 이전 버전 요약\nv0.4.5\n- 프로세스 모니터 추가: 프로세스별 CPU / 메모리 / GPU 메모리를 팝업 창으로\nv0.4.4\n- 온라인 명령 [실행] 시 탭이 바뀌지 않음 (결과는 목록 아래에)\n- 시퀀스: 여러 명령을 순서대로 실행\nv0.4.3\n- 자동 줄 바꿈 추가 (켜기/끄기)",
-    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.4.6",
+    "notes":  "### 요약\n- PID / TID 로 거를 때 번호마다 다른 글자색\n\n### Changed\n- PID · TID 색 구분: PID 칸(1234|5678, pid:, tid:)이나 앱(패키지) 필터로 거르는 중이면 목록의 PID / TID 글자를 번호마다 다른 색으로 표시 (필터가 없을 때는 기존처럼 회색)\n  - 필터에 적은 번호는 적은 순서대로 뚜렷한 색, 앱 필터로 찾은 PID 도 같은 방식\n  - TID: 메인 스레드(TID = PID)는 PID 와 같은 색, 다른 스레드는 번호마다 고정된 색 → 한 프로세스 안의 스레드 구분\n  - 같은 번호는 탭·창이 달라도 같은 색. 다크/라이트 테마별로 읽기 좋은 밝기\n  - 끄기: 컬럼 제목 우클릭 · 보기 메뉴 · 옵션의 \"PID · TID 필터 시 번호별 색\"\n\n### 이전 버전 요약\nv0.4.6\n- 화면 공유 창 추가 (스크린샷 저장·복사, 마우스로 조작)\n- 프로세스 모니터에 그래프 보기 추가 (CPU · 메모리 · GPU 메모리)\nv0.4.5\n- 프로세스 모니터 추가: 프로세스별 CPU / 메모리 / GPU 메모리를 팝업 창으로\nv0.4.4\n- 온라인 명령 [실행] 시 탭이 바뀌지 않음 (결과는 목록 아래에)\n- 시퀀스: 여러 명령을 순서대로 실행",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.4.7",
     "history":  [
+                    {
+                        "version":  "0.4.6",
+                        "published":  "2026-11-13",
+                        "summary":  [
+                                        "화면 공유 창 추가 (스크린샷 저장·복사, 마우스로 조작)",
+                                        "프로세스 모니터에 그래프 보기 추가 (CPU · 메모리 · GPU 메모리)"
+                                    ]
+                    },
                     {
                         "version":  "0.4.5",
                         "published":  "2026-11-13",
@@ -87,35 +94,23 @@
                                         "프리셋 적용 = 그 탭의 하이라이트도 프리셋 것으로",
                                         "하이라이트 창에서 [이 프리셋에 저장]"
                                     ]
-                    },
-                    {
-                        "version":  "0.3.0",
-                        "published":  "2026-11-12",
-                        "summary":  [
-                                        "클립보드 복사/붙여넣기가 외부 프로그램과 제대로 연동",
-                                        "검색 연산자 통일: a|b, *, ?, !제외 (정규식 체크 시 모두 정규식)",
-                                        "같은 폴더의 로그를 열면 마지막 필터 자동 적용",
-                                        "자동 스크롤·위치 막대(SeekBar) 수정, 수신 중 클릭 정확도 개선",
-                                        "탭 모양 정리(이름+닫기 한 덩어리, 줄바꿈), 툴팁 즉시 표시",
-                                        "선택한 줄을 아래 상태줄에서 부분 복사, 프리셋 메뉴 정리"
-                                    ]
                     }
                 ],
     "installer":  {
-                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.6/CCLogcat-Setup-0.4.6.exe",
-                      "sha256":  "423fe49aba3137d7b8196a8d0f50db19770836f4b5d97bdba08f19518fc5aaf0",
-                      "size":  6611799
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.7/CCLogcat-Setup-0.4.7.exe",
+                      "sha256":  "33cffd9a241afbfcd346993616bc3dc22759fd6be713cc1ed16c8007230e7e03",
+                      "size":  6612475
                   },
     "installers":  {
                        "windows-x64":  {
-                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.6/CCLogcat-Setup-0.4.6.exe",
-                                           "sha256":  "423fe49aba3137d7b8196a8d0f50db19770836f4b5d97bdba08f19518fc5aaf0",
-                                           "size":  6611799
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.7/CCLogcat-Setup-0.4.7.exe",
+                                           "sha256":  "33cffd9a241afbfcd346993616bc3dc22759fd6be713cc1ed16c8007230e7e03",
+                                           "size":  6612475
                                        },
                        "linux-x64":  {
-                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.6/cclogcat_0.4.6_amd64.deb",
-                                         "sha256":  "8e42fd9e5873446cbdbfcbefe7764d916ecc02892cdb98fe34c7922587b14df7",
-                                         "size":  5205496
+                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.7/cclogcat_0.4.7_amd64.deb",
+                                         "sha256":  "048d040acdbf0ab189a88ed0e75a33c397597939cde00e67ac1c7c8a4ef990cc",
+                                         "size":  5209816
                                      }
                    }
 }
