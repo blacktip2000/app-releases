@@ -1,15 +1,23 @@
 {
     "schema":  1,
     "app":  "CCLogcat",
-    "version":  "0.4.7",
-    "tag":  "CCLogcat-v0.4.7",
-    "published":  "2026-11-15",
+    "version":  "0.4.8",
+    "tag":  "CCLogcat-v0.4.8",
+    "published":  "2026-11-16",
     "summary":  [
-                    "PID / TID 로 거를 때 번호마다 다른 글자색"
+                    "왼쪽 [시리얼] 탭 추가: 시리얼 포트 로그 받기 + 보내기",
+                    "미리 입력해 둔 내용을 버튼 하나로 보내기"
                 ],
-    "notes":  "### 요약\n- PID / TID 로 거를 때 번호마다 다른 글자색\n\n### Changed\n- PID · TID 색 구분: PID 칸(1234|5678, pid:, tid:)이나 앱(패키지) 필터로 거르는 중이면 목록의 PID / TID 글자를 번호마다 다른 색으로 표시 (필터가 없을 때는 기존처럼 회색)\n  - 필터에 적은 번호는 적은 순서대로 뚜렷한 색, 앱 필터로 찾은 PID 도 같은 방식\n  - TID: 메인 스레드(TID = PID)는 PID 와 같은 색, 다른 스레드는 번호마다 고정된 색 → 한 프로세스 안의 스레드 구분\n  - 같은 번호는 탭·창이 달라도 같은 색. 다크/라이트 테마별로 읽기 좋은 밝기\n  - 끄기: 컬럼 제목 우클릭 · 보기 메뉴 · 옵션의 \"PID · TID 필터 시 번호별 색\"\n\n### 이전 버전 요약\nv0.4.6\n- 화면 공유 창 추가 (스크린샷 저장·복사, 마우스로 조작)\n- 프로세스 모니터에 그래프 보기 추가 (CPU · 메모리 · GPU 메모리)\nv0.4.5\n- 프로세스 모니터 추가: 프로세스별 CPU / 메모리 / GPU 메모리를 팝업 창으로\nv0.4.4\n- 온라인 명령 [실행] 시 탭이 바뀌지 않음 (결과는 목록 아래에)\n- 시퀀스: 여러 명령을 순서대로 실행",
-    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.4.7",
+    "notes":  "### 요약\n- 왼쪽 [시리얼] 탭 추가: 시리얼 포트 로그 받기 + 보내기\n- 미리 입력해 둔 내용을 버튼 하나로 보내기\n\n### Added\n- 시리얼 포트 받기: 왼쪽 [시리얼] 탭에서 포트·속도 고르고 [열기] → 로그 탭으로 받음\n  - 필터·하이라이트·검색·북마크 등 로그 기능을 그대로 사용\n  - 받은 줄 앞에 PC 수신 시각(TIME 열), ANSI 색 코드·제어 문자 제거, 줄 끝 없이 멈춘 프롬프트도 표시\n  - 고급: 데이터 비트 / 패리티 / 정지 비트 / 흐름 제어(XON·RTS/CTS) / DTR·RTS, 포트 직접 입력\n  - USB 를 뺐다 꽂으면 다시 연결해 이어서 받기 (끌 수 있음)\n  - 수신 시각을 끄면 줄 그대로 해석 → 콘솔에서 logcat / dmesg 를 띄우면 레벨·태그로 보임\n- 보내기: 직접 입력(Enter, ↑↓ 기록), 줄 끝 CR / LF / CRLF / 없음, HEX(AA 55 01), \\r \\n \\t \\xNN 이스케이프\n  - Enter / Ctrl+C / Ctrl+D / Ctrl+Z / ESC 버튼, 시리얼 탭 툴바에도 빠른 입력칸\n  - 보낸 내용은 로그에 \u003e\u003e ... 로 표시 (끌 수 있음)\n- 미리 입력: 자주 보내는 내용을 그룹·이름으로 저장해 [보내기] 버튼(또는 이름 더블클릭) 한 번으로 전송\n  - 여러 줄이면 줄마다 줄 끝을 붙여 지정한 간격(ms)으로 차례로, 항목별 줄 끝·HEX 지정\n  - 편집(수정·삭제·순서), 찾기, 기본 예시 항목\n- 포트를 여러 개 열 수 있음 (탭마다 하나). \"열린 포트\" 목록에서 보내기 대상 선택·닫기\n\n### 이전 버전 요약\nv0.4.7\n- PID / TID 로 거를 때 번호마다 다른 글자색\nv0.4.6\n- 화면 공유 창 추가 (스크린샷 저장·복사, 마우스로 조작)\n- 프로세스 모니터에 그래프 보기 추가 (CPU · 메모리 · GPU 메모리)\nv0.4.5\n- 프로세스 모니터 추가: 프로세스별 CPU / 메모리 / GPU 메모리를 팝업 창으로",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.4.8",
     "history":  [
+                    {
+                        "version":  "0.4.7",
+                        "published":  "2026-11-15",
+                        "summary":  [
+                                        "PID / TID 로 거를 때 번호마다 다른 글자색"
+                                    ]
+                    },
                     {
                         "version":  "0.4.6",
                         "published":  "2026-11-13",
@@ -85,32 +93,23 @@
                                         "왼쪽 패널을 « 버튼 한 번으로 닫기",
                                         "컬럼 폭을 마우스로 조절, 헤더 우클릭으로 컬럼 켜기/끄기"
                                     ]
-                    },
-                    {
-                        "version":  "0.3.1",
-                        "published":  "2026-11-12",
-                        "summary":  [
-                                        "하이라이트를 탭(프리셋)마다 따로 관리 (전체 공통 아님)",
-                                        "프리셋 적용 = 그 탭의 하이라이트도 프리셋 것으로",
-                                        "하이라이트 창에서 [이 프리셋에 저장]"
-                                    ]
                     }
                 ],
     "installer":  {
-                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.7/CCLogcat-Setup-0.4.7.exe",
-                      "sha256":  "33cffd9a241afbfcd346993616bc3dc22759fd6be713cc1ed16c8007230e7e03",
-                      "size":  6612475
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.8/CCLogcat-Setup-0.4.8.exe",
+                      "sha256":  "ce9574877d32c2318ccdd1caa6dfdc983ba9671a5b12655ce9a038bc0bcc0b6d",
+                      "size":  6689864
                   },
     "installers":  {
                        "windows-x64":  {
-                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.7/CCLogcat-Setup-0.4.7.exe",
-                                           "sha256":  "33cffd9a241afbfcd346993616bc3dc22759fd6be713cc1ed16c8007230e7e03",
-                                           "size":  6612475
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.8/CCLogcat-Setup-0.4.8.exe",
+                                           "sha256":  "ce9574877d32c2318ccdd1caa6dfdc983ba9671a5b12655ce9a038bc0bcc0b6d",
+                                           "size":  6689864
                                        },
                        "linux-x64":  {
-                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.7/cclogcat_0.4.7_amd64.deb",
-                                         "sha256":  "048d040acdbf0ab189a88ed0e75a33c397597939cde00e67ac1c7c8a4ef990cc",
-                                         "size":  5209816
+                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.8/cclogcat_0.4.8_amd64.deb",
+                                         "sha256":  "0e25634d295b9ddb0a98b0ffde006127cd8104241bfc9f7c382cd4a48af951f6",
+                                         "size":  5297684
                                      }
                    }
 }
