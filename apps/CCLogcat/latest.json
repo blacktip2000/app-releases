@@ -1,15 +1,24 @@
 {
     "schema":  1,
     "app":  "CCLogcat",
-    "version":  "0.4.11",
-    "tag":  "CCLogcat-v0.4.11",
+    "version":  "0.4.12",
+    "tag":  "CCLogcat-v0.4.12",
     "published":  "2026-11-16",
     "summary":  [
-                    "구버전 안드로이드에서 \"Invalid parameter to -v\" 로 연결이 붙었다 떨어지던 문제 수정 (자동 호환)"
+                    "하이라이트가 PID · TID 칸에도 적용 (우클릭 \u003e 하이라이트 추가 \u003e PID / TID)",
+                    "PID/TID 필터 시 번호별 글자색 기능 제거",
+                    "사용자 설명서(PDF) 제공"
                 ],
-    "notes":  "### 요약\n- 구버전 안드로이드에서 \"Invalid parameter to -v\" 로 연결이 붙었다 떨어지던 문제 수정 (자동 호환)\n\n### Fixed\n- 구버전 logcat 호환: 기기의 logcat 이 -v usec(마이크로초) 같은 옵션을 모르면 오류를 알아채고 옵션을 빼서 바로 다시 연결\n  - 1단계: -v threadtime -v usec → 2단계: -v threadtime (밀리초) → 3단계: -T(이어 받기)도 뺌\n  - 기기별로 기억해서 같은 실행 중에는 다음 연결부터 바로 맞는 옵션으로 시작\n  - 상태줄에 \"구버전 logcat (밀리초)\" 처럼 표시, 사용법(Usage) 문구가 로그 목록에 섞이지 않음\n  - stderr 를 따로 주지 않는 옛 adbd(오류가 일반 출력으로 오는 경우)도 처리\n\n### 이전 버전 요약\nv0.4.10\n- 오른쪽 위치 막대(전체 스크롤)가 잘 보이도록 바탕색·손잡이 강조\nv0.4.9\n- 시리얼을 로그 탭이 아닌 왼쪽 [시리얼] 탭 안에서만 사용 (ADB 명령 탭과 같은 방식)\n- 미리 입력 목록은 비어서 시작 (사용자가 추가한 것만 저장·유지)\n- 왼쪽 아이콘 순서 변경\nv0.4.8\n- 왼쪽 [시리얼] 탭 추가: 시리얼 포트 로그 받기 + 보내기\n- 미리 입력해 둔 내용을 버튼 하나로 보내기",
-    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.4.11",
+    "notes":  "### 요약\n- 하이라이트가 PID · TID 칸에도 적용 (우클릭 \u003e 하이라이트 추가 \u003e PID / TID)\n- PID/TID 필터 시 번호별 글자색 기능 제거\n- 사용자 설명서(PDF) 제공\n\n### Added\n- PID · TID 하이라이트: 하이라이트 단어와 맞는 PID / TID 는 메시지 하이라이트와 같은 색(배경·글자)으로 표시\n- 우클릭 \u003e 하이라이트 추가: 맨 위에 \"PID 1234 하이라이트\" / \"TID 5678 하이라이트\" (숫자 단위로만 맞게 \\b1234\\b 정규식으로 추가)\n- 사용자 설명서 PDF (소스 레파지토리 릴리즈 페이지)\n\n### Removed\n- PID/TID 로 거를 때 번호마다 다른 글자색 (0.4.7) — 하이라이트로 대체\n\n### Fixed\n- 옵션 창: 체크박스 하나가 \"줄마다 배경 번갈아 칠하기\" 줄의 세기 슬라이더 사이에 끼어 있던 배치\n\n### 이전 버전 요약\nv0.4.11\n- 구버전 안드로이드에서 \"Invalid parameter to -v\" 로 연결이 붙었다 떨어지던 문제 수정 (자동 호환)\nv0.4.10\n- 오른쪽 위치 막대(전체 스크롤)가 잘 보이도록 바탕색·손잡이 강조\nv0.4.9\n- 시리얼을 로그 탭이 아닌 왼쪽 [시리얼] 탭 안에서만 사용 (ADB 명령 탭과 같은 방식)\n- 미리 입력 목록은 비어서 시작 (사용자가 추가한 것만 저장·유지)\n- 왼쪽 아이콘 순서 변경",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.4.12",
     "history":  [
+                    {
+                        "version":  "0.4.11",
+                        "published":  "2026-11-16",
+                        "summary":  [
+                                        "구버전 안드로이드에서 \"Invalid parameter to -v\" 로 연결이 붙었다 떨어지던 문제 수정 (자동 호환)"
+                                    ]
+                    },
                     {
                         "version":  "0.4.10",
                         "published":  "2026-11-16",
@@ -79,31 +88,23 @@
                                         "새로고침해도 앱 목록 창이 닫히지 않음",
                                         "기기가 연결돼 있으면 어느 탭에서나 [목록] 사용 가능"
                                     ]
-                    },
-                    {
-                        "version":  "0.4.1",
-                        "published":  "2026-11-13",
-                        "summary":  [
-                                        "성능 개선: 수신 중 위치 막대 계산, 하이라이트 규칙이 많을 때 줄 그리기",
-                                        "북마크·메모가 많아도 패널이 느려지지 않게"
-                                    ]
                     }
                 ],
     "installer":  {
-                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.11/CCLogcat-Setup-0.4.11.exe",
-                      "sha256":  "0f38acad7f5888328a0388df34c35ea683fc8ea2d31ae79c713d566811b921ca",
-                      "size":  6692780
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.12/CCLogcat-Setup-0.4.12.exe",
+                      "sha256":  "5ddb2633bc3781e36f27646e7d0b3e1ad2aa6f55df3f3ec77e2cc67cf5b95911",
+                      "size":  6692922
                   },
     "installers":  {
                        "windows-x64":  {
-                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.11/CCLogcat-Setup-0.4.11.exe",
-                                           "sha256":  "0f38acad7f5888328a0388df34c35ea683fc8ea2d31ae79c713d566811b921ca",
-                                           "size":  6692780
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.12/CCLogcat-Setup-0.4.12.exe",
+                                           "sha256":  "5ddb2633bc3781e36f27646e7d0b3e1ad2aa6f55df3f3ec77e2cc67cf5b95911",
+                                           "size":  6692922
                                        },
                        "linux-x64":  {
-                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.11/cclogcat_0.4.11_amd64.deb",
-                                         "sha256":  "817b6c42dd264a42ce673546e7315683ce13d1f32a6a83d8a33d0797eebaf6a0",
-                                         "size":  5299388
+                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.12/cclogcat_0.4.12_amd64.deb",
+                                         "sha256":  "6844c4c94e1f0e3e41337d34b7aa3268e338ee8cd9db728dd5ed4e1b1bd14f8e",
+                                         "size":  5297748
                                      }
                    }
 }
