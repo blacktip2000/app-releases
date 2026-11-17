@@ -1,15 +1,22 @@
 {
     "schema":  1,
     "app":  "CCLogcat",
-    "version":  "0.4.14",
-    "tag":  "CCLogcat-v0.4.14",
+    "version":  "0.4.15",
+    "tag":  "CCLogcat-v0.4.15",
     "published":  "2026-11-17",
     "summary":  [
-                    "프로세스 모니터에 프로세스별 GPU 사용률(GPU%) 추가"
+                    "연결이 끊긴 기기의 로그 탭에서 [시작]을 누르면 화면이 멈추던 문제 수정"
                 ],
-    "notes":  "### 요약\n- 프로세스 모니터에 프로세스별 GPU 사용률(GPU%) 추가\n\n### Added\n- GPU% 열: dumpsys gpu --gpuwork 의 앱(UID)별 GPU 사용 시간을 주기마다 읽어 그 차이로 사용률 계산. 열 제목 클릭으로 정렬, 30% 이상 빨강\n  - 안드로이드 14 이상 + 커널의 GPU work period 지원 기기에서 표시. 지원하지 않으면 창에 안내\n  - 안드로이드가 UID 단위로만 집계하므로 같은 앱의 여러 프로세스(:remote 등)·system 계정 프로세스는 같은 값\n  - 첫 값은 두 번째 수집(주기 1회 뒤)부터\n- 그래프 보기: 고른 프로세스의 \"GPU % (UID 단위)\" 그래프 추가\n- top 의 UID 열을 함께 읽음 (없는 top 이면 USER 이름에서 UID 계산)\n- 사용자 설명서 0.4.14\n\n### 이전 버전 요약\nv0.4.13\n- 줄 우클릭에 \"하이라이트 해제\" 추가\nv0.4.12\n- 하이라이트가 PID · TID 칸에도 적용 (우클릭 \u003e 하이라이트 추가 \u003e PID / TID)\n- PID/TID 필터 시 번호별 글자색 기능 제거\n- 사용자 설명서(PDF) 제공\nv0.4.11\n- 구버전 안드로이드에서 \"Invalid parameter to -v\" 로 연결이 붙었다 떨어지던 문제 수정 (자동 호환)",
-    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.4.14",
+    "notes":  "### 요약\n- 연결이 끊긴 기기의 로그 탭에서 [시작]을 누르면 화면이 멈추던 문제 수정\n\n### Fixed\n- [시작] 시 멈춤: \"시작할 때 기기 버퍼 비우기\"가 켜져 있으면 adb logcat -c 를 화면(UI) 스레드에서 기다렸는데, 기기가 없으면 adb 가 \"- waiting for device -\" 로 끝없이 기다려 앱 전체가 멈췄음\n  - 버퍼 비우기를 수신 스레드로 옮기고 5초 제한 (기기가 없으면 건너뛰고 상태줄에 표시)\n  - [기기 버퍼 비우기] 버튼도 8초 제한\n- 기기가 없을 때 상태줄에 \"기기가 연결되기를 기다리는 중... (연결되면 자동으로 시작)\" 표시 (기기를 다시 꽂으면 그대로 받기 시작)\n\n### 이전 버전 요약\nv0.4.14\n- 프로세스 모니터에 프로세스별 GPU 사용률(GPU%) 추가\nv0.4.13\n- 줄 우클릭에 \"하이라이트 해제\" 추가\nv0.4.12\n- 하이라이트가 PID · TID 칸에도 적용 (우클릭 \u003e 하이라이트 추가 \u003e PID / TID)\n- PID/TID 필터 시 번호별 글자색 기능 제거\n- 사용자 설명서(PDF) 제공",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.4.15",
     "history":  [
+                    {
+                        "version":  "0.4.14",
+                        "published":  "2026-11-17",
+                        "summary":  [
+                                        "프로세스 모니터에 프로세스별 GPU 사용률(GPU%) 추가"
+                                    ]
+                    },
                     {
                         "version":  "0.4.13",
                         "published":  "2026-11-16",
@@ -78,31 +85,23 @@
                         "summary":  [
                                         "프로세스 모니터 추가: 프로세스별 CPU / 메모리 / GPU 메모리를 팝업 창으로"
                                     ]
-                    },
-                    {
-                        "version":  "0.4.4",
-                        "published":  "2026-11-13",
-                        "summary":  [
-                                        "온라인 명령 [실행] 시 탭이 바뀌지 않음 (결과는 목록 아래에)",
-                                        "시퀀스: 여러 명령을 순서대로 실행"
-                                    ]
                     }
                 ],
     "installer":  {
-                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.14/CCLogcat-Setup-0.4.14.exe",
-                      "sha256":  "f4fe2c50423d92378d8e42d6aa5ac74482394b5ad08a3cc1724f21c2c25ed752",
-                      "size":  6710956
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.15/CCLogcat-Setup-0.4.15.exe",
+                      "sha256":  "af361faeb8c4cec9568c1320d94c30f6c5752719fce2ca7972ac2d054641cc72",
+                      "size":  6710157
                   },
     "installers":  {
                        "windows-x64":  {
-                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.14/CCLogcat-Setup-0.4.14.exe",
-                                           "sha256":  "f4fe2c50423d92378d8e42d6aa5ac74482394b5ad08a3cc1724f21c2c25ed752",
-                                           "size":  6710956
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.15/CCLogcat-Setup-0.4.15.exe",
+                                           "sha256":  "af361faeb8c4cec9568c1320d94c30f6c5752719fce2ca7972ac2d054641cc72",
+                                           "size":  6710157
                                        },
                        "linux-x64":  {
-                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.14/cclogcat_0.4.14_amd64.deb",
-                                         "sha256":  "732da9c2a5eae7a713a8648adeb95f1007ffcec319db78bb6489a7a69af246c7",
-                                         "size":  5313444
+                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.15/cclogcat_0.4.15_amd64.deb",
+                                         "sha256":  "91e73e9cdf20e3450b79d358ce583daca2ab47747ff2fafd990a1a4f36434330",
+                                         "size":  5315072
                                      }
                    }
 }

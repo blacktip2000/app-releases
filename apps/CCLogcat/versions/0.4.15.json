@@ -1,0 +1,107 @@
+{
+    "schema":  1,
+    "app":  "CCLogcat",
+    "version":  "0.4.15",
+    "tag":  "CCLogcat-v0.4.15",
+    "published":  "2026-11-17",
+    "summary":  [
+                    "연결이 끊긴 기기의 로그 탭에서 [시작]을 누르면 화면이 멈추던 문제 수정"
+                ],
+    "notes":  "### 요약\n- 연결이 끊긴 기기의 로그 탭에서 [시작]을 누르면 화면이 멈추던 문제 수정\n\n### Fixed\n- [시작] 시 멈춤: \"시작할 때 기기 버퍼 비우기\"가 켜져 있으면 adb logcat -c 를 화면(UI) 스레드에서 기다렸는데, 기기가 없으면 adb 가 \"- waiting for device -\" 로 끝없이 기다려 앱 전체가 멈췄음\n  - 버퍼 비우기를 수신 스레드로 옮기고 5초 제한 (기기가 없으면 건너뛰고 상태줄에 표시)\n  - [기기 버퍼 비우기] 버튼도 8초 제한\n- 기기가 없을 때 상태줄에 \"기기가 연결되기를 기다리는 중... (연결되면 자동으로 시작)\" 표시 (기기를 다시 꽂으면 그대로 받기 시작)\n\n### 이전 버전 요약\nv0.4.14\n- 프로세스 모니터에 프로세스별 GPU 사용률(GPU%) 추가\nv0.4.13\n- 줄 우클릭에 \"하이라이트 해제\" 추가\nv0.4.12\n- 하이라이트가 PID · TID 칸에도 적용 (우클릭 \u003e 하이라이트 추가 \u003e PID / TID)\n- PID/TID 필터 시 번호별 글자색 기능 제거\n- 사용자 설명서(PDF) 제공",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.4.15",
+    "history":  [
+                    {
+                        "version":  "0.4.14",
+                        "published":  "2026-11-17",
+                        "summary":  [
+                                        "프로세스 모니터에 프로세스별 GPU 사용률(GPU%) 추가"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.13",
+                        "published":  "2026-11-16",
+                        "summary":  [
+                                        "줄 우클릭에 \"하이라이트 해제\" 추가"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.12",
+                        "published":  "2026-11-16",
+                        "summary":  [
+                                        "하이라이트가 PID · TID 칸에도 적용 (우클릭 \u003e 하이라이트 추가 \u003e PID / TID)",
+                                        "PID/TID 필터 시 번호별 글자색 기능 제거",
+                                        "사용자 설명서(PDF) 제공"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.11",
+                        "published":  "2026-11-16",
+                        "summary":  [
+                                        "구버전 안드로이드에서 \"Invalid parameter to -v\" 로 연결이 붙었다 떨어지던 문제 수정 (자동 호환)"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.10",
+                        "published":  "2026-11-16",
+                        "summary":  [
+                                        "오른쪽 위치 막대(전체 스크롤)가 잘 보이도록 바탕색·손잡이 강조"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.9",
+                        "published":  "2026-11-16",
+                        "summary":  [
+                                        "시리얼을 로그 탭이 아닌 왼쪽 [시리얼] 탭 안에서만 사용 (ADB 명령 탭과 같은 방식)",
+                                        "미리 입력 목록은 비어서 시작 (사용자가 추가한 것만 저장·유지)",
+                                        "왼쪽 아이콘 순서 변경"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.8",
+                        "published":  "2026-11-16",
+                        "summary":  [
+                                        "왼쪽 [시리얼] 탭 추가: 시리얼 포트 로그 받기 + 보내기",
+                                        "미리 입력해 둔 내용을 버튼 하나로 보내기"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.7",
+                        "published":  "2026-11-15",
+                        "summary":  [
+                                        "PID / TID 로 거를 때 번호마다 다른 글자색"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.6",
+                        "published":  "2026-11-13",
+                        "summary":  [
+                                        "화면 공유 창 추가 (스크린샷 저장·복사, 마우스로 조작)",
+                                        "프로세스 모니터에 그래프 보기 추가 (CPU · 메모리 · GPU 메모리)"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.5",
+                        "published":  "2026-11-13",
+                        "summary":  [
+                                        "프로세스 모니터 추가: 프로세스별 CPU / 메모리 / GPU 메모리를 팝업 창으로"
+                                    ]
+                    }
+                ],
+    "installer":  {
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.15/CCLogcat-Setup-0.4.15.exe",
+                      "sha256":  "af361faeb8c4cec9568c1320d94c30f6c5752719fce2ca7972ac2d054641cc72",
+                      "size":  6710157
+                  },
+    "installers":  {
+                       "windows-x64":  {
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.15/CCLogcat-Setup-0.4.15.exe",
+                                           "sha256":  "af361faeb8c4cec9568c1320d94c30f6c5752719fce2ca7972ac2d054641cc72",
+                                           "size":  6710157
+                                       },
+                       "linux-x64":  {
+                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.15/cclogcat_0.4.15_amd64.deb",
+                                         "sha256":  "91e73e9cdf20e3450b79d358ce583daca2ab47747ff2fafd990a1a4f36434330",
+                                         "size":  5315072
+                                     }
+                   }
+}
