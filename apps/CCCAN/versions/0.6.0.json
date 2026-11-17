@@ -1,0 +1,112 @@
+{
+    "schema":  1,
+    "app":  "CCCAN",
+    "version":  "0.6.0",
+    "tag":  "CCCAN-v0.6.0",
+    "published":  "2026-11-17",
+    "summary":  [
+                    "장치 펌웨어 업데이트 기능: V1 은 앱에서 바로(공식 저장소에서 최신 받기 → 부트로더 → 전송 → 버전 확인)",
+                    "V2 는 공식 .hex 받기 + BOOT0/DFU 안내 + STM32CubeProgrammer 실행 연동"
+                ],
+    "notes":  "### 요약\n- 장치 펌웨어 업데이트 기능: V1 은 앱에서 바로(공식 저장소에서 최신 받기 → 부트로더 → 전송 → 버전 확인)\n- V2 는 공식 .hex 받기 + BOOT0/DFU 안내 + STM32CubeProgrammer 실행 연동\n\n### Added\n- 펌웨어 업데이트 창: [정보] → [펌웨어 업데이트…], 또는 구버전 펌웨어 안내 창의 [펌웨어 업데이트…].\n  - V1: WeAct 공식 저장소에서 최신 .fpk 받기(또는 파일 선택) → 파일 검증(대상 장치·CRC) → 부트로더 진입 → 전송(약 30초) → 재시작 후 새 버전 확인 → [다시 연결].\n  - V2: .hex 받기, BOOT0 + USB DFU 안내, STM32CubeProgrammer 가 설치돼 있으면 앱에서 실행(출력 표시).\n- cccan-cli fw-info \u003c파일.fpk\u003e, cccan-cli fw-update \u003c포트\u003e \u003c파일.fpk | latest\u003e.\n- 사용자 설명서 4.5절 \"펌웨어 업데이트\".\n\n### 주의\n- 업데이트 중에는 USB 를 뽑지 마세요. 실패해 부트로더 상태로 남으면 [업데이트 시작]을 다시 누르면 이어서 씁니다.\n\n### 첨부\n- Windows CCCAN-Setup-0.6.0.exe / Linux cccan_0.6.0_amd64.deb, cccan_0.6.0_arm64.deb / 사용자 설명서 CCCAN-UserManual-0.6.0.pdf\n\n### 이전 버전 요약\nv0.5.4\n- 구버전 V1 펌웨어(V1.0.0.3 등)에서도 연결: 지원하지 않는 명령은 건너뛰고 호환 모드(ASCII)로 연결\n- 연결 시 펌웨어가 오래되면 업데이트 권장 안내 창(제한 사항 + 업데이트 방법 열기)\nv0.5.3\n- CANDB(DBC) 파일별 [사용] 체크: 등록은 유지한 채 끄고 켜기(ID 충돌 시 필요 없는 DBC만 제외)\n- DBC 충돌 열/목록(어느 파일의 어떤 ID와 겹쳤는지), 우선순위 [아래로] 추가\nv0.5.2\n- Tx 리스트(파일)에 그룹 기능 추가(온라인 리스트처럼 접기/펼치기, 그룹으로 이동·이름 바꾸기·순서 변경)\n- 앱 시작 시 아래 영역은 Tx 탭이 선택된 상태로 시작",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCCAN-v0.6.0",
+    "history":  [
+                    {
+                        "version":  "0.5.4",
+                        "published":  "2026-11-17",
+                        "summary":  [
+                                        "구버전 V1 펌웨어(V1.0.0.3 등)에서도 연결: 지원하지 않는 명령은 건너뛰고 호환 모드(ASCII)로 연결",
+                                        "연결 시 펌웨어가 오래되면 업데이트 권장 안내 창(제한 사항 + 업데이트 방법 열기)"
+                                    ]
+                    },
+                    {
+                        "version":  "0.5.3",
+                        "published":  "2026-11-16",
+                        "summary":  [
+                                        "CANDB(DBC) 파일별 [사용] 체크: 등록은 유지한 채 끄고 켜기(ID 충돌 시 필요 없는 DBC만 제외)",
+                                        "DBC 충돌 열/목록(어느 파일의 어떤 ID와 겹쳤는지), 우선순위 [아래로] 추가"
+                                    ]
+                    },
+                    {
+                        "version":  "0.5.2",
+                        "published":  "2026-11-13",
+                        "summary":  [
+                                        "Tx 리스트(파일)에 그룹 기능 추가(온라인 리스트처럼 접기/펼치기, 그룹으로 이동·이름 바꾸기·순서 변경)",
+                                        "앱 시작 시 아래 영역은 Tx 탭이 선택된 상태로 시작"
+                                    ]
+                    },
+                    {
+                        "version":  "0.5.1",
+                        "published":  "2026-11-09",
+                        "summary":  [
+                                        "Linux 판이 Ubuntu 20.04 / Debian 11 / Raspberry Pi OS bullseye(64bit)에서도 설치·실행",
+                                        "사용자 설명서(PDF) 배포: CCCAN-UserManual-0.5.1.pdf"
+                                    ]
+                    },
+                    {
+                        "version":  "0.5.0",
+                        "published":  "2026-11-07",
+                        "summary":  [
+                                        "Linux 판 추가(x64 PC / arm64 라즈베리파이, .deb 설치형, 자동 업데이트 포함)",
+                                        "Tx 반복 시작 시 같은 MsgID를 반복 중인 다른 행(모든 탭·직접 입력)을 자동 정지"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.2",
+                        "published":  "2026-11-05",
+                        "summary":  [
+                                        "온라인 Tx 리스트에 시퀀스 지원(페이지의 \"동작 / 대상 / 값\" 표)",
+                                        "Tx 항목 편집 창의 ImGui ID 충돌 경고 수정"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.1",
+                        "published":  "2026-11-04",
+                        "summary":  [
+                                        "업데이트 알림에 변경 사항 요약 표시(건너뛴 버전 포함)",
+                                        "전체 릴리스 노트는 접어서 보기"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.0",
+                        "published":  "2026-11-04",
+                        "summary":  [
+                                        "Tx 탭 재구성: 직접 입력 / 파일 리스트 / 온라인 리스트 + [+]로 탭 추가",
+                                        "직접 입력 Repeat, 리스트 행마다 [1회]/[반복] + 주기",
+                                        "CANDB 시그널로 Tx 메시지 만들기(값 선택 → Data 자동 구성)",
+                                        "온라인 Tx 리스트(Docmost 페이지 표, 캐시)",
+                                        "라이트 테마 가독성 개선"
+                                    ]
+                    },
+                    {
+                        "version":  "0.3.0",
+                        "published":  "2026-11-04",
+                        "summary":  [
+
+                                    ],
+                        "notes":  "## [0.3.0] - 2026-11-04\n\n### Added\n- **앱 자동 업데이트**: 실행할 때마다 백그라운드로 새 버전을 확인하고, 있으면 변경 내용과 함께 알림.\n  [지금 설치] → 다운로드(진행률/취소) → 크기·**SHA-256 검증** → 앱 정상 종료(설정 저장) → 설치 프로그램 무인 실행 → 설치 후 자동 재실행.\n  [나중에] / [이 버전 건너뛰기] 선택 가능. 기록 중·Tx 반복/시퀀스 실행 중·리플레이 중에는 설치를 막고 이유를 표시.\n- 배포 채널: 공개 배포 전용 레포 `blacktip2000/app-releases` (소스는 계속 Private). 여러 앱이 함께 쓰도록\n  `\u003cApp\u003e-v\u003c버전\u003e` 태그 + `apps/\u003cApp\u003e/latest.json` 매니페스트로 구분. 다운로드는 이 레포 릴리스 자산만 허용.\n- 설치 모드 유지: 현재 사용자용 설치면 `/CURRENTUSER`, 모든 사용자용이면 `/ALLUSERS`(UAC 확인)로 업데이트. 설치 로그는\n  `%LOCALAPPDATA%\\CCCAN\\logs\\update_install_\u003c버전\u003e.log`.\n- [설정] → 업데이트: \"실행할 때마다 새 버전 확인\"(인터넷이 막힌 환경에서는 끌 수 있음), [지금 확인], 건너뛴 버전 해제.\n  [정보] 창에 [업데이트 확인] 버튼.\n- 진단 로그: 확인 주소·결과(최신 버전, 설치 파일 주소·크기·SHA-256), 다운로드·검증 결과, 실행한 설치 명령. 실패 시 원인(DNS/방화벽/프록시/TLS) 표시.\n- 회사 프록시: 시스템 프록시 설정 자동 사용(WinHTTP).\n\n### Notes\n- 0.2.0 이하에는 업데이트 기능이 없으므로 0.3.0은 직접 설치해야 하며, 이후 버전부터 자동으로 안내됩니다.\n- 설치형이 아닌 실행(빌드 폴더 등)에서는 알림만 하고 다운로드 페이지를 엽니다.\n"
+                    }
+                ],
+    "installer":  {
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.6.0/CCCAN-Setup-0.6.0.exe",
+                      "sha256":  "20f48758acab77cbf9deb03665f0bb35588a9a6d2490d3a981c2dac1ad366577",
+                      "size":  3272281
+                  },
+    "installers":  {
+                       "windows-x64":  {
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.6.0/CCCAN-Setup-0.6.0.exe",
+                                           "sha256":  "20f48758acab77cbf9deb03665f0bb35588a9a6d2490d3a981c2dac1ad366577",
+                                           "size":  3272281
+                                       },
+                       "linux-x64":  {
+                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.6.0/cccan_0.6.0_amd64.deb",
+                                         "sha256":  "928ec67e3c804abc7135724d7279c9497b85cb0dd59457c64a9d1b030341d343",
+                                         "size":  3553678
+                                     },
+                       "linux-arm64":  {
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.6.0/cccan_0.6.0_arm64.deb",
+                                           "sha256":  "45772de371d4a4b869a3de98f6bbb6ea83f247003fb55556f886901a23e0a037",
+                                           "size":  3285418
+                                       }
+                   }
+}

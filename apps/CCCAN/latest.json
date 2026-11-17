@@ -1,16 +1,24 @@
 {
     "schema":  1,
     "app":  "CCCAN",
-    "version":  "0.5.4",
-    "tag":  "CCCAN-v0.5.4",
+    "version":  "0.6.0",
+    "tag":  "CCCAN-v0.6.0",
     "published":  "2026-11-17",
     "summary":  [
-                    "구버전 V1 펌웨어(V1.0.0.3 등)에서도 연결: 지원하지 않는 명령은 건너뛰고 호환 모드(ASCII)로 연결",
-                    "연결 시 펌웨어가 오래되면 업데이트 권장 안내 창(제한 사항 + 업데이트 방법 열기)"
+                    "장치 펌웨어 업데이트 기능: V1 은 앱에서 바로(공식 저장소에서 최신 받기 → 부트로더 → 전송 → 버전 확인)",
+                    "V2 는 공식 .hex 받기 + BOOT0/DFU 안내 + STM32CubeProgrammer 실행 연동"
                 ],
-    "notes":  "### 요약\n- 구버전 V1 펌웨어(V1.0.0.3 등)에서도 연결: 지원하지 않는 명령은 건너뛰고 호환 모드(ASCII)로 연결\n- 연결 시 펌웨어가 오래되면 업데이트 권장 안내 창(제한 사항 + 업데이트 방법 열기)\n\n### Fixed\n- V1 펌웨어 1.0.0.6 미만에서 \"표준 ID 필터: 장치 거부\"로 연결 실패 → 펌웨어 버전으로 기능을 판단해 필터/Enhance 명령 생략.\n- 1.0.0.3 미만: 분주 지정 비트 타이밍이 거부되면 같은 비트레이트의 호환 명령/프리셋으로 재시도.\n\n### Added\n- 펌웨어 업데이트 권장 안내: 장치/최신 버전, 제한 사항, [업데이트 방법 열기], [이 버전은 다시 알리지 않기].\n\n### 첨부\n- Windows CCCAN-Setup-0.5.4.exe / Linux cccan_0.5.4_amd64.deb, cccan_0.5.4_arm64.deb / 사용자 설명서 CCCAN-UserManual-0.5.4.pdf\n\n### 이전 버전 요약\nv0.5.3\n- CANDB(DBC) 파일별 [사용] 체크: 등록은 유지한 채 끄고 켜기(ID 충돌 시 필요 없는 DBC만 제외)\n- DBC 충돌 열/목록(어느 파일의 어떤 ID와 겹쳤는지), 우선순위 [아래로] 추가\nv0.5.2\n- Tx 리스트(파일)에 그룹 기능 추가(온라인 리스트처럼 접기/펼치기, 그룹으로 이동·이름 바꾸기·순서 변경)\n- 앱 시작 시 아래 영역은 Tx 탭이 선택된 상태로 시작\nv0.5.1\n- Linux 판이 Ubuntu 20.04 / Debian 11 / Raspberry Pi OS bullseye(64bit)에서도 설치·실행\n- 사용자 설명서(PDF) 배포: CCCAN-UserManual-0.5.1.pdf",
-    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCCAN-v0.5.4",
+    "notes":  "### 요약\n- 장치 펌웨어 업데이트 기능: V1 은 앱에서 바로(공식 저장소에서 최신 받기 → 부트로더 → 전송 → 버전 확인)\n- V2 는 공식 .hex 받기 + BOOT0/DFU 안내 + STM32CubeProgrammer 실행 연동\n\n### Added\n- 펌웨어 업데이트 창: [정보] → [펌웨어 업데이트…], 또는 구버전 펌웨어 안내 창의 [펌웨어 업데이트…].\n  - V1: WeAct 공식 저장소에서 최신 .fpk 받기(또는 파일 선택) → 파일 검증(대상 장치·CRC) → 부트로더 진입 → 전송(약 30초) → 재시작 후 새 버전 확인 → [다시 연결].\n  - V2: .hex 받기, BOOT0 + USB DFU 안내, STM32CubeProgrammer 가 설치돼 있으면 앱에서 실행(출력 표시).\n- cccan-cli fw-info \u003c파일.fpk\u003e, cccan-cli fw-update \u003c포트\u003e \u003c파일.fpk | latest\u003e.\n- 사용자 설명서 4.5절 \"펌웨어 업데이트\".\n\n### 주의\n- 업데이트 중에는 USB 를 뽑지 마세요. 실패해 부트로더 상태로 남으면 [업데이트 시작]을 다시 누르면 이어서 씁니다.\n\n### 첨부\n- Windows CCCAN-Setup-0.6.0.exe / Linux cccan_0.6.0_amd64.deb, cccan_0.6.0_arm64.deb / 사용자 설명서 CCCAN-UserManual-0.6.0.pdf\n\n### 이전 버전 요약\nv0.5.4\n- 구버전 V1 펌웨어(V1.0.0.3 등)에서도 연결: 지원하지 않는 명령은 건너뛰고 호환 모드(ASCII)로 연결\n- 연결 시 펌웨어가 오래되면 업데이트 권장 안내 창(제한 사항 + 업데이트 방법 열기)\nv0.5.3\n- CANDB(DBC) 파일별 [사용] 체크: 등록은 유지한 채 끄고 켜기(ID 충돌 시 필요 없는 DBC만 제외)\n- DBC 충돌 열/목록(어느 파일의 어떤 ID와 겹쳤는지), 우선순위 [아래로] 추가\nv0.5.2\n- Tx 리스트(파일)에 그룹 기능 추가(온라인 리스트처럼 접기/펼치기, 그룹으로 이동·이름 바꾸기·순서 변경)\n- 앱 시작 시 아래 영역은 Tx 탭이 선택된 상태로 시작",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCCAN-v0.6.0",
     "history":  [
+                    {
+                        "version":  "0.5.4",
+                        "published":  "2026-11-17",
+                        "summary":  [
+                                        "구버전 V1 펌웨어(V1.0.0.3 등)에서도 연결: 지원하지 않는 명령은 건너뛰고 호환 모드(ASCII)로 연결",
+                                        "연결 시 펌웨어가 오래되면 업데이트 권장 안내 창(제한 사항 + 업데이트 방법 열기)"
+                                    ]
+                    },
                     {
                         "version":  "0.5.3",
                         "published":  "2026-11-16",
@@ -80,25 +88,25 @@
                     }
                 ],
     "installer":  {
-                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.4/CCCAN-Setup-0.5.4.exe",
-                      "sha256":  "4c5000931bcb6da3badd51243e897554c4c061ba9f5b1b66640abc4df4fdff0b",
-                      "size":  3217286
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.6.0/CCCAN-Setup-0.6.0.exe",
+                      "sha256":  "20f48758acab77cbf9deb03665f0bb35588a9a6d2490d3a981c2dac1ad366577",
+                      "size":  3272281
                   },
     "installers":  {
                        "windows-x64":  {
-                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.4/CCCAN-Setup-0.5.4.exe",
-                                           "sha256":  "4c5000931bcb6da3badd51243e897554c4c061ba9f5b1b66640abc4df4fdff0b",
-                                           "size":  3217286
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.6.0/CCCAN-Setup-0.6.0.exe",
+                                           "sha256":  "20f48758acab77cbf9deb03665f0bb35588a9a6d2490d3a981c2dac1ad366577",
+                                           "size":  3272281
                                        },
                        "linux-x64":  {
-                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.4/cccan_0.5.4_amd64.deb",
-                                         "sha256":  "9073da0e3e12424895b0fa16384149999ec36a523ca67e5d019af7dafbf86eb5",
-                                         "size":  3425294
+                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.6.0/cccan_0.6.0_amd64.deb",
+                                         "sha256":  "928ec67e3c804abc7135724d7279c9497b85cb0dd59457c64a9d1b030341d343",
+                                         "size":  3553678
                                      },
                        "linux-arm64":  {
-                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.4/cccan_0.5.4_arm64.deb",
-                                           "sha256":  "74964311e87a00b6587c3534da2f5c3a010b7e6266e0ec8ba497fe5989e66721",
-                                           "size":  3169174
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.6.0/cccan_0.6.0_arm64.deb",
+                                           "sha256":  "45772de371d4a4b869a3de98f6bbb6ea83f247003fb55556f886901a23e0a037",
+                                           "size":  3285418
                                        }
                    }
 }
