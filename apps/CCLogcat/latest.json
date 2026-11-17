@@ -1,15 +1,22 @@
 {
     "schema":  1,
     "app":  "CCLogcat",
-    "version":  "0.4.13",
-    "tag":  "CCLogcat-v0.4.13",
-    "published":  "2026-11-16",
+    "version":  "0.4.14",
+    "tag":  "CCLogcat-v0.4.14",
+    "published":  "2026-11-17",
     "summary":  [
-                    "줄 우클릭에 \"하이라이트 해제\" 추가"
+                    "프로세스 모니터에 프로세스별 GPU 사용률(GPU%) 추가"
                 ],
-    "notes":  "### 요약\n- 줄 우클릭에 \"하이라이트 해제\" 추가\n\n### Added\n- 우클릭 \u003e 하이라이트 해제 (N): 그 줄에 걸린 하이라이트 규칙만 색과 함께 보여 주고, 골라서 하나씩 해제. 둘 이상이면 \"이 줄의 하이라이트 모두 해제\"\n  - 우클릭으로 넣은 PID/TID 하이라이트(\\b1234\\b)는 숫자만 보이게 표시\n  - 해제는 지금 탭의 하이라이트에서 지움 (하이라이트 창에서 지우는 것과 같음)\n- 사용자 설명서 0.4.13\n\n### 이전 버전 요약\nv0.4.12\n- 하이라이트가 PID · TID 칸에도 적용 (우클릭 \u003e 하이라이트 추가 \u003e PID / TID)\n- PID/TID 필터 시 번호별 글자색 기능 제거\n- 사용자 설명서(PDF) 제공\nv0.4.11\n- 구버전 안드로이드에서 \"Invalid parameter to -v\" 로 연결이 붙었다 떨어지던 문제 수정 (자동 호환)\nv0.4.10\n- 오른쪽 위치 막대(전체 스크롤)가 잘 보이도록 바탕색·손잡이 강조",
-    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.4.13",
+    "notes":  "### 요약\n- 프로세스 모니터에 프로세스별 GPU 사용률(GPU%) 추가\n\n### Added\n- GPU% 열: dumpsys gpu --gpuwork 의 앱(UID)별 GPU 사용 시간을 주기마다 읽어 그 차이로 사용률 계산. 열 제목 클릭으로 정렬, 30% 이상 빨강\n  - 안드로이드 14 이상 + 커널의 GPU work period 지원 기기에서 표시. 지원하지 않으면 창에 안내\n  - 안드로이드가 UID 단위로만 집계하므로 같은 앱의 여러 프로세스(:remote 등)·system 계정 프로세스는 같은 값\n  - 첫 값은 두 번째 수집(주기 1회 뒤)부터\n- 그래프 보기: 고른 프로세스의 \"GPU % (UID 단위)\" 그래프 추가\n- top 의 UID 열을 함께 읽음 (없는 top 이면 USER 이름에서 UID 계산)\n- 사용자 설명서 0.4.14\n\n### 이전 버전 요약\nv0.4.13\n- 줄 우클릭에 \"하이라이트 해제\" 추가\nv0.4.12\n- 하이라이트가 PID · TID 칸에도 적용 (우클릭 \u003e 하이라이트 추가 \u003e PID / TID)\n- PID/TID 필터 시 번호별 글자색 기능 제거\n- 사용자 설명서(PDF) 제공\nv0.4.11\n- 구버전 안드로이드에서 \"Invalid parameter to -v\" 로 연결이 붙었다 떨어지던 문제 수정 (자동 호환)",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.4.14",
     "history":  [
+                    {
+                        "version":  "0.4.13",
+                        "published":  "2026-11-16",
+                        "summary":  [
+                                        "줄 우클릭에 \"하이라이트 해제\" 추가"
+                                    ]
+                    },
                     {
                         "version":  "0.4.12",
                         "published":  "2026-11-16",
@@ -79,30 +86,23 @@
                                         "온라인 명령 [실행] 시 탭이 바뀌지 않음 (결과는 목록 아래에)",
                                         "시퀀스: 여러 명령을 순서대로 실행"
                                     ]
-                    },
-                    {
-                        "version":  "0.4.3",
-                        "published":  "2026-11-13",
-                        "summary":  [
-                                        "자동 줄 바꿈 추가 (켜기/끄기)"
-                                    ]
                     }
                 ],
     "installer":  {
-                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.13/CCLogcat-Setup-0.4.13.exe",
-                      "sha256":  "23da7b4a4e385d8d036aeabd247f91a7c4688aae4a9e6ec61ec19a4df2a0208b",
-                      "size":  6699678
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.14/CCLogcat-Setup-0.4.14.exe",
+                      "sha256":  "f4fe2c50423d92378d8e42d6aa5ac74482394b5ad08a3cc1724f21c2c25ed752",
+                      "size":  6710956
                   },
     "installers":  {
                        "windows-x64":  {
-                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.13/CCLogcat-Setup-0.4.13.exe",
-                                           "sha256":  "23da7b4a4e385d8d036aeabd247f91a7c4688aae4a9e6ec61ec19a4df2a0208b",
-                                           "size":  6699678
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.14/CCLogcat-Setup-0.4.14.exe",
+                                           "sha256":  "f4fe2c50423d92378d8e42d6aa5ac74482394b5ad08a3cc1724f21c2c25ed752",
+                                           "size":  6710956
                                        },
                        "linux-x64":  {
-                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.13/cclogcat_0.4.13_amd64.deb",
-                                         "sha256":  "4b5c2ca396dfa4b0c485a7ccc57a51c3c43fc0a30b8b85bbc805a23f38d2c2f6",
-                                         "size":  5304628
+                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.14/cclogcat_0.4.14_amd64.deb",
+                                         "sha256":  "732da9c2a5eae7a713a8648adeb95f1007ffcec319db78bb6489a7a69af246c7",
+                                         "size":  5313444
                                      }
                    }
 }
