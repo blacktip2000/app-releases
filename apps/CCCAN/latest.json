@@ -1,16 +1,24 @@
 {
     "schema":  1,
     "app":  "CCCAN",
-    "version":  "0.5.3",
-    "tag":  "CCCAN-v0.5.3",
-    "published":  "2026-11-16",
+    "version":  "0.5.4",
+    "tag":  "CCCAN-v0.5.4",
+    "published":  "2026-11-17",
     "summary":  [
-                    "CANDB(DBC) 파일별 [사용] 체크: 등록은 유지한 채 끄고 켜기(ID 충돌 시 필요 없는 DBC만 제외)",
-                    "DBC 충돌 열/목록(어느 파일의 어떤 ID와 겹쳤는지), 우선순위 [아래로] 추가"
+                    "구버전 V1 펌웨어(V1.0.0.3 등)에서도 연결: 지원하지 않는 명령은 건너뛰고 호환 모드(ASCII)로 연결",
+                    "연결 시 펌웨어가 오래되면 업데이트 권장 안내 창(제한 사항 + 업데이트 방법 열기)"
                 ],
-    "notes":  "### 요약\n- CANDB(DBC) 파일별 [사용] 체크: 등록은 유지한 채 끄고 켜기(ID 충돌 시 필요 없는 DBC만 제외)\n- DBC 충돌 열/목록(어느 파일의 어떤 ID와 겹쳤는지), 우선순위 [아래로] 추가\n\n### Added\n- DBC 사용/사용 안 함: 설정 → CANDB 표 맨 앞 [사용] 체크. 끄면 등록 목록에 남기고 디코딩·충돌 계산에서 제외, 다음 실행에도 유지.\n  툴바 DBC 사용/전체(예: DBC 1/2).\n- 충돌 열: 위쪽 파일과 ID가 겹쳐 무시된 메시지 수. 행에 마우스를 올리면 ID 0x100 중복: A (a.dbc) 사용, B (b.dbc) 무시 목록.\n- 우선순위 [아래로] 버튼.\n\n### Changed\n- [위로]/[아래로]는 다시 읽지 않고 순서만 바꿔 바로 적용(사용 여부 유지).\n\n### 첨부\n- Windows CCCAN-Setup-0.5.3.exe / Linux cccan_0.5.3_amd64.deb, cccan_0.5.3_arm64.deb / 사용자 설명서 CCCAN-UserManual-0.5.3.pdf\n\n### 이전 버전 요약\nv0.5.2\n- Tx 리스트(파일)에 그룹 기능 추가(온라인 리스트처럼 접기/펼치기, 그룹으로 이동·이름 바꾸기·순서 변경)\n- 앱 시작 시 아래 영역은 Tx 탭이 선택된 상태로 시작\nv0.5.1\n- Linux 판이 Ubuntu 20.04 / Debian 11 / Raspberry Pi OS bullseye(64bit)에서도 설치·실행\n- 사용자 설명서(PDF) 배포: CCCAN-UserManual-0.5.1.pdf\nv0.5.0\n- Linux 판 추가(x64 PC / arm64 라즈베리파이, .deb 설치형, 자동 업데이트 포함)\n- Tx 반복 시작 시 같은 MsgID를 반복 중인 다른 행(모든 탭·직접 입력)을 자동 정지",
-    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCCAN-v0.5.3",
+    "notes":  "### 요약\n- 구버전 V1 펌웨어(V1.0.0.3 등)에서도 연결: 지원하지 않는 명령은 건너뛰고 호환 모드(ASCII)로 연결\n- 연결 시 펌웨어가 오래되면 업데이트 권장 안내 창(제한 사항 + 업데이트 방법 열기)\n\n### Fixed\n- V1 펌웨어 1.0.0.6 미만에서 \"표준 ID 필터: 장치 거부\"로 연결 실패 → 펌웨어 버전으로 기능을 판단해 필터/Enhance 명령 생략.\n- 1.0.0.3 미만: 분주 지정 비트 타이밍이 거부되면 같은 비트레이트의 호환 명령/프리셋으로 재시도.\n\n### Added\n- 펌웨어 업데이트 권장 안내: 장치/최신 버전, 제한 사항, [업데이트 방법 열기], [이 버전은 다시 알리지 않기].\n\n### 첨부\n- Windows CCCAN-Setup-0.5.4.exe / Linux cccan_0.5.4_amd64.deb, cccan_0.5.4_arm64.deb / 사용자 설명서 CCCAN-UserManual-0.5.4.pdf\n\n### 이전 버전 요약\nv0.5.3\n- CANDB(DBC) 파일별 [사용] 체크: 등록은 유지한 채 끄고 켜기(ID 충돌 시 필요 없는 DBC만 제외)\n- DBC 충돌 열/목록(어느 파일의 어떤 ID와 겹쳤는지), 우선순위 [아래로] 추가\nv0.5.2\n- Tx 리스트(파일)에 그룹 기능 추가(온라인 리스트처럼 접기/펼치기, 그룹으로 이동·이름 바꾸기·순서 변경)\n- 앱 시작 시 아래 영역은 Tx 탭이 선택된 상태로 시작\nv0.5.1\n- Linux 판이 Ubuntu 20.04 / Debian 11 / Raspberry Pi OS bullseye(64bit)에서도 설치·실행\n- 사용자 설명서(PDF) 배포: CCCAN-UserManual-0.5.1.pdf",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCCAN-v0.5.4",
     "history":  [
+                    {
+                        "version":  "0.5.3",
+                        "published":  "2026-11-16",
+                        "summary":  [
+                                        "CANDB(DBC) 파일별 [사용] 체크: 등록은 유지한 채 끄고 켜기(ID 충돌 시 필요 없는 DBC만 제외)",
+                                        "DBC 충돌 열/목록(어느 파일의 어떤 ID와 겹쳤는지), 우선순위 [아래로] 추가"
+                                    ]
+                    },
                     {
                         "version":  "0.5.2",
                         "published":  "2026-11-13",
@@ -72,25 +80,25 @@
                     }
                 ],
     "installer":  {
-                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.3/CCCAN-Setup-0.5.3.exe",
-                      "sha256":  "44881a71c8c169a2e7d069daa714e33230566470e0de942b98eec89bef098da3",
-                      "size":  3209792
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.4/CCCAN-Setup-0.5.4.exe",
+                      "sha256":  "4c5000931bcb6da3badd51243e897554c4c061ba9f5b1b66640abc4df4fdff0b",
+                      "size":  3217286
                   },
     "installers":  {
                        "windows-x64":  {
-                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.3/CCCAN-Setup-0.5.3.exe",
-                                           "sha256":  "44881a71c8c169a2e7d069daa714e33230566470e0de942b98eec89bef098da3",
-                                           "size":  3209792
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.4/CCCAN-Setup-0.5.4.exe",
+                                           "sha256":  "4c5000931bcb6da3badd51243e897554c4c061ba9f5b1b66640abc4df4fdff0b",
+                                           "size":  3217286
                                        },
                        "linux-x64":  {
-                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.3/cccan_0.5.3_amd64.deb",
-                                         "sha256":  "87fe3c64c5ca8a67b1b05c5c097bc3be849e322696a4da3daa85aa5be9bfa427",
-                                         "size":  3403478
+                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.4/cccan_0.5.4_amd64.deb",
+                                         "sha256":  "9073da0e3e12424895b0fa16384149999ec36a523ca67e5d019af7dafbf86eb5",
+                                         "size":  3425294
                                      },
                        "linux-arm64":  {
-                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.3/cccan_0.5.3_arm64.deb",
-                                           "sha256":  "a0d0c1b6515f4ef573759b24eb3410d921834f463fd000d3dd910db9fe2599d1",
-                                           "size":  3148930
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.5.4/cccan_0.5.4_arm64.deb",
+                                           "sha256":  "74964311e87a00b6587c3534da2f5c3a010b7e6266e0ec8ba497fe5989e66721",
+                                           "size":  3169174
                                        }
                    }
 }
