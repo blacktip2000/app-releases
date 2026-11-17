@@ -1,16 +1,24 @@
 {
     "schema":  1,
     "app":  "CCCAN",
-    "version":  "0.6.0",
-    "tag":  "CCCAN-v0.6.0",
-    "published":  "2026-11-17",
+    "version":  "0.6.1",
+    "tag":  "CCCAN-v0.6.1",
+    "published":  "2026-11-18",
     "summary":  [
-                    "장치 펌웨어 업데이트 기능: V1 은 앱에서 바로(공식 저장소에서 최신 받기 → 부트로더 → 전송 → 버전 확인)",
-                    "V2 는 공식 .hex 받기 + BOOT0/DFU 안내 + STM32CubeProgrammer 실행 연동"
+                    "V2 펌웨어 업데이트를 앱에서 직접: BOOT0 를 누른 채 꽂고 [장치 찾기] → [업데이트 시작] (STM32CubeProgrammer 없이)",
+                    "Windows 는 DFU 장치에 WinUSB 드라이버 1회 설치 필요(Zadig 안내), Linux 는 udev 규칙 포함"
                 ],
-    "notes":  "### 요약\n- 장치 펌웨어 업데이트 기능: V1 은 앱에서 바로(공식 저장소에서 최신 받기 → 부트로더 → 전송 → 버전 확인)\n- V2 는 공식 .hex 받기 + BOOT0/DFU 안내 + STM32CubeProgrammer 실행 연동\n\n### Added\n- 펌웨어 업데이트 창: [정보] → [펌웨어 업데이트…], 또는 구버전 펌웨어 안내 창의 [펌웨어 업데이트…].\n  - V1: WeAct 공식 저장소에서 최신 .fpk 받기(또는 파일 선택) → 파일 검증(대상 장치·CRC) → 부트로더 진입 → 전송(약 30초) → 재시작 후 새 버전 확인 → [다시 연결].\n  - V2: .hex 받기, BOOT0 + USB DFU 안내, STM32CubeProgrammer 가 설치돼 있으면 앱에서 실행(출력 표시).\n- cccan-cli fw-info \u003c파일.fpk\u003e, cccan-cli fw-update \u003c포트\u003e \u003c파일.fpk | latest\u003e.\n- 사용자 설명서 4.5절 \"펌웨어 업데이트\".\n\n### 주의\n- 업데이트 중에는 USB 를 뽑지 마세요. 실패해 부트로더 상태로 남으면 [업데이트 시작]을 다시 누르면 이어서 씁니다.\n\n### 첨부\n- Windows CCCAN-Setup-0.6.0.exe / Linux cccan_0.6.0_amd64.deb, cccan_0.6.0_arm64.deb / 사용자 설명서 CCCAN-UserManual-0.6.0.pdf\n\n### 이전 버전 요약\nv0.5.4\n- 구버전 V1 펌웨어(V1.0.0.3 등)에서도 연결: 지원하지 않는 명령은 건너뛰고 호환 모드(ASCII)로 연결\n- 연결 시 펌웨어가 오래되면 업데이트 권장 안내 창(제한 사항 + 업데이트 방법 열기)\nv0.5.3\n- CANDB(DBC) 파일별 [사용] 체크: 등록은 유지한 채 끄고 켜기(ID 충돌 시 필요 없는 DBC만 제외)\n- DBC 충돌 열/목록(어느 파일의 어떤 ID와 겹쳤는지), 우선순위 [아래로] 추가\nv0.5.2\n- Tx 리스트(파일)에 그룹 기능 추가(온라인 리스트처럼 접기/펼치기, 그룹으로 이동·이름 바꾸기·순서 변경)\n- 앱 시작 시 아래 영역은 Tx 탭이 선택된 상태로 시작",
-    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCCAN-v0.6.0",
+    "notes":  "### 요약\n- V2 펌웨어 업데이트를 앱에서 직접: BOOT0 를 누른 채 꽂고 [장치 찾기] → [업데이트 시작] (STM32CubeProgrammer 없이)\n- Windows 는 DFU 장치에 WinUSB 드라이버 1회 설치 필요(Zadig 안내), Linux 는 udev 규칙 포함\n\n### Added\n- V2 자체 USB DFU 쓰기(USB DFU 1.1 + ST DfuSe): Intel HEX 해석·검증 → 이미지가 걸친 페이지만 지우기 → 쓰기 → 다시 읽어 비교 → 새 펌웨어로 시작 → WeAct 포트가 나타나면 V 응답 기록 → [다시 연결].\n  - Windows: 0483:DF11 장치와 연결된 드라이버 확인, WinUSB 로 통신. WinUSB 가 아니면(드라이버 없음 / ST STTub30) 사유와 Zadig 안내 표시.\n  - Linux: usbfs 직접 사용(추가 라이브러리 없음), udev 규칙에 0483:df11 추가.\n  - 장치가 알려 주는 플래시 배치를 확인해 범위 밖 펌웨어는 쓰지 않음.\n- 펌웨어 창 V2: 파일 정보(버전·크기·주소), [장치 찾기], 확인 후 [업데이트 시작], 단계별 진행률. STM32CubeProgrammer 는 [다른 방법] 으로 유지.\n- cccan-cli dfu-list, cccan-cli dfu-update \u003c파일.hex | latest\u003e.\n- 로그: DFU 장치·드라이버·메모리 배치, 지울 페이지 수, 장치 상태 코드(errPROG 등), 재시작 후 버전.\n\n### Windows 드라이버(처음 한 번)\nZadig(https://zadig.akeo.ie) → Options → List All Devices → STM32 BOOTLOADER → WinUSB → Install Driver\n\n### 실장치 확인 필요\n- V2 실물: BOOT0 → [장치 찾기] → [업데이트 시작] (Windows WinUSB / Linux)\n\n### 이전 버전 요약\nv0.6.0\n- 장치 펌웨어 업데이트 기능: V1 은 앱에서 바로(공식 저장소에서 최신 받기 → 부트로더 → 전송 → 버전 확인)\n- V2 는 공식 .hex 받기 + BOOT0/DFU 안내 + STM32CubeProgrammer 실행 연동\nv0.5.4\n- 구버전 V1 펌웨어(V1.0.0.3 등)에서도 연결: 지원하지 않는 명령은 건너뛰고 호환 모드(ASCII)로 연결\n- 연결 시 펌웨어가 오래되면 업데이트 권장 안내 창(제한 사항 + 업데이트 방법 열기)\nv0.5.3\n- CANDB(DBC) 파일별 [사용] 체크: 등록은 유지한 채 끄고 켜기(ID 충돌 시 필요 없는 DBC만 제외)\n- DBC 충돌 열/목록(어느 파일의 어떤 ID와 겹쳤는지), 우선순위 [아래로] 추가",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCCAN-v0.6.1",
     "history":  [
+                    {
+                        "version":  "0.6.0",
+                        "published":  "2026-11-17",
+                        "summary":  [
+                                        "장치 펌웨어 업데이트 기능: V1 은 앱에서 바로(공식 저장소에서 최신 받기 → 부트로더 → 전송 → 버전 확인)",
+                                        "V2 는 공식 .hex 받기 + BOOT0/DFU 안내 + STM32CubeProgrammer 실행 연동"
+                                    ]
+                    },
                     {
                         "version":  "0.5.4",
                         "published":  "2026-11-17",
@@ -88,25 +96,25 @@
                     }
                 ],
     "installer":  {
-                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.6.0/CCCAN-Setup-0.6.0.exe",
-                      "sha256":  "20f48758acab77cbf9deb03665f0bb35588a9a6d2490d3a981c2dac1ad366577",
-                      "size":  3272281
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.6.1/CCCAN-Setup-0.6.1.exe",
+                      "sha256":  "a9f72649ce617e5ca2cfe0f2b0909a8a5e1ff9c4c4778092054cf54981d84f1e",
+                      "size":  3295744
                   },
     "installers":  {
                        "windows-x64":  {
-                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.6.0/CCCAN-Setup-0.6.0.exe",
-                                           "sha256":  "20f48758acab77cbf9deb03665f0bb35588a9a6d2490d3a981c2dac1ad366577",
-                                           "size":  3272281
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.6.1/CCCAN-Setup-0.6.1.exe",
+                                           "sha256":  "a9f72649ce617e5ca2cfe0f2b0909a8a5e1ff9c4c4778092054cf54981d84f1e",
+                                           "size":  3295744
                                        },
                        "linux-x64":  {
-                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.6.0/cccan_0.6.0_amd64.deb",
-                                         "sha256":  "928ec67e3c804abc7135724d7279c9497b85cb0dd59457c64a9d1b030341d343",
-                                         "size":  3553678
+                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.6.1/cccan_0.6.1_amd64.deb",
+                                         "sha256":  "629a4c08dc28059825b22cd566f56250b0972deb40ec50ba8ec70b169e4113e1",
+                                         "size":  3621634
                                      },
                        "linux-arm64":  {
-                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.6.0/cccan_0.6.0_arm64.deb",
-                                           "sha256":  "45772de371d4a4b869a3de98f6bbb6ea83f247003fb55556f886901a23e0a037",
-                                           "size":  3285418
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.6.1/cccan_0.6.1_arm64.deb",
+                                           "sha256":  "10ceb81229e09ac1ed49e1535796c7a54c54f98110f60010cec019ff3da5e426",
+                                           "size":  3346956
                                        }
                    }
 }
