@@ -1,0 +1,107 @@
+{
+    "schema":  1,
+    "app":  "CCLogcat",
+    "version":  "0.4.16",
+    "tag":  "CCLogcat-v0.4.16",
+    "published":  "2026-11-18",
+    "summary":  [
+                    "구버전 안드로이드 / ADB 에서 화면 공유가 안 되던 문제 수정 (받는 방법 자동 전환)"
+                ],
+    "notes":  "### 요약\n- 구버전 안드로이드 / ADB 에서 화면 공유가 안 되던 문제 수정 (받는 방법 자동 전환)\n\n### Fixed\n- 화면 공유 (구버전 기기): 화면을 adb exec-out screencap 으로만 받았는데, exec-out 은 안드로이드 5.0(Lollipop) 미만의 adbd 나 오래된 adb 에서는 지원되지 않아 화면이 나오지 않았음\n  - 실패하면 다음 방법으로 자동 전환: exec-out raw → exec-out PNG → shell PNG → 파일로 받기(pull)\n  - shell PNG: 구버전 adbd 가 줄바꿈(LF)을 CRLF 로 바꿔 PNG 가 깨지는 것을 자동 복구\n  - 파일로 받기: 기기의 /data/local/tmp 에 저장 후 adb pull\n  - 한 번 성공한 방법은 계속 사용, 아래 상태줄에 지금 쓰는 방법 표시 (예: 540x1170 · 3.5 fps · shell PNG)\n  - 모두 실패하면 각 방법의 오류를 함께 표시\n\n### 이전 버전 요약\nv0.4.15\n- 연결이 끊긴 기기의 로그 탭에서 [시작]을 누르면 화면이 멈추던 문제 수정\nv0.4.14\n- 프로세스 모니터에 프로세스별 GPU 사용률(GPU%) 추가\nv0.4.13\n- 줄 우클릭에 \"하이라이트 해제\" 추가",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.4.16",
+    "history":  [
+                    {
+                        "version":  "0.4.15",
+                        "published":  "2026-11-17",
+                        "summary":  [
+                                        "연결이 끊긴 기기의 로그 탭에서 [시작]을 누르면 화면이 멈추던 문제 수정"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.14",
+                        "published":  "2026-11-17",
+                        "summary":  [
+                                        "프로세스 모니터에 프로세스별 GPU 사용률(GPU%) 추가"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.13",
+                        "published":  "2026-11-16",
+                        "summary":  [
+                                        "줄 우클릭에 \"하이라이트 해제\" 추가"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.12",
+                        "published":  "2026-11-16",
+                        "summary":  [
+                                        "하이라이트가 PID · TID 칸에도 적용 (우클릭 \u003e 하이라이트 추가 \u003e PID / TID)",
+                                        "PID/TID 필터 시 번호별 글자색 기능 제거",
+                                        "사용자 설명서(PDF) 제공"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.11",
+                        "published":  "2026-11-16",
+                        "summary":  [
+                                        "구버전 안드로이드에서 \"Invalid parameter to -v\" 로 연결이 붙었다 떨어지던 문제 수정 (자동 호환)"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.10",
+                        "published":  "2026-11-16",
+                        "summary":  [
+                                        "오른쪽 위치 막대(전체 스크롤)가 잘 보이도록 바탕색·손잡이 강조"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.9",
+                        "published":  "2026-11-16",
+                        "summary":  [
+                                        "시리얼을 로그 탭이 아닌 왼쪽 [시리얼] 탭 안에서만 사용 (ADB 명령 탭과 같은 방식)",
+                                        "미리 입력 목록은 비어서 시작 (사용자가 추가한 것만 저장·유지)",
+                                        "왼쪽 아이콘 순서 변경"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.8",
+                        "published":  "2026-11-16",
+                        "summary":  [
+                                        "왼쪽 [시리얼] 탭 추가: 시리얼 포트 로그 받기 + 보내기",
+                                        "미리 입력해 둔 내용을 버튼 하나로 보내기"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.7",
+                        "published":  "2026-11-15",
+                        "summary":  [
+                                        "PID / TID 로 거를 때 번호마다 다른 글자색"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.6",
+                        "published":  "2026-11-13",
+                        "summary":  [
+                                        "화면 공유 창 추가 (스크린샷 저장·복사, 마우스로 조작)",
+                                        "프로세스 모니터에 그래프 보기 추가 (CPU · 메모리 · GPU 메모리)"
+                                    ]
+                    }
+                ],
+    "installer":  {
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.16/CCLogcat-Setup-0.4.16.exe",
+                      "sha256":  "7960e341170948ed9c67d8e557b8ffe7f4a0267ef3c30d27da1d8c252950031a",
+                      "size":  6715449
+                  },
+    "installers":  {
+                       "windows-x64":  {
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.16/CCLogcat-Setup-0.4.16.exe",
+                                           "sha256":  "7960e341170948ed9c67d8e557b8ffe7f4a0267ef3c30d27da1d8c252950031a",
+                                           "size":  6715449
+                                       },
+                       "linux-x64":  {
+                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.16/cclogcat_0.4.16_amd64.deb",
+                                         "sha256":  "3285a5b1c2f5d4a5c7d7666dd84553ac4a40288822ccf20d1edda2655d026baa",
+                                         "size":  5319376
+                                     }
+                   }
+}
