@@ -1,0 +1,61 @@
+{
+    "schema":  1,
+    "app":  "SnackView",
+    "version":  "1.1.2",
+    "tag":  "SnackView-v1.1.2",
+    "published":  "2026-11-19",
+    "summary":  [
+                    "스크롤 캡처가 한 번만 내려가고 멈추던 문제 수정 (이어 붙이기 판정 개선)"
+                ],
+    "notes":  "## SnackView 1.1.2\r\n\r\n### 요약\r\n- 스크롤 캡처가 한 번만 내려가고 멈추던 문제 수정 (이어 붙이기 판정 개선)\r\n\r\n### 변경 사항\r\n- 화면을 세로 띠로 나눠 비교: 고정된 옆 패널, 스크롤할 때 나타나는 얇은 스크롤바, 커서 아래 강조 표시가 있어도 이어 붙임\r\n- 휠로 내린 뒤 마우스 포인터를 캡처 영역 바깥으로 옮겨 마우스를 올렸을 때의 강조 표시가 화면을 바꾸지 않게 함\r\n- 한 번에 너무 많이 내려가 겹치는 부분이 없으면 되돌린 뒤 더 작은 단위로 계속 (Windows는 휠 반 칸까지)\r\n- 스크롤 캡처 과정(대상 창, 단계별 결과, 멈춘 이유)을 로그에 기록\r\n- 썸네일 격자처럼 비슷한 칸이 반복되는 화면에서 잘못 이어 붙이지 않도록 검증 강화\r\n\r\n### 설치\r\n- Windows: SnackView-Setup-1.1.2.exe (앱 안 업데이트로도 설치됨)\r\n- Ubuntu/Debian: sudo apt install ./snackview_1.1.2_amd64.deb",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/SnackView-v1.1.2",
+    "history":  [
+                    {
+                        "version":  "1.1.1",
+                        "published":  "2026-11-19",
+                        "summary":  [
+                                        "스크롤 캡처가 중간에 멈추던 문제 수정",
+                                        "캡처 목록에서 지우다가 하나만 남으면 편집 화면이 검게 비던 문제 수정"
+                                    ]
+                    },
+                    {
+                        "version":  "1.1.0",
+                        "published":  "2026-11-14",
+                        "summary":  [
+                                        "WebP 지원: 정지 WebP와 움직이는 WebP를 썸네일·미리보기·확대 모드에서 표시",
+                                        "Lottie 지원: .json(Bodymovin)과 .lottie(dotLottie) 애니메이션을 재생"
+                                    ]
+                    },
+                    {
+                        "version":  "1.0.1",
+                        "published":  "2026-11-14",
+                        "summary":  [
+                                        "움직이는 GIF가 확대 모드와 미리보기에서 재생됨"
+                                    ]
+                    },
+                    {
+                        "version":  "1.0.0",
+                        "published":  "2026-11-09",
+                        "summary":  [
+                                        "이미지 뷰어와 화면 캡처·편집기를 하나로 합친 첫 릴리스",
+                                        "다크 테마 UI: 카드형 썸네일, 강조색 캡처 버튼, 아이콘 툴바, 사이드바 설정 창",
+                                        "뷰어 메뉴에서 캡처, Ctrl+E로 그림을 편집기로 열기, 편집 결과를 뷰어로 보기",
+                                        "뷰어·캡처 설정을 한 창에서 (탐색/보기/슬라이드 쇼/썸네일/캡처 단축키/캡처·일반)",
+                                        "Windows 10/11 x64, Ubuntu 20.04 이상(.deb) 지원, 앱 내 자동 업데이트"
+                                    ]
+                    }
+                ],
+    "installer":  {
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/SnackView-v1.1.2/SnackView-Setup-1.1.2.exe",
+                      "sha256":  "b4eb62ba4f0c21074aaa6327c34f1512edd614a42794885d6c7b1207ee80649f",
+                      "size":  14548542
+                  },
+    "platforms":  {
+                      "linux-x86_64":  {
+                                           "kind":  "deb",
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/SnackView-v1.1.2/snackview_1.1.2_amd64.deb",
+                                           "sha256":  "2d4b52319a2a2f593fb206d2b62a0e78fafb1be44bac1a6d16b26237c77c0e63",
+                                           "size":  27504220
+                                       }
+                  }
+}
