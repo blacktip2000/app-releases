@@ -1,16 +1,23 @@
 {
     "schema":  1,
     "app":  "CCLogcat",
-    "version":  "0.4.17",
-    "tag":  "CCLogcat-v0.4.17",
+    "version":  "0.4.18",
+    "tag":  "CCLogcat-v0.4.18",
     "published":  "2026-11-19",
     "summary":  [
-                    "필터 [초기화] 옆 ▼ 메뉴로 항목별 초기화 (레벨·포함·제외·태그·PID·앱·정규식/대소문자·하이라이트) + 전체",
-                    "Shift+F2(이전 북마크)·Shift+F3(이전 검색 결과)가 \u0027다음\u0027으로 가던 문제 수정"
+                    "프로세스 모니터: 기기 연결이 끊겨도 그래프는 계속 흘러가고, 다시 연결되면 자동으로 이어서 수집"
                 ],
-    "notes":  "### 요약\n- 필터 [초기화] 옆 ▼ 메뉴로 항목별 초기화 (레벨·포함·제외·태그·PID·앱·정규식/대소문자·하이라이트) + 전체\n- Shift+F2(이전 북마크)·Shift+F3(이전 검색 결과)가 \u0027다음\u0027으로 가던 문제 수정\n\n### Added\n- 항목별 초기화: [초기화] 버튼은 그대로 필터 전체 초기화, 옆 ▼ 를 누르면\n  - 레벨(모두 켜기) / 포함 / 제외 / 태그 / PID / 앱 / 정규식·대소문자 끄기 — 하나씩 초기화 (값이 있는 항목만 켜지고, 지금 값이 함께 보임)\n  - 하이라이트 모두 지우기\n  - 전체 (필터 + 하이라이트)\n\n### Fixed\n- Shift+F2 / Shift+F3: 키 처리에서 F2·F3 를 Shift 조합보다 먼저 확인했는데, egui 의 consume_key 는 Shift 가 더 눌려 있어도 일치로 보기 때문에 Shift+F2 가 F2(다음)로 처리됐음 → Shift 조합을 먼저 확인하도록 순서 변경\n- 검색 중 목록에서 Shift+Enter 도 이전 검색 결과로 이동\n\n### 이전 버전 요약\nv0.4.16\n- 구버전 안드로이드 / ADB 에서 화면 공유가 안 되던 문제 수정 (받는 방법 자동 전환)\nv0.4.15\n- 연결이 끊긴 기기의 로그 탭에서 [시작]을 누르면 화면이 멈추던 문제 수정\nv0.4.14\n- 프로세스 모니터에 프로세스별 GPU 사용률(GPU%) 추가",
-    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.4.17",
+    "notes":  "### 요약\n- 프로세스 모니터: 기기 연결이 끊겨도 그래프는 계속 흘러가고, 다시 연결되면 자동으로 이어서 수집\n\n### Changed\n- 연결 끊김 처리: 전에는 연결이 끊기면 \"top 이 끝났습니다\" 오류로 멈추고, 다시 연결해도 창을 다시 열어야 했음\n  - 끊기면 프로세스 목록을 비우고 \"기기 연결 끊김 (N초)\" 표시\n  - 그래프(CPU·메모리·GPU 전체, 프로세스별)는 시간이 계속 흘러가고 끊긴 구간은 빈칸\n  - 1초마다 연결을 확인해 다시 연결되면 top 을 다시 띄워 같은 그래프에 이어서 그림 (같은 PID 는 같은 선으로 이어짐)\n  - 끊긴 동안 GPU 정보는 읽지 않음 (다시 연결된 뒤 GPU % 는 다음 주기부터)\n\n### 이전 버전 요약\nv0.4.17\n- 필터 [초기화] 옆 ▼ 메뉴로 항목별 초기화 (레벨·포함·제외·태그·PID·앱·정규식/대소문자·하이라이트) + 전체\n- Shift+F2(이전 북마크)·Shift+F3(이전 검색 결과)가 \u0027다음\u0027으로 가던 문제 수정\nv0.4.16\n- 구버전 안드로이드 / ADB 에서 화면 공유가 안 되던 문제 수정 (받는 방법 자동 전환)\nv0.4.15\n- 연결이 끊긴 기기의 로그 탭에서 [시작]을 누르면 화면이 멈추던 문제 수정",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.4.18",
     "history":  [
+                    {
+                        "version":  "0.4.17",
+                        "published":  "2026-11-19",
+                        "summary":  [
+                                        "필터 [초기화] 옆 ▼ 메뉴로 항목별 초기화 (레벨·포함·제외·태그·PID·앱·정규식/대소문자·하이라이트) + 전체",
+                                        "Shift+F2(이전 북마크)·Shift+F3(이전 검색 결과)가 \u0027다음\u0027으로 가던 문제 수정"
+                                    ]
+                    },
                     {
                         "version":  "0.4.16",
                         "published":  "2026-11-18",
@@ -78,30 +85,23 @@
                                         "왼쪽 [시리얼] 탭 추가: 시리얼 포트 로그 받기 + 보내기",
                                         "미리 입력해 둔 내용을 버튼 하나로 보내기"
                                     ]
-                    },
-                    {
-                        "version":  "0.4.7",
-                        "published":  "2026-11-15",
-                        "summary":  [
-                                        "PID / TID 로 거를 때 번호마다 다른 글자색"
-                                    ]
                     }
                 ],
     "installer":  {
-                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.17/CCLogcat-Setup-0.4.17.exe",
-                      "sha256":  "31005fab74d935a13f3dd4dbcc27ec622dda31db8945f0c1e02521bfaf27daf4",
-                      "size":  6724293
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.18/CCLogcat-Setup-0.4.18.exe",
+                      "sha256":  "49723aab4f4e3e9027258bde7508ea40e177c2b630025a2dea46ef73531ad1ba",
+                      "size":  6723990
                   },
     "installers":  {
                        "windows-x64":  {
-                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.17/CCLogcat-Setup-0.4.17.exe",
-                                           "sha256":  "31005fab74d935a13f3dd4dbcc27ec622dda31db8945f0c1e02521bfaf27daf4",
-                                           "size":  6724293
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.18/CCLogcat-Setup-0.4.18.exe",
+                                           "sha256":  "49723aab4f4e3e9027258bde7508ea40e177c2b630025a2dea46ef73531ad1ba",
+                                           "size":  6723990
                                        },
                        "linux-x64":  {
-                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.17/cclogcat_0.4.17_amd64.deb",
-                                         "sha256":  "973b8e923bbb0861324bda765eebd678ad7e26afebe791d232552eb73343007b",
-                                         "size":  5325648
+                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.18/cclogcat_0.4.18_amd64.deb",
+                                         "sha256":  "73ce813e7dc1d5277121ebdbe188c02416c782046e715e7cf09c58c682090354",
+                                         "size":  5325968
                                      }
                    }
 }
