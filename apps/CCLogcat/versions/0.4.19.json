@@ -1,0 +1,106 @@
+{
+    "schema":  1,
+    "app":  "CCLogcat",
+    "version":  "0.4.19",
+    "tag":  "CCLogcat-v0.4.19",
+    "published":  "2026-11-20",
+    "summary":  [
+                    "창 폭을 줄일 때 툴바 버튼(예: [초기화])이 글자 단위로 줄바꿈되며 위쪽 툴바가 비정상적으로 커지던 문제 수정"
+                ],
+    "notes":  "### 요약\n- 창 폭을 줄일 때 툴바 버튼(예: [초기화])이 글자 단위로 줄바꿈되며 위쪽 툴바가 비정상적으로 커지던 문제 수정\n\n### Fixed\n- 툴바 줄바꿈: 폭이 모자라면 버튼 안의 글자를 쪼개 세로로 늘어나던 것을, 버튼 단위로 다음 줄로 넘기도록 (로그 탭 툴바·필터 줄, 프로세스 모니터, 화면 공유, 왼쪽 패널)\n- 필터 줄의 입력 칸(포함·제외·태그·PID·앱)이 남은 폭에 맞춰 찌그러지던 것: 라벨+칸이 안 들어가면 함께 다음 줄로\n\n### 이전 버전 요약\nv0.4.18\n- 프로세스 모니터: 기기 연결이 끊겨도 그래프는 계속 흘러가고, 다시 연결되면 자동으로 이어서 수집\nv0.4.17\n- 필터 [초기화] 옆 ▼ 메뉴로 항목별 초기화 (레벨·포함·제외·태그·PID·앱·정규식/대소문자·하이라이트) + 전체\n- Shift+F2(이전 북마크)·Shift+F3(이전 검색 결과)가 \u0027다음\u0027으로 가던 문제 수정\nv0.4.16\n- 구버전 안드로이드 / ADB 에서 화면 공유가 안 되던 문제 수정 (받는 방법 자동 전환)",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.4.19",
+    "history":  [
+                    {
+                        "version":  "0.4.18",
+                        "published":  "2026-11-19",
+                        "summary":  [
+                                        "프로세스 모니터: 기기 연결이 끊겨도 그래프는 계속 흘러가고, 다시 연결되면 자동으로 이어서 수집"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.17",
+                        "published":  "2026-11-19",
+                        "summary":  [
+                                        "필터 [초기화] 옆 ▼ 메뉴로 항목별 초기화 (레벨·포함·제외·태그·PID·앱·정규식/대소문자·하이라이트) + 전체",
+                                        "Shift+F2(이전 북마크)·Shift+F3(이전 검색 결과)가 \u0027다음\u0027으로 가던 문제 수정"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.16",
+                        "published":  "2026-11-18",
+                        "summary":  [
+                                        "구버전 안드로이드 / ADB 에서 화면 공유가 안 되던 문제 수정 (받는 방법 자동 전환)"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.15",
+                        "published":  "2026-11-17",
+                        "summary":  [
+                                        "연결이 끊긴 기기의 로그 탭에서 [시작]을 누르면 화면이 멈추던 문제 수정"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.14",
+                        "published":  "2026-11-17",
+                        "summary":  [
+                                        "프로세스 모니터에 프로세스별 GPU 사용률(GPU%) 추가"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.13",
+                        "published":  "2026-11-16",
+                        "summary":  [
+                                        "줄 우클릭에 \"하이라이트 해제\" 추가"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.12",
+                        "published":  "2026-11-16",
+                        "summary":  [
+                                        "하이라이트가 PID · TID 칸에도 적용 (우클릭 \u003e 하이라이트 추가 \u003e PID / TID)",
+                                        "PID/TID 필터 시 번호별 글자색 기능 제거",
+                                        "사용자 설명서(PDF) 제공"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.11",
+                        "published":  "2026-11-16",
+                        "summary":  [
+                                        "구버전 안드로이드에서 \"Invalid parameter to -v\" 로 연결이 붙었다 떨어지던 문제 수정 (자동 호환)"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.10",
+                        "published":  "2026-11-16",
+                        "summary":  [
+                                        "오른쪽 위치 막대(전체 스크롤)가 잘 보이도록 바탕색·손잡이 강조"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.9",
+                        "published":  "2026-11-16",
+                        "summary":  [
+                                        "시리얼을 로그 탭이 아닌 왼쪽 [시리얼] 탭 안에서만 사용 (ADB 명령 탭과 같은 방식)",
+                                        "미리 입력 목록은 비어서 시작 (사용자가 추가한 것만 저장·유지)",
+                                        "왼쪽 아이콘 순서 변경"
+                                    ]
+                    }
+                ],
+    "installer":  {
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.19/CCLogcat-Setup-0.4.19.exe",
+                      "sha256":  "9ce7262dbb341d0b781d98194a0a558d7166fcf21a2d9a5dd98e71d795d030d6",
+                      "size":  6723695
+                  },
+    "installers":  {
+                       "windows-x64":  {
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.19/CCLogcat-Setup-0.4.19.exe",
+                                           "sha256":  "9ce7262dbb341d0b781d98194a0a558d7166fcf21a2d9a5dd98e71d795d030d6",
+                                           "size":  6723695
+                                       },
+                       "linux-x64":  {
+                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.19/cclogcat_0.4.19_amd64.deb",
+                                         "sha256":  "0f8f09c7143668efa2da363c6265ea9e8a5ca067ff02a5bb050836d06d45b043",
+                                         "size":  5329676
+                                     }
+                   }
+}
