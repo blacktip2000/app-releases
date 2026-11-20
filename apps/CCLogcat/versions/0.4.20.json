@@ -1,0 +1,106 @@
+{
+    "schema":  1,
+    "app":  "CCLogcat",
+    "version":  "0.4.20",
+    "tag":  "CCLogcat-v0.4.20",
+    "published":  "2026-11-20",
+    "summary":  [
+                    "프로세스 모니터: 찾기 칸에서 여러 이름을 a|b 로 (다른 필터 칸과 같은 규칙)",
+                    "그래프에 고른 프로세스를 이름으로 추적: 기기를 껐다 켜서 PID 가 바뀌어도 같은 선으로 이어서 그림",
+                    "화면 고정이 그래프에도 적용: 고정한 순간 그대로 멈추고, 풀면 그동안 흐른 시간만큼 지나간 지금 시점으로"
+                ],
+    "notes":  "### 요약\n- 프로세스 모니터: 찾기 칸에서 여러 이름을 a|b 로 (다른 필터 칸과 같은 규칙)\n- 그래프에 고른 프로세스를 이름으로 추적: 기기를 껐다 켜서 PID 가 바뀌어도 같은 선으로 이어서 그림\n- 화면 고정이 그래프에도 적용: 고정한 순간 그대로 멈추고, 풀면 그동안 흐른 시간만큼 지나간 지금 시점으로\n\n### Changed\n- 찾기 칸: a|b = 또는, * ? 와일드카드, !a = 제외, 대소문자 무시. 이름 또는 PID 에서 찾음 (예: com.example|surfaceflinger|!:remote)\n- 그래프 추적: 표에서 줄을 클릭해 고르면 PID 가 아니라 프로세스 이름으로 기억\n  - 재부팅·앱 재시작으로 PID 가 바뀌어도 같은 선으로 이어짐 (끊긴 구간은 빈칸)\n  - 지금 실행 중이 아니면 범례에 (없음), 다시 실행되면 이어서 그림 (고른 것은 직접 뺄 때까지 유지)\n  - 같은 이름 프로세스가 동시에 여럿이면 CPU·메모리는 합 ((N개 합) 표시)\n  - 자동(CPU 상위 5개)도 이름 기준\n- 화면 고정: 표뿐 아니라 그래프·전체 사용률·요약도 고정 (수집은 계속). 풀면 지금 시점으로 돌아감\n\n### 이전 버전 요약\nv0.4.19\n- 창 폭을 줄일 때 툴바 버튼(예: [초기화])이 글자 단위로 줄바꿈되며 위쪽 툴바가 비정상적으로 커지던 문제 수정\nv0.4.18\n- 프로세스 모니터: 기기 연결이 끊겨도 그래프는 계속 흘러가고, 다시 연결되면 자동으로 이어서 수집\nv0.4.17\n- 필터 [초기화] 옆 ▼ 메뉴로 항목별 초기화 (레벨·포함·제외·태그·PID·앱·정규식/대소문자·하이라이트) + 전체\n- Shift+F2(이전 북마크)·Shift+F3(이전 검색 결과)가 \u0027다음\u0027으로 가던 문제 수정",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.4.20",
+    "history":  [
+                    {
+                        "version":  "0.4.19",
+                        "published":  "2026-11-20",
+                        "summary":  [
+                                        "창 폭을 줄일 때 툴바 버튼(예: [초기화])이 글자 단위로 줄바꿈되며 위쪽 툴바가 비정상적으로 커지던 문제 수정"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.18",
+                        "published":  "2026-11-19",
+                        "summary":  [
+                                        "프로세스 모니터: 기기 연결이 끊겨도 그래프는 계속 흘러가고, 다시 연결되면 자동으로 이어서 수집"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.17",
+                        "published":  "2026-11-19",
+                        "summary":  [
+                                        "필터 [초기화] 옆 ▼ 메뉴로 항목별 초기화 (레벨·포함·제외·태그·PID·앱·정규식/대소문자·하이라이트) + 전체",
+                                        "Shift+F2(이전 북마크)·Shift+F3(이전 검색 결과)가 \u0027다음\u0027으로 가던 문제 수정"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.16",
+                        "published":  "2026-11-18",
+                        "summary":  [
+                                        "구버전 안드로이드 / ADB 에서 화면 공유가 안 되던 문제 수정 (받는 방법 자동 전환)"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.15",
+                        "published":  "2026-11-17",
+                        "summary":  [
+                                        "연결이 끊긴 기기의 로그 탭에서 [시작]을 누르면 화면이 멈추던 문제 수정"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.14",
+                        "published":  "2026-11-17",
+                        "summary":  [
+                                        "프로세스 모니터에 프로세스별 GPU 사용률(GPU%) 추가"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.13",
+                        "published":  "2026-11-16",
+                        "summary":  [
+                                        "줄 우클릭에 \"하이라이트 해제\" 추가"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.12",
+                        "published":  "2026-11-16",
+                        "summary":  [
+                                        "하이라이트가 PID · TID 칸에도 적용 (우클릭 \u003e 하이라이트 추가 \u003e PID / TID)",
+                                        "PID/TID 필터 시 번호별 글자색 기능 제거",
+                                        "사용자 설명서(PDF) 제공"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.11",
+                        "published":  "2026-11-16",
+                        "summary":  [
+                                        "구버전 안드로이드에서 \"Invalid parameter to -v\" 로 연결이 붙었다 떨어지던 문제 수정 (자동 호환)"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.10",
+                        "published":  "2026-11-16",
+                        "summary":  [
+                                        "오른쪽 위치 막대(전체 스크롤)가 잘 보이도록 바탕색·손잡이 강조"
+                                    ]
+                    }
+                ],
+    "installer":  {
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.20/CCLogcat-Setup-0.4.20.exe",
+                      "sha256":  "ad41ba24f2a3c397962a4e8b6a212e7da18f6f2cb41b414fe1e001e3ea2e0f19",
+                      "size":  6731777
+                  },
+    "installers":  {
+                       "windows-x64":  {
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.20/CCLogcat-Setup-0.4.20.exe",
+                                           "sha256":  "ad41ba24f2a3c397962a4e8b6a212e7da18f6f2cb41b414fe1e001e3ea2e0f19",
+                                           "size":  6731777
+                                       },
+                       "linux-x64":  {
+                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.4.20/cclogcat_0.4.20_amd64.deb",
+                                         "sha256":  "dec8d7f6ac58d8c9d16b96ef67315358969774b2b6c71814b20df1283ba7ed28",
+                                         "size":  5336160
+                                     }
+                   }
+}
