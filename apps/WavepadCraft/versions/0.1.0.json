@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "app": "WavepadCraft",
+  "version": "0.1.0",
+  "tag": "WavepadCraft-v0.1.0",
+  "published": "2026-11-23",
+  "summary": [
+    "WavepadCraft 첫 릴리스: 오디오 녹음·편집·효과·변환",
+    "WAV/MP3/FLAC/OGG 열기, WAV/FLAC/OGG 저장, 일괄 변환",
+    "효과 20여 종 + 노이즈 감소, 미리 듣기",
+    "자동 업데이트(app-releases)"
+  ],
+  "notes": "### 요약\n- WavepadCraft 첫 릴리스: 오디오 녹음·편집·효과·변환\n- WAV/MP3/FLAC/OGG 열기, WAV/FLAC/OGG 저장, 일괄 변환\n- 효과 20여 종 + 노이즈 감소, 미리 듣기\n- 자동 업데이트(app-releases)\n\n### Added\n- 파일: WAV · MP3 · FLAC · OGG 열기, WAV(16/24/32f) · FLAC(16/24) · OGG 저장, 여러 탭, 끌어다 놓기, 최근 파일, 선택 영역 저장, 마커 기준 분할 저장\n- 편집: 잘라내기 · 복사 · 붙여넣기 · 믹스 붙여넣기 · 삭제 · 자르기 · 무음 삽입, 실행 취소/다시 실행, 마커\n- 효과: 증폭 · 정규화 · 페이드 · 컴프레서 · 노이즈 게이트 · 10밴드 EQ · 필터 · 에코 · 리버브 · 코러스 · 플랜저 · 디스토션 · 트레몰로 · 역방향 · 속도/템포/음높이 변경\n- 정리: 노이즈 프로필 기반 노이즈 감소 · 앞뒤 무음 자르기 · 샘플 레이트/채널 변환\n- 생성: 톤 · 노이즈 · DTMF · 무음\n- 재생/녹음: 선택/반복 재생, 레벨 미터, 입력 장치 선택 녹음\n- 도구: 주파수 분석 · 음량 분석 · 일괄 변환\n- 앱: 한국어/영어, 다크/라이트, 자동 업데이트, 크래시 덤프, 진단 로그",
+  "notesUrl": "https://github.com/blacktip2000/app-releases/releases/tag/WavepadCraft-v0.1.0",
+  "history": [],
+  "installer": {
+    "url": "https://github.com/blacktip2000/app-releases/releases/download/WavepadCraft-v0.1.0/WavepadCraft-Setup-0.1.0.exe",
+    "sha256": "40c60a221c00bf39a7249caafe0792546607562dde25c33b41c84e3d55173f9f",
+    "size": 3214949
+  },
+  "installers": {
+    "windows-x64": {
+      "url": "https://github.com/blacktip2000/app-releases/releases/download/WavepadCraft-v0.1.0/WavepadCraft-Setup-0.1.0.exe",
+      "sha256": "40c60a221c00bf39a7249caafe0792546607562dde25c33b41c84e3d55173f9f",
+      "size": 3214949
+    }
+  }
+}
