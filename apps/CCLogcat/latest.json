@@ -1,16 +1,23 @@
 {
     "schema":  1,
     "app":  "CCLogcat",
-    "version":  "0.5.1",
-    "tag":  "CCLogcat-v0.5.1",
+    "version":  "0.5.2",
+    "tag":  "CCLogcat-v0.5.2",
     "published":  "2026-11-23",
     "summary":  [
-                    "포함·제외 칸에 필드 지정 tag: · msg: — tag:EXT_CAMERA | msg:property 처럼 태그 또는 메시지로 거르기 (Android Studio logcat 과 같은 감각)",
-                    "파일 \u003e 최근 파일 (최근 10개)"
+                    "최근 파일: 여러 파일을 한 번에 열었으면 묶음 하나로 (a.log 외 2개 → 누르면 다시 합쳐서 열기)"
                 ],
-    "notes":  "### 요약\n- 포함·제외 칸에 필드 지정 tag: · msg: — tag:EXT_CAMERA | msg:property 처럼 태그 또는 메시지로 거르기 (Android Studio logcat 과 같은 감각)\n- 파일 \u003e 최근 파일 (최근 10개)\n\n### Added\n- 필드 지정 (포함·제외 칸)\n  - tag:X = 태그에서, msg:X(message:X) = 메시지에서만 찾음. * ? 와일드카드, 대소문자 옵션 그대로\n  - 포함 칸의 항목끼리는 또는: tag:EXT_CAMERA | msg:property → 태그가 EXT_CAMERA 이거나 메시지에 property\n  - 접두어 없는 항목과 섞어도 또는: tag:BtManager | FATAL\n  - 제외: !tag:chatty (포함 칸) 또는 제외 칸에 tag:chatty | msg:heartbeat\n  - 태그 칸 · PID 칸 · 레벨과는 지금처럼 그리고\n  - 접두어 없는 입력은 예전과 똑같이 동작 (빠른 검색 경로 그대로), 정규식(.*) 모드에서는 접두어를 해석하지 않음\n  - 줄 우클릭 \u003e 포함 칸에 tag:X 추가 (또는)\n- 최근 파일: 파일 \u003e 최근 파일 — 최근에 연 파일 10개 (이름 · 폴더), 없는 파일은 흐리게, [목록 지우기]\n\n### 이전 버전 요약\nv0.5.0\n- AI 로그 분석 정식 포함: 로그 탭 [AI 분석] 에 현상·재현 방법을 적으면 AI 가 로그를 검색해 원인·결과를 추정하고, 메모와 프리셋(하이라이트 포함)을 만들어 보여 줌\n- 메모·프리셋에 [AI 추정 NN%] 로 확신도 표시, 분석 히스토리, 메모 클립보드 복사\n- 북마크·메모 목록에서 필터에 가려진 줄을 눌러도 그 줄로 이동\nv0.4.22\n- 필터 줄 [초기화] 를 콤보박스로: 눌러서 어떤 초기화를 할지 고름 (옆의 ▼ 버튼 없앰)\nv0.4.21\n- 라이선스 정리: CCLogcat 라이선스(프리웨어, © blacktip) + 사용한 오픈소스 전체의 저작권 표시·라이선스 전문 고지\n- 앱 [정보] 탭 · 도구 메뉴에 [라이선스 · 오픈소스 고지]",
-    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.5.1",
+    "notes":  "### 요약\n- 최근 파일: 여러 파일을 한 번에 열었으면 묶음 하나로 (a.log 외 2개 → 누르면 다시 합쳐서 열기)\n\n### Changed\n- 최근 파일 묶음: 한 번에 연 파일들은 한 항목으로 기억 (최대 10개 항목)\n  - 메뉴에 a.log 외 2개 로 표시, 마우스를 올리면 모든 경로\n  - 누르면 시간순으로 다시 합쳐서 열기. 일부 파일이 없으면 남은 파일만 열고, 모두 없으면 흐리게\n  - 예전 목록(파일 하나씩)은 그대로 읽힘\n- 배포: 이번 버전부터 GitHub Actions 대신 개발 PC 에서 빌드해 배포 (설치 파일·zip·deb 내용은 같음)\n\n### 이전 버전 요약\nv0.5.1\n- 포함·제외 칸에 필드 지정 tag: · msg: — tag:EXT_CAMERA | msg:property 처럼 태그 또는 메시지로 거르기 (Android Studio logcat 과 같은 감각)\n- 파일 \u003e 최근 파일 (최근 10개)\nv0.5.0\n- AI 로그 분석 정식 포함: 로그 탭 [AI 분석] 에 현상·재현 방법을 적으면 AI 가 로그를 검색해 원인·결과를 추정하고, 메모와 프리셋(하이라이트 포함)을 만들어 보여 줌\n- 메모·프리셋에 [AI 추정 NN%] 로 확신도 표시, 분석 히스토리, 메모 클립보드 복사\n- 북마크·메모 목록에서 필터에 가려진 줄을 눌러도 그 줄로 이동\nv0.4.22\n- 필터 줄 [초기화] 를 콤보박스로: 눌러서 어떤 초기화를 할지 고름 (옆의 ▼ 버튼 없앰)",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.5.2",
     "history":  [
+                    {
+                        "version":  "0.5.1",
+                        "published":  "2026-11-23",
+                        "summary":  [
+                                        "포함·제외 칸에 필드 지정 tag: · msg: — tag:EXT_CAMERA | msg:property 처럼 태그 또는 메시지로 거르기 (Android Studio logcat 과 같은 감각)",
+                                        "파일 \u003e 최근 파일 (최근 10개)"
+                                    ]
+                    },
                     {
                         "version":  "0.5.0",
                         "published":  "2026-11-23",
@@ -79,30 +86,23 @@
                         "summary":  [
                                         "연결이 끊긴 기기의 로그 탭에서 [시작]을 누르면 화면이 멈추던 문제 수정"
                                     ]
-                    },
-                    {
-                        "version":  "0.4.14",
-                        "published":  "2026-11-17",
-                        "summary":  [
-                                        "프로세스 모니터에 프로세스별 GPU 사용률(GPU%) 추가"
-                                    ]
                     }
                 ],
     "installer":  {
-                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.5.1/CCLogcat-Setup-0.5.1.exe",
-                      "sha256":  "39062e4276cbea74160f570052737d75347ddb26115a887de623677bb03b49e8",
-                      "size":  6934081
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.5.2/CCLogcat-Setup-0.5.2.exe",
+                      "sha256":  "b99074cedff7748708d78efc44e9902d2081121292846f93510e191b1fb57d6f",
+                      "size":  6941338
                   },
     "installers":  {
                        "windows-x64":  {
-                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.5.1/CCLogcat-Setup-0.5.1.exe",
-                                           "sha256":  "39062e4276cbea74160f570052737d75347ddb26115a887de623677bb03b49e8",
-                                           "size":  6934081
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.5.2/CCLogcat-Setup-0.5.2.exe",
+                                           "sha256":  "b99074cedff7748708d78efc44e9902d2081121292846f93510e191b1fb57d6f",
+                                           "size":  6941338
                                        },
                        "linux-x64":  {
-                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.5.1/cclogcat_0.5.1_amd64.deb",
-                                         "sha256":  "f99817f80bdd899dd31c8c27e4bbc4eba9306be14a0a217d9d6e146087a04a95",
-                                         "size":  5559460
+                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.5.2/cclogcat_0.5.2_amd64.deb",
+                                         "sha256":  "b1e40cc1fbe9829f696fb811503fb48e3425e20da2d6401fb23e68674988b6e9",
+                                         "size":  5567544
                                      }
                    }
 }
