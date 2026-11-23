@@ -1,0 +1,120 @@
+{
+    "schema":  1,
+    "app":  "CCCAN",
+    "version":  "0.6.2",
+    "tag":  "CCCAN-v0.6.2",
+    "published":  "2026-11-23",
+    "summary":  [
+                    "온라인 Tx 리스트에 [페이지 열기(편집)] 버튼: 웹 브라우저로 Docmost 편집 페이지를 바로 열기",
+                    "Tx 리스트(파일/온라인) 반복 주기 기본값을 CANDB 메시지 이름 끝(AAA_10ms)에서 가져옴, 없으면 100ms"
+                ],
+    "notes":  "### 요약\n- 온라인 Tx 리스트에 [페이지 열기(편집)] 버튼: 웹 브라우저로 Docmost 편집 페이지를 바로 열기\n- Tx 리스트(파일/온라인) 반복 주기 기본값을 CANDB 메시지 이름 끝(AAA_10ms)에서 가져옴, 없으면 100ms\n\n### Added\n- [페이지 열기(편집)](온라인 리스트 도구줄): 공유 주소의 /share/ → /s/ 로 바꾼 주소를 기본 브라우저로 엽니다(로그인 필요). 항목을 추가·수정한 뒤 [새로고침].\n- 반복 주기 자동: 직접 바꾼 값 \u003e 파일의 repeat 주기 \u003e CANDB 에서 같은 ID 메시지 이름 끝 표기(_10ms, 100MS, _1s) \u003e 100ms.\n  - 주기 칸에 마우스를 올리면 어디서 정했는지 표시\n  - 행 우클릭 [주기 되돌리기]로 직접 바꾼 값을 지움\n\n### 이전 버전 요약\nv0.6.1\n- V2 펌웨어 업데이트를 앱에서 직접: BOOT0 를 누른 채 꽂고 [장치 찾기] → [업데이트 시작] (STM32CubeProgrammer 없이)\n- Windows 는 DFU 장치에 WinUSB 드라이버 1회 설치 필요(Zadig 안내), Linux 는 udev 규칙 포함\nv0.6.0\n- 장치 펌웨어 업데이트 기능: V1 은 앱에서 바로(공식 저장소에서 최신 받기 → 부트로더 → 전송 → 버전 확인)\n- V2 는 공식 .hex 받기 + BOOT0/DFU 안내 + STM32CubeProgrammer 실행 연동\nv0.5.4\n- 구버전 V1 펌웨어(V1.0.0.3 등)에서도 연결: 지원하지 않는 명령은 건너뛰고 호환 모드(ASCII)로 연결\n- 연결 시 펌웨어가 오래되면 업데이트 권장 안내 창(제한 사항 + 업데이트 방법 열기)",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCCAN-v0.6.2",
+    "history":  [
+                    {
+                        "version":  "0.6.1",
+                        "published":  "2026-11-18",
+                        "summary":  [
+                                        "V2 펌웨어 업데이트를 앱에서 직접: BOOT0 를 누른 채 꽂고 [장치 찾기] → [업데이트 시작] (STM32CubeProgrammer 없이)",
+                                        "Windows 는 DFU 장치에 WinUSB 드라이버 1회 설치 필요(Zadig 안내), Linux 는 udev 규칙 포함"
+                                    ]
+                    },
+                    {
+                        "version":  "0.6.0",
+                        "published":  "2026-11-17",
+                        "summary":  [
+                                        "장치 펌웨어 업데이트 기능: V1 은 앱에서 바로(공식 저장소에서 최신 받기 → 부트로더 → 전송 → 버전 확인)",
+                                        "V2 는 공식 .hex 받기 + BOOT0/DFU 안내 + STM32CubeProgrammer 실행 연동"
+                                    ]
+                    },
+                    {
+                        "version":  "0.5.4",
+                        "published":  "2026-11-17",
+                        "summary":  [
+                                        "구버전 V1 펌웨어(V1.0.0.3 등)에서도 연결: 지원하지 않는 명령은 건너뛰고 호환 모드(ASCII)로 연결",
+                                        "연결 시 펌웨어가 오래되면 업데이트 권장 안내 창(제한 사항 + 업데이트 방법 열기)"
+                                    ]
+                    },
+                    {
+                        "version":  "0.5.3",
+                        "published":  "2026-11-16",
+                        "summary":  [
+                                        "CANDB(DBC) 파일별 [사용] 체크: 등록은 유지한 채 끄고 켜기(ID 충돌 시 필요 없는 DBC만 제외)",
+                                        "DBC 충돌 열/목록(어느 파일의 어떤 ID와 겹쳤는지), 우선순위 [아래로] 추가"
+                                    ]
+                    },
+                    {
+                        "version":  "0.5.2",
+                        "published":  "2026-11-13",
+                        "summary":  [
+                                        "Tx 리스트(파일)에 그룹 기능 추가(온라인 리스트처럼 접기/펼치기, 그룹으로 이동·이름 바꾸기·순서 변경)",
+                                        "앱 시작 시 아래 영역은 Tx 탭이 선택된 상태로 시작"
+                                    ]
+                    },
+                    {
+                        "version":  "0.5.1",
+                        "published":  "2026-11-09",
+                        "summary":  [
+                                        "Linux 판이 Ubuntu 20.04 / Debian 11 / Raspberry Pi OS bullseye(64bit)에서도 설치·실행",
+                                        "사용자 설명서(PDF) 배포: CCCAN-UserManual-0.5.1.pdf"
+                                    ]
+                    },
+                    {
+                        "version":  "0.5.0",
+                        "published":  "2026-11-07",
+                        "summary":  [
+                                        "Linux 판 추가(x64 PC / arm64 라즈베리파이, .deb 설치형, 자동 업데이트 포함)",
+                                        "Tx 반복 시작 시 같은 MsgID를 반복 중인 다른 행(모든 탭·직접 입력)을 자동 정지"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.2",
+                        "published":  "2026-11-05",
+                        "summary":  [
+                                        "온라인 Tx 리스트에 시퀀스 지원(페이지의 \"동작 / 대상 / 값\" 표)",
+                                        "Tx 항목 편집 창의 ImGui ID 충돌 경고 수정"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.1",
+                        "published":  "2026-11-04",
+                        "summary":  [
+                                        "업데이트 알림에 변경 사항 요약 표시(건너뛴 버전 포함)",
+                                        "전체 릴리스 노트는 접어서 보기"
+                                    ]
+                    },
+                    {
+                        "version":  "0.4.0",
+                        "published":  "2026-11-04",
+                        "summary":  [
+                                        "Tx 탭 재구성: 직접 입력 / 파일 리스트 / 온라인 리스트 + [+]로 탭 추가",
+                                        "직접 입력 Repeat, 리스트 행마다 [1회]/[반복] + 주기",
+                                        "CANDB 시그널로 Tx 메시지 만들기(값 선택 → Data 자동 구성)",
+                                        "온라인 Tx 리스트(Docmost 페이지 표, 캐시)",
+                                        "라이트 테마 가독성 개선"
+                                    ]
+                    }
+                ],
+    "installer":  {
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.6.2/CCCAN-Setup-0.6.2.exe",
+                      "sha256":  "1e03ae81e17bdb87fbe9d8ece0da0d0683e005c2d2c1b5a1ad72a7e202f4ff6f",
+                      "size":  3297726
+                  },
+    "installers":  {
+                       "windows-x64":  {
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.6.2/CCCAN-Setup-0.6.2.exe",
+                                           "sha256":  "1e03ae81e17bdb87fbe9d8ece0da0d0683e005c2d2c1b5a1ad72a7e202f4ff6f",
+                                           "size":  3297726
+                                       },
+                       "linux-x64":  {
+                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.6.2/cccan_0.6.2_amd64.deb",
+                                         "sha256":  "3d116cb1f761a692ad6034bcece95a70950630145ccf5735b1a983a4cbb3811f",
+                                         "size":  3624920
+                                     },
+                       "linux-arm64":  {
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCCAN-v0.6.2/cccan_0.6.2_arm64.deb",
+                                           "sha256":  "be2e8366b1a6e9ea86eea51ff3a0be6b32896e9d558173c17cee4e7242a94f44",
+                                           "size":  3349746
+                                       }
+                   }
+}
