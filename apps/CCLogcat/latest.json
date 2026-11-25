@@ -1,15 +1,22 @@
 {
     "schema":  1,
     "app":  "CCLogcat",
-    "version":  "0.5.3",
-    "tag":  "CCLogcat-v0.5.3",
-    "published":  "2026-11-23",
+    "version":  "0.5.4",
+    "tag":  "CCLogcat-v0.5.4",
+    "published":  "2026-11-25",
     "summary":  [
-                    "프로세스 모니터: 줄 우클릭 \u003e 프로세스 강제 종료 (kill -9) · 앱 강제 중지 (am force-stop)"
+                    "(Windows) 시리얼 포트를 닫은 뒤 다시 열 수 없던 문제 수정 — adb.exe 가 COM 포트를 잡고 있던 현상"
                 ],
-    "notes":  "### 요약\n- 프로세스 모니터: 줄 우클릭 \u003e 프로세스 강제 종료 (kill -9) · 앱 강제 중지 (am force-stop)\n\n### Added\n- 프로세스 강제 종료: 줄 우클릭 \u003e 프로세스 강제 종료 (kill -9 PID) → 확인 창 → 종료\n  - 셸 권한으로 안 되는 프로세스(다른 사용자·시스템)는 su 로 한 번 더 시도 (root 기기 / adb root)\n  - 결과를 창 위쪽에 표시 (종료함 / root 로 종료함 / 이미 종료됨 / 권한 없음)\n- 앱 강제 중지: 앱 프로세스는 앱 강제 중지 (am force-stop 패키지) 도 표시 — 설정 \u003e 앱 \u003e 강제 중지 와 같음, root 불필요, 앱의 모든 프로세스 종료\n- 실수 방지를 위해 항상 확인 창 (Esc = 취소)\n\n### 이전 버전 요약\nv0.5.2\n- 최근 파일: 여러 파일을 한 번에 열었으면 묶음 하나로 (a.log 외 2개 → 누르면 다시 합쳐서 열기)\nv0.5.1\n- 포함·제외 칸에 필드 지정 tag: · msg: — tag:EXT_CAMERA | msg:property 처럼 태그 또는 메시지로 거르기 (Android Studio logcat 과 같은 감각)\n- 파일 \u003e 최근 파일 (최근 10개)\nv0.5.0\n- AI 로그 분석 정식 포함: 로그 탭 [AI 분석] 에 현상·재현 방법을 적으면 AI 가 로그를 검색해 원인·결과를 추정하고, 메모와 프리셋(하이라이트 포함)을 만들어 보여 줌\n- 메모·프리셋에 [AI 추정 NN%] 로 확신도 표시, 분석 히스토리, 메모 클립보드 복사\n- 북마크·메모 목록에서 필터에 가려진 줄을 눌러도 그 줄로 이동",
-    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.5.3",
+    "notes":  "### 요약\n- (Windows) 시리얼 포트를 닫은 뒤 다시 열 수 없던 문제 수정 — adb.exe 가 COM 포트를 잡고 있던 현상\n\n### Fixed\n- COM 포트 점유 (Windows): 포트를 읽기/쓰기용으로 복제할 때 serialport 라이브러리가 \"자식 프로세스에 상속 가능\" 핸들을 만들어서,\n  포트가 열린 동안 CCLogcat 이 띄운 adb.exe(로그 수신, 기기 감시, 프로세스 모니터, 특히 새로 시작된 adb 서버)가 COM 포트 핸들을 물려받았음.\n  UI 에서 닫아도 그 adb.exe 가 살아 있는 동안 포트가 열린 상태로 남아 다시 열 수 없었음 (포트가 열린 뒤 adb 를 새로 띄운 경우에만 생겨 가끔 재현)\n  - 포트 핸들(원본·복제본)을 상속 안 되게 설정 → adb 등 다른 프로세스로 넘어가지 않음\n  - 이미 이 상태라면: 작업 관리자에서 해당 adb.exe 종료 또는 adb kill-server 후 업데이트\n- Linux 는 원래 영향 없음 (O_CLOEXEC)\n\n### 이전 버전 요약\nv0.5.3\n- 프로세스 모니터: 줄 우클릭 \u003e 프로세스 강제 종료 (kill -9) · 앱 강제 중지 (am force-stop)\nv0.5.2\n- 최근 파일: 여러 파일을 한 번에 열었으면 묶음 하나로 (a.log 외 2개 → 누르면 다시 합쳐서 열기)\nv0.5.1\n- 포함·제외 칸에 필드 지정 tag: · msg: — tag:EXT_CAMERA | msg:property 처럼 태그 또는 메시지로 거르기 (Android Studio logcat 과 같은 감각)\n- 파일 \u003e 최근 파일 (최근 10개)",
+    "notesUrl":  "https://github.com/blacktip2000/app-releases/releases/tag/CCLogcat-v0.5.4",
     "history":  [
+                    {
+                        "version":  "0.5.3",
+                        "published":  "2026-11-23",
+                        "summary":  [
+                                        "프로세스 모니터: 줄 우클릭 \u003e 프로세스 강제 종료 (kill -9) · 앱 강제 중지 (am force-stop)"
+                                    ]
+                    },
                     {
                         "version":  "0.5.2",
                         "published":  "2026-11-23",
@@ -79,30 +86,23 @@
                                         "필터 [초기화] 옆 ▼ 메뉴로 항목별 초기화 (레벨·포함·제외·태그·PID·앱·정규식/대소문자·하이라이트) + 전체",
                                         "Shift+F2(이전 북마크)·Shift+F3(이전 검색 결과)가 \u0027다음\u0027으로 가던 문제 수정"
                                     ]
-                    },
-                    {
-                        "version":  "0.4.16",
-                        "published":  "2026-11-18",
-                        "summary":  [
-                                        "구버전 안드로이드 / ADB 에서 화면 공유가 안 되던 문제 수정 (받는 방법 자동 전환)"
-                                    ]
                     }
                 ],
     "installer":  {
-                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.5.3/CCLogcat-Setup-0.5.3.exe",
-                      "sha256":  "5dbe6c90de2d7d87670d037f81e993a801c84cacc75787182e95913d56b2a5b9",
-                      "size":  6948144
+                      "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.5.4/CCLogcat-Setup-0.5.4.exe",
+                      "sha256":  "b7039e9db2e5ddd89c01efe6a005e68e2b528630f73b16681d3ae9c672fcd5a0",
+                      "size":  6939728
                   },
     "installers":  {
                        "windows-x64":  {
-                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.5.3/CCLogcat-Setup-0.5.3.exe",
-                                           "sha256":  "5dbe6c90de2d7d87670d037f81e993a801c84cacc75787182e95913d56b2a5b9",
-                                           "size":  6948144
+                                           "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.5.4/CCLogcat-Setup-0.5.4.exe",
+                                           "sha256":  "b7039e9db2e5ddd89c01efe6a005e68e2b528630f73b16681d3ae9c672fcd5a0",
+                                           "size":  6939728
                                        },
                        "linux-x64":  {
-                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.5.3/cclogcat_0.5.3_amd64.deb",
-                                         "sha256":  "b590145e20c90ceeaba14005aa8e240cae76dda9c644ecda6c2a6ff6e2c5b161",
-                                         "size":  5572288
+                                         "url":  "https://github.com/blacktip2000/app-releases/releases/download/CCLogcat-v0.5.4/cclogcat_0.5.4_amd64.deb",
+                                         "sha256":  "747370e931952117e81a224eada7e5e38103d62d2264d6ef67a95eaf49c2923b",
+                                         "size":  5569080
                                      }
                    }
 }
